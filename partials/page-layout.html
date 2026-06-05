@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="fr" class="overscroll-none">
+  <head>
+    {{> head title=title description=description root="../" }}
+  </head>
+  <body class="font-body text-ink antialiased">
+  <h1 class="sr-only">Dossier qualité Giggr. · PFE Hugo Girona</h1>
+    <a href="#content" class="label sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:bg-ink focus:px-4 focus:py-2 focus:text-paper">Aller au contenu</a>
+    {{> header root="../" }}
+    <main id="content">
+      {{> page-header num=num title=heading lede=lede root="../" }}
+      {{> @partial-block }}
+    </main>
+    {{> page-pager root="../" prevHref=prevHref prevNum=prevNum prevTitle=prevTitle nextHref=nextHref nextNum=nextNum nextTitle=nextTitle }}
+    {{> footer root="../" }}
+  </body>
+</html>

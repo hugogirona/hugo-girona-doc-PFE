@@ -1,0 +1,25 @@
+<nav class="border-t border-hairline-strong" aria-labelledby="pager-titre">
+  <h2 id="pager-titre" class="sr-only">Navigation entre sections</h2>
+  <div class="mx-auto grid max-w-6xl grid-cols-2 divide-x divide-hairline">
+    {{#if prevHref}}
+    <a href="{{root}}pages/{{prevHref}}" class="group flex flex-col gap-2 px-6 py-10 md:px-8">
+      <span class="label">← Précédent</span>
+      <span class="font-display text-lg font-medium transition-colors group-hover:text-accent md:text-xl" style="letter-spacing: -0.01em">
+        <span class="font-mono text-sm text-accent" aria-hidden="true">{{prevNum}}</span> {{prevTitle}}
+      </span>
+    </a>
+    {{else}}
+    <span class="px-6 py-10 md:px-8"></span>
+    {{/if}}
+    {{#if nextHref}}
+    <a href="{{root}}pages/{{nextHref}}" class="group flex flex-col items-end gap-2 px-6 py-10 text-right md:px-8">
+      <span class="label">Suivant →</span>
+      <span class="font-display text-lg font-medium transition-colors group-hover:text-accent md:text-xl" style="letter-spacing: -0.01em">
+        {{nextTitle}} <span class="font-mono text-sm text-accent" aria-hidden="true">{{nextNum}}</span>
+      </span>
+    </a>
+    {{else}}
+    <span class="px-6 py-10 md:px-8"></span>
+    {{/if}}
+  </div>
+</nav>

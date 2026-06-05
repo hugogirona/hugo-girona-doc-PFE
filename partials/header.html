@@ -1,0 +1,31 @@
+<header class="border-b border-hairline-strong bg-paper">
+  <div class="mx-auto flex h-16 max-w-6xl items-center justify-between px-6 md:px-8">
+    <a href="{{root}}index.html" class="flex shrink-0 items-baseline gap-2.5">
+      <span class="font-mono text-base font-semibold tracking-tight text-ink">Giggr.</span>
+      <span class="label hidden whitespace-nowrap sm:inline">Dossier qualité</span>
+    </a>
+    <nav class="flex shrink-0 items-center gap-4 text-sm sm:gap-6" aria-label="Navigation principale">
+      <h2 class="sr-only">Navigation principale</h2>
+      <button type="button" class="sections__toggle" aria-expanded="false" aria-controls="sections-panel" data-sections-toggle>
+        <span class="sections__toggle-label">Sections</span> <span class="sections__chevron" aria-hidden="true">▾</span>
+      </button>
+      <a class="link whitespace-nowrap" href="https://staging.giggr.be" rel="noopener" target="_blank">Le produit ↗</a>
+    </nav>
+  </div>
+
+  <div id="sections-panel" class="sections__panel" data-sections-panel>
+    <div class="sections__inner">
+      <ol class="sections__grid">
+        <li><a class="sections__item" href="{{root}}pages/code-html.html"><span class="sections__num" aria-hidden="true">01</span> Qualité du code HTML</a></li>
+        <li><a class="sections__item" href="{{root}}pages/performance.html"><span class="sections__num" aria-hidden="true">02</span> Performance</a></li>
+        <li><a class="sections__item" href="{{root}}pages/accessibilite.html"><span class="sections__num" aria-hidden="true">03</span> Accessibilité</a></li>
+        <li><a class="sections__item" href="{{root}}pages/serveur.html"><span class="sections__num" aria-hidden="true">04</span> Performances serveur</a></li>
+        <li><a class="sections__item" href="{{root}}pages/tests-automatises.html"><span class="sections__num" aria-hidden="true">05</span> Tests automatisés</a></li>
+        <li><a class="sections__item" href="{{root}}pages/opquast.html"><span class="sections__num" aria-hidden="true">06</span> Audit Opquast</a></li>
+        <li><a class="sections__item" href="{{root}}pages/recherche-utilisateur.html"><span class="sections__num" aria-hidden="true">07</span> Recherche utilisateur</a></li>
+        <li><a class="sections__item" href="{{root}}pages/tests-utilisateurs.html"><span class="sections__num" aria-hidden="true">08</span> Tests utilisateurs</a></li>
+        <li><a class="sections__item" href="{{root}}pages/javascript.html"><span class="sections__num" aria-hidden="true">09</span> JS et dégradation gracieuse</a></li>
+      </ol>
+    </div>
+  </div>
+</header>
