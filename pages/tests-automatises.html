@@ -1,0 +1,88 @@
+{{#> page-layout title="Tests automatisés · Dossier qualité Giggr." description="Tests automatisés de Giggr : au moins 30 tests Pest répartis entre navigateur et serveur, tableau de répartition, extraits commentés et couverture." num="05" heading="Tests automatisés" lede="Couverture de tests automatisés : au moins 30 tests Pest, répartis entre navigateur et serveur, avec extraits commentés." prevHref="serveur.html" prevNum="04" prevTitle="Performances serveur" nextHref="opquast.html" nextNum="06" nextTitle="Audit Opquast" }}
+
+<section class="border-b border-hairline">
+        <div class="mx-auto max-w-6xl px-6 md:px-8 py-16 md:py-20">
+            <h2 class="font-display text-2xl font-medium md:text-3xl" style="letter-spacing: -0.02em">
+                Répartition des tests
+            </h2>
+            <p class="mt-5 max-w-[65ch] text-muted" id="tbl-desc-1">
+                La suite de tests de Giggr s'écrit avec Pest. La cible est d'au moins
+                30 tests au total, répartis en deux familles : les tests navigateur
+                (Pest browser), qui pilotent l'interface réelle, et les tests serveur
+                (feature et unit), qui valident la logique applicative. Le tableau
+                ci-dessous fixe les cibles ; la colonne « Écrits » sera renseignée au
+                fur et à mesure de l'écriture des tests.
+            </p>
+            <div class="mt-8 overflow-x-auto border border-hairline-strong">
+                <table class="data-table" aria-describedby="tbl-desc-1">
+                    <caption class="sr-only">Répartition des tests automatisés</caption>
+                    <thead>
+                    <tr>
+                        <th scope="col">Catégorie</th>
+                        <th scope="col">Cible</th>
+                        <th scope="col">Écrits</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td data-label="Catégorie">Tests navigateur (Pest browser)</td>
+                        <td data-label="Cible" class="font-mono text-sm">≥ 15</td>
+                        <td data-label="Écrits" class="text-muted">à compléter</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Catégorie">Tests serveur (feature / unit)</td>
+                        <td data-label="Cible" class="font-mono text-sm">≥ 15</td>
+                        <td data-label="Écrits" class="text-muted">à compléter</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Catégorie">Total</td>
+                        <td data-label="Cible" class="font-mono text-sm">≥ 30</td>
+                        <td data-label="Écrits" class="text-muted">à compléter</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section class="border-b border-hairline">
+        <div class="mx-auto max-w-6xl px-6 md:px-8 py-16 md:py-20">
+            <h2 class="font-display text-2xl font-medium md:text-3xl" style="letter-spacing: -0.02em">
+                Extraits commentés
+            </h2>
+            <p class="mt-5 max-w-[65ch] text-muted">
+                Deux à trois extraits représentatifs seront commentés ici : un test
+                navigateur d'un parcours utilisateur et un ou deux tests serveur d'une
+                règle métier. Chaque extrait montrera la structure d'un test Pest
+                (arrangement, action, attente) et expliquera ce qui est vérifié. Le
+                bloc ci-dessous est un emplacement à remplacer par les extraits réels.
+            </p>
+            <pre class="mt-8 overflow-x-auto border border-hairline-strong bg-surface p-4 font-mono text-sm"><code>// Extrait de test Pest à intégrer</code></pre>
+        </div>
+    </section>
+
+    <section>
+        <div class="mx-auto max-w-6xl px-6 md:px-8 py-16 md:py-20">
+            <div class="flex flex-wrap items-start justify-between gap-3">
+                <h2 class="font-display text-2xl font-medium md:text-3xl" style="letter-spacing: -0.02em">
+                    Couverture
+                </h2>
+                <span class="chip">à compléter</span>
+            </div>
+            <p class="mt-5 max-w-[65ch] text-muted">
+                La couverture sera mesurée avec le rapport de couverture de Pest
+                (<code class="font-mono text-sm">pest --coverage</code>). Les chiffres
+                seront reportés ici une fois la suite stabilisée ; aucune valeur n'est
+                avancée tant que la mesure n'a pas été faite. La capture ci-dessous
+                recevra le rapport généré.
+            </p>
+            <figure class="capture mt-8">
+                <div class="capture__frame">Capture à venir</div>
+                <figcaption class="capture__caption">
+                    Rapport de couverture Pest. À intégrer après la première mesure.
+                </figcaption>
+            </figure>
+        </div>
+    </section>
+
+{{/page-layout}}

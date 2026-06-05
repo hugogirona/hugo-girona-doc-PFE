@@ -1,0 +1,130 @@
+{{#> page-layout title="Qualité du code HTML · Dossier qualité Giggr." description="Qualité du code HTML de Giggr : plans de titres des pages publiques, validation Total Validator, sémantique, microdata et stratégie d'images responsives." num="01" heading="Qualité du code HTML" lede="Structure sémantique du HTML public de Giggr : plans de titres, validation Total Validator, microdata et stratégie d'images responsives." nextHref="performance.html" nextNum="02" nextTitle="Performance" }}
+
+<section class="border-b border-hairline">
+        <div class="mx-auto max-w-6xl px-6 md:px-8 py-16 md:py-20">
+            <div class="flex flex-wrap items-start justify-between gap-3">
+                <h2 class="font-display text-2xl font-medium md:text-3xl" style="letter-spacing: -0.02em">
+                    Sémantique HTML
+                </h2>
+                <span class="chip">à compléter</span>
+            </div>
+            <p class="mt-5 max-w-[65ch] text-muted">
+                Chaque page publique s'appuie sur des éléments de section explicites
+                (<code class="font-mono text-sm">header</code>,
+                <code class="font-mono text-sm">nav</code>,
+                <code class="font-mono text-sm">main</code>,
+                <code class="font-mono text-sm">article</code>,
+                <code class="font-mono text-sm">footer</code>) et sur une hiérarchie
+                de titres unique par page. La validation est faite avec Total Validator.
+            </p>
+            <figure class="capture mt-8">
+                <div class="capture__frame">Capture à venir</div>
+                <figcaption class="capture__caption">
+                    Total Validator, page d'accueil. Rapport à intégrer.
+                </figcaption>
+            </figure>
+        </div>
+    </section>
+
+    <section class="border-b border-hairline">
+        <div class="mx-auto max-w-6xl px-6 md:px-8 py-16 md:py-20">
+            <h2 class="font-display text-2xl font-medium md:text-3xl" style="letter-spacing: -0.02em">
+                Plans de titres des pages publiques
+            </h2>
+            <p class="mt-5 max-w-[65ch] text-muted" id="tbl-desc-1">
+                Un seul <code class="font-mono text-sm">h1</code> par page, puis une
+                descente de niveaux sans saut. Relevé page par page ci-dessous.
+            </p>
+            <div class="mt-8 overflow-x-auto border border-hairline-strong">
+                <table class="data-table" aria-describedby="tbl-desc-1">
+                    <caption class="sr-only">Plans de titres des pages publiques</caption>
+                    <thead>
+                    <tr>
+                        <th scope="col">Page</th>
+                        <th scope="col">URL</th>
+                        <th scope="col">Plan de titres</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td data-label="Page">Accueil</td>
+                        <td data-label="URL" class="font-mono text-sm">/</td>
+                        <td data-label="Plan de titres" class="text-muted">à relever</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Page">Explorer</td>
+                        <td data-label="URL" class="font-mono text-sm">/explorer</td>
+                        <td data-label="Plan de titres" class="text-muted">à relever</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Page">Profil public</td>
+                        <td data-label="URL" class="font-mono text-sm">/profil/{id}</td>
+                        <td data-label="Plan de titres" class="text-muted">à relever</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Page">Détail d'une annonce</td>
+                        <td data-label="URL" class="font-mono text-sm">/annonces/{id}</td>
+                        <td data-label="Plan de titres" class="text-muted">à relever</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Page">Connexion / Inscription</td>
+                        <td data-label="URL" class="font-mono text-sm">/connexion</td>
+                        <td data-label="Plan de titres" class="text-muted">à relever</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Page">Contact</td>
+                        <td data-label="URL" class="font-mono text-sm">/contact</td>
+                        <td data-label="Plan de titres" class="text-muted">à relever</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section class="border-b border-hairline">
+        <div class="mx-auto max-w-6xl px-6 md:px-8 py-16 md:py-20">
+            <div class="flex flex-wrap items-start justify-between gap-3">
+                <h2 class="font-display text-2xl font-medium md:text-3xl" style="letter-spacing: -0.02em">
+                    Microdata
+                </h2>
+                <span class="chip">à compléter</span>
+            </div>
+            <p class="mt-5 max-w-[65ch] text-muted">
+                Les profils de musiciens et les annonces exposent des données
+                structurées Schema.org (par exemple
+                <code class="font-mono text-sm">MusicGroup</code> et
+                <code class="font-mono text-sm">Person</code>), vérifiables au Rich
+                Results Test de Google.
+            </p>
+            <figure class="capture mt-8">
+                <div class="capture__frame">Capture à venir</div>
+                <figcaption class="capture__caption">
+                    Rich Results Test, fiche profil. Rapport à intégrer.
+                </figcaption>
+            </figure>
+        </div>
+    </section>
+
+    <section>
+        <div class="mx-auto max-w-6xl px-6 md:px-8 py-16 md:py-20">
+            <h2 class="font-display text-2xl font-medium md:text-3xl" style="letter-spacing: -0.02em">
+                Images responsives
+            </h2>
+            <p class="mt-5 max-w-[65ch] text-muted">
+                Les visuels (avatars, vignettes d'annonces) sont servis en plusieurs
+                variantes via <code class="font-mono text-sm">srcset</code> et
+                <code class="font-mono text-sm">sizes</code>, avec un format moderne
+                et des dimensions déclarées pour éviter tout décalage de mise en page.
+                Mécanisme déjà en place côté code, captures à intégrer.
+            </p>
+            <figure class="capture mt-8">
+                <div class="capture__frame">Capture à venir</div>
+                <figcaption class="capture__caption">
+                    Variantes responsives servies, onglet Réseau. Capture à intégrer.
+                </figcaption>
+            </figure>
+        </div>
+    </section>
+
+{{/page-layout}}
