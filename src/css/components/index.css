@@ -1,0 +1,91 @@
+@layer components {
+  .index {
+    border-top: 1px solid var(--color-hairline-strong);
+  }
+
+  .index__row {
+    position: relative;
+    display: grid;
+    grid-template-columns: 2.75rem 1fr auto;
+    column-gap: 1.25rem;
+    align-items: start;
+    padding: 1.6rem 0;
+    border-bottom: 1px solid var(--color-hairline);
+  }
+  @media (min-width: 768px) {
+    .index__row {
+      column-gap: 2rem;
+      padding: 1.9rem 0;
+    }
+  }
+  .index__row::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    height: 2px;
+    width: 100%;
+    background-color: var(--color-accent);
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .index__row::after {
+      transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+  }
+  .index__row:hover::after,
+  .index__row:focus-visible::after {
+    transform: scaleX(1);
+  }
+
+  .index__num {
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    font-variant-numeric: tabular-nums;
+    color: var(--color-muted);
+    transition: color 0.3s ease;
+  }
+  .index__row:hover .index__num,
+  .index__row:focus-visible .index__num {
+    color: var(--color-accent);
+  }
+
+  .index__body {
+    display: block;
+  }
+  .index__title {
+    display: block;
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 1.5rem;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+  @media (min-width: 768px) {
+    .index__title {
+      font-size: 1.875rem;
+    }
+  }
+  .index__desc {
+    display: block;
+    margin-top: 0.45rem;
+    max-width: 60ch;
+    font-size: 0.9375rem;
+    line-height: 1.5;
+    color: var(--color-muted);
+  }
+
+  .index__arrow {
+    align-self: center;
+    font-family: var(--font-mono);
+    font-size: 1rem;
+    color: var(--color-muted);
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+  .index__row:hover .index__arrow,
+  .index__row:focus-visible .index__arrow {
+    transform: translateX(4px);
+    color: var(--color-ink);
+  }
+}

@@ -1,0 +1,19 @@
+@layer components {
+  .footer-section {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.55rem;
+    line-height: 1.4;
+    color: color-mix(in srgb, var(--color-paper) 80%, var(--color-ink));
+    transition: color 0.2s ease;
+  }
+  .footer-section:hover,
+  .footer-section:focus-visible {
+    color: var(--color-accent-on-dark);
+  }
+  .footer-section__num {
+    font-family: var(--font-mono), monospace;
+    font-size: 0.75rem;
+    color: color-mix(in srgb, var(--color-paper) 58%, var(--color-ink));
+  }
+}

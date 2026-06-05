@@ -1,0 +1,18 @@
+@import "@fontsource-variable/geist/index.css";
+@import "@fontsource-variable/geist-mono/index.css";
+
+@import "tailwindcss";
+
+@import "./theme.css";
+@import "./base.css";
+
+@import "./components/label.css";
+@import "./components/link.css";
+@import "./components/gauge.css";
+@import "./components/index.css";
+@import "./components/sections-disclosure.css";
+@import "./components/footer-section.css";
+@import "./components/capture.css";
+@import "./components/chip.css";
+@import "./components/data-table.css";
+

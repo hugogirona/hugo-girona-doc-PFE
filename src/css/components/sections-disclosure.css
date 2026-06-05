@@ -1,0 +1,99 @@
+@layer components {
+  .sections__toggle {
+    display: none;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0;
+    border: 0;
+    background: none;
+    font: inherit;
+    color: var(--color-ink);
+    cursor: pointer;
+    transition: color 0.2s ease;
+  }
+  .js .sections__toggle {
+    display: inline-flex;
+  }
+  .sections__toggle-label {
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+    text-decoration-color: var(--color-hairline-strong);
+    transition: text-decoration-color 0.2s ease;
+  }
+  .sections__toggle:hover,
+  .sections__toggle[aria-expanded="true"] {
+    color: var(--color-accent);
+  }
+  .sections__toggle:hover .sections__toggle-label,
+  .sections__toggle[aria-expanded="true"] .sections__toggle-label {
+    text-decoration-color: var(--color-accent);
+  }
+  .sections__chevron {
+    transition: transform 0.25s ease;
+  }
+  .sections__toggle[aria-expanded="true"] .sections__chevron {
+    transform: rotate(-180deg);
+  }
+
+  .sections__panel {
+    display: grid;
+    grid-template-rows: 1fr;
+  }
+  .js .sections__panel {
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 320ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .js .sections__panel[data-open] {
+    grid-template-rows: 1fr;
+  }
+  .sections__inner {
+    overflow: hidden;
+    min-height: 0;
+  }
+  .sections__grid {
+    margin-inline: auto;
+    max-width: 72rem;
+    padding: 1.75rem 1.5rem 2.25rem;
+    border-top: 1px solid var(--color-hairline);
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  @media (min-width: 640px) {
+    .sections__grid {
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 2rem;
+    }
+  }
+  @media (min-width: 1024px) {
+    .sections__grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  .sections__item {
+    display: flex;
+    align-items: baseline;
+    gap: 0.7rem;
+    padding: 0.7rem 0;
+    border-bottom: 1px solid var(--color-hairline);
+    font-family: var(--font-display);
+    font-size: 1.0625rem;
+    font-weight: 500;
+    color: var(--color-ink);
+    transition: color 0.2s ease;
+  }
+  .sections__item:hover,
+  .sections__item:focus-visible {
+    color: var(--color-accent);
+  }
+  .sections__num {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--color-muted);
+    transition: color 0.2s ease;
+  }
+  .sections__item:hover .sections__num,
+  .sections__item:focus-visible .sections__num {
+    color: var(--color-accent);
+  }
+}

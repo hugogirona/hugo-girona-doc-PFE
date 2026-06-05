@@ -1,0 +1,14 @@
+@layer components {
+  .link {
+    color: var(--color-ink);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+    text-decoration-color: var(--color-hairline-strong);
+    transition: text-decoration-color 0.2s, color 0.2s;
+  }
+  .link:hover {
+    color: var(--color-accent);
+    text-decoration-color: var(--color-accent);
+  }
+}

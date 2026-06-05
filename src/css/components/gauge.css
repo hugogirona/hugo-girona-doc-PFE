@@ -1,0 +1,18 @@
+@layer components {
+  .gauge {
+    position: relative;
+    height: 3px;
+    background-color: var(--color-hairline);
+    overflow: hidden;
+  }
+  .gauge__fill {
+    position: absolute;
+    inset: 0 100% 0 0;
+    background-color: var(--color-ink);
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .js .gauge__fill {
+      transition: inset 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+  }
+}

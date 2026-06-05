@@ -1,0 +1,20 @@
+@theme {
+  --color-ink: #0a0a0a;
+  --color-paper: #fafaf9;
+  --color-surface: #f1f0ee;
+  --color-hairline: #cfcecb;
+  --color-hairline-strong: #1a1a1a;
+
+  --color-muted: #52514d;
+
+  --color-accent: #c2410c;
+  --color-accent-on-dark: #f67649;
+  --color-positive: #15803d;
+  --color-danger: #b91c1c;
+
+  --font-display: "Geist Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Geist Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Geist Mono Variable", ui-monospace, "SFMono-Regular", monospace;
+
+  --radius: 0px;
+}
