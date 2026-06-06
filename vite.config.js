@@ -8,7 +8,6 @@ const root = fileURLToPath(new URL('.', import.meta.url))
 const at = (p) => resolve(root, p)
 
 export default defineConfig({
-    base: '/hugo-girona-doc-PFE/',
     plugins: [
         tailwindcss(),
         handlebars({partialDirectory: at('partials')}),
