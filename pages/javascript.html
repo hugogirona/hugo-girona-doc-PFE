@@ -50,12 +50,9 @@
 
       <section class="border-b border-hairline">
         <div class="mx-auto max-w-6xl px-6 md:px-8 py-16 md:py-20">
-          <div class="flex flex-wrap items-start justify-between gap-3">
-            <h2 class="font-display text-2xl font-medium md:text-3xl" style="letter-spacing: -0.02em">
-              Réactivité côté serveur (Livewire)
-            </h2>
-            <span class="chip">à compléter</span>
-          </div>
+          <h2 class="font-display text-2xl font-medium md:text-3xl" style="letter-spacing: -0.02em">
+            Réactivité côté serveur (Livewire)
+          </h2>
           <p class="mt-5 max-w-[65ch] text-muted">
             Giggr s'appuie sur Livewire 4 pour rendre l'interface réactive sans
             écrire d'API cliente. Quatre usages principaux :
@@ -84,9 +81,14 @@
             </li>
           </ul>
           <figure class="capture mt-8">
-            <div class="capture__frame">Capture à venir</div>
+            <video class="block w-full sm:hidden" width="390" height="844" autoplay muted loop playsinline controls preload="metadata" aria-label="Capture vidéo du filtre Explorer en direct (mobile)">
+              <source src="../src/video/explore-filter-mobile.webm" type="video/webm" />
+            </video>
+            <video class="hidden w-full sm:block" width="1280" height="800" autoplay muted loop playsinline controls preload="metadata" aria-label="Capture vidéo du filtre Explorer en direct">
+              <source src="../src/video/explore-filter.webm" type="video/webm" />
+            </video>
             <figcaption class="capture__caption">
-              Filtre d'exploration en direct (wire:model.live). Capture à intégrer.
+              Filtre Explorer en direct : ouverture du tiroir, sélection d'instruments et de genres, puis application. Résultats mis à jour par Livewire sans rechargement.
             </figcaption>
           </figure>
         </div>
@@ -120,35 +122,123 @@
 
       <section>
         <div class="mx-auto max-w-6xl px-6 md:px-8 py-16 md:py-20">
-          <div class="flex flex-wrap items-start justify-between gap-3">
-            <h2 class="font-display text-2xl font-medium md:text-3xl" style="letter-spacing: -0.02em">
-              Dégradation gracieuse et mouvement
-            </h2>
-            <span class="chip">à vérifier</span>
-          </div>
+          <h2 class="font-display text-2xl font-medium md:text-3xl" style="letter-spacing: -0.02em">
+            Dégradation gracieuse et mouvement
+          </h2>
           <p class="mt-5 max-w-[65ch] text-muted">
             Le contenu de Giggr est rendu côté serveur en Blade : pages, profils et
-            annonces restent donc consultables sans JavaScript, et la navigation par
-            liens fonctionne. JavaScript ajoute la réactivité par-dessus. Ce qui en
-            dépend reste à confirmer écran par écran : filtres en direct, soumission
-            des formulaires Livewire, messagerie temps réel, retours de chargement.
+            annonces restent consultables sans JavaScript, et la navigation par liens
+            fonctionne. JavaScript ajoute la réactivité par-dessus, et l'application
+            prévoit explicitement son absence.
           </p>
           <p class="mt-5 max-w-[65ch] text-muted">
-            Côté mouvement, l'animation d'empilement (GSAP) lit la préférence système
-            avant de s'activer : si l'utilisateur demande un mouvement réduit, ou si
-            la fenêtre est trop courte, elle ne se déclenche pas et le contenu
-            s'affiche normalement.
+            Le mécanisme est systématique : tout élément qui dépend de JavaScript porte
+            l'attribut <code class="font-mono text-sm">data-js-only</code>, et un
+            <code class="font-mono text-sm">&lt;noscript&gt;</code> le masque quand
+            JavaScript est absent. Un équivalent statique prend alors le relais.
           </p>
-          <pre class="mt-8 overflow-x-auto border border-hairline-strong bg-surface p-4 font-mono text-sm"><code>function canStack() {
-  return !window.matchMedia('(prefers-reduced-motion: reduce)').matches
-    &amp;&amp; window.innerHeight &gt;= config.minViewportHeight;
-}</code></pre>
-          <figure class="capture mt-8">
-            <div class="capture__frame">Capture à venir</div>
-            <figcaption class="capture__caption">
-              Une page de Giggr avec JavaScript désactivé. Capture à intégrer.
-            </figcaption>
-          </figure>
+          <pre class="shiki github-light mt-5 overflow-x-auto border border-hairline-strong p-4 text-sm font-mono code-block" style="background-color:#fff;color:#24292e" tabindex="0"><code><span class="line"><span style="color:#6A737D">&#123;&#123;-- layouts/app.blade.php : sans JS, on masque tout ce qui en dépend --&#125;&#125;</span></span>
+<span class="line"><span style="color:#24292E">&#x3C;</span><span style="color:#22863A">noscript</span><span style="color:#24292E">&gt;</span></span>
+<span class="line"><span style="color:#24292E">    &#x3C;</span><span style="color:#22863A">style</span><span style="color:#24292E">&gt;[</span><span style="color:#6F42C1">data-js-only</span><span style="color:#24292E">] &#123; </span><span style="color:#005CC5">display</span><span style="color:#24292E">: </span><span style="color:#005CC5">none</span><span style="color:#D73A49"> !important</span><span style="color:#24292E">; &#125;&#x3C;/</span><span style="color:#22863A">style</span><span style="color:#24292E">&gt;</span></span>
+<span class="line"><span style="color:#24292E">&#x3C;/</span><span style="color:#22863A">noscript</span><span style="color:#24292E">&gt;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">&#123;&#123;-- header.blade.php : le burger (Alpine) est data-js-only... --&#125;&#125;</span></span>
+<span class="line"><span style="color:#24292E">&#x3C;</span><span style="color:#22863A">div</span><span style="color:#6F42C1"> class</span><span style="color:#24292E">=</span><span style="color:#032F62">"md:hidden"</span><span style="color:#6F42C1"> data-js-only</span><span style="color:#6F42C1"> x-data</span><span style="color:#24292E">=</span><span style="color:#032F62">"&#123; open: false &#125;"</span><span style="color:#24292E">&gt;</span></span>
+<span class="line"><span style="color:#6A737D">    &#123;&#123;-- bouton burger + menu plein écran Alpine --&#125;&#125;</span></span>
+<span class="line"><span style="color:#24292E">&#x3C;/</span><span style="color:#22863A">div</span><span style="color:#24292E">&gt;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">&#123;&#123;-- ...une navigation de secours, 100% CSS, prend le relais --&#125;&#125;</span></span>
+<span class="line"><span style="color:#24292E">&#x3C;</span><span style="color:#22863A">noscript</span><span style="color:#24292E">&gt;</span></span>
+<span class="line"><span style="color:#24292E">    &#x3C;</span><span style="color:#22863A">nav</span><span style="color:#6F42C1"> aria-label</span><span style="color:#24292E">=</span><span style="color:#032F62">"Navigation de secours"</span><span style="color:#24292E">&gt;</span></span>
+<span class="line"><span style="color:#24292E">        &#x3C;</span><span style="color:#22863A">a</span><span style="color:#6F42C1"> href</span><span style="color:#24292E">=</span><span style="color:#032F62">"</span><span style="color:#005CC5">&#123;&#123;</span><span style="color:#6F42C1"> route</span><span style="color:#032F62">('home') </span><span style="color:#005CC5">&#125;&#125;</span><span style="color:#032F62">"</span><span style="color:#24292E">&gt;Accueil&#x3C;/</span><span style="color:#22863A">a</span><span style="color:#24292E">&gt;</span></span>
+<span class="line"><span style="color:#24292E">        &#x3C;</span><span style="color:#22863A">a</span><span style="color:#6F42C1"> href</span><span style="color:#24292E">=</span><span style="color:#032F62">"</span><span style="color:#005CC5">&#123;&#123;</span><span style="color:#6F42C1"> route</span><span style="color:#032F62">('explore') </span><span style="color:#005CC5">&#125;&#125;</span><span style="color:#032F62">"</span><span style="color:#24292E">&gt;Explorer&#x3C;/</span><span style="color:#22863A">a</span><span style="color:#24292E">&gt;</span></span>
+<span class="line"><span style="color:#24292E">        &#x3C;</span><span style="color:#22863A">a</span><span style="color:#6F42C1"> href</span><span style="color:#24292E">=</span><span style="color:#032F62">"</span><span style="color:#005CC5">&#123;&#123;</span><span style="color:#6F42C1"> route</span><span style="color:#032F62">('contact') </span><span style="color:#005CC5">&#125;&#125;</span><span style="color:#032F62">"</span><span style="color:#24292E">&gt;Contact&#x3C;/</span><span style="color:#22863A">a</span><span style="color:#24292E">&gt;</span></span>
+<span class="line"><span style="color:#24292E">    &#x3C;/</span><span style="color:#22863A">nav</span><span style="color:#24292E">&gt;</span></span>
+<span class="line"><span style="color:#24292E">&#x3C;/</span><span style="color:#22863A">noscript</span><span style="color:#24292E">&gt;</span></span></code></pre>
+          <ul class="mt-8 max-w-[68ch] space-y-3 text-muted">
+            <li>
+              <strong class="font-medium text-ink">Menu burger</strong> : le bouton
+              hamburger (Alpine) est <code class="font-mono text-sm">data-js-only</code>.
+              Sans JavaScript, une navigation de secours <strong>entièrement en CSS</strong>,
+              listée dans un <code class="font-mono text-sm">&lt;noscript&gt;</code>, prend
+              le relais (liens des pages publiques, déconnexion en formulaire POST).
+            </li>
+            <li>
+              <strong class="font-medium text-ink">FAQ (page Contact)</strong> : c'est
+              Alpine qui replie les réponses
+              (<code class="font-mono text-sm">:class</code> appliquant
+              <code class="font-mono text-sm">grid-rows-[0fr]</code>). Sans JavaScript, ce
+              binding ne s'applique pas : l'état par défaut est <strong>ouvert</strong>,
+              donc toutes les réponses restent lisibles.
+            </li>
+            <li>
+              <strong class="font-medium text-ink">Carrousel d'accueil</strong> : c'est un
+              conteneur à défilement natif. Sans JavaScript, on fait toujours défiler les
+              cartes horizontalement ; seuls les boutons et les points de pagination
+              deviennent inertes.
+            </li>
+            <li>
+              <strong class="font-medium text-ink">Formulaires d'authentification et de
+              contact</strong> : de simples
+              <code class="font-mono text-sm">&lt;form method="POST"&gt;</code> traités
+              côté serveur, qui fonctionnent sans JavaScript.
+            </li>
+          </ul>
+          <p class="mt-8 max-w-[65ch] text-muted">
+            Ce qui reste réservé à JavaScript : les filtres en direct, la soumission des
+            formulaires Livewire, la messagerie temps réel et les retours de chargement.
+          </p>
+          <p class="mt-8 max-w-[65ch] text-muted">
+            Côté mouvement, l'animation d'empilement (GSAP) lit la préférence système
+            avant de s'activer : si l'utilisateur demande un mouvement réduit, ou si la
+            fenêtre est trop courte, elle ne se déclenche pas et le contenu s'affiche
+            normalement.
+          </p>
+          <pre class="shiki github-light mt-5 overflow-x-auto border border-hairline-strong p-4 text-sm font-mono code-block" style="background-color:#fff;color:#24292e" tabindex="0"><code><span class="line"><span style="color:#D73A49">function</span><span style="color:#6F42C1"> canStack</span><span style="color:#24292E">() &#123;</span></span>
+<span class="line"><span style="color:#D73A49">    return</span><span style="color:#D73A49"> !</span><span style="color:#24292E">window.</span><span style="color:#6F42C1">matchMedia</span><span style="color:#24292E">(</span><span style="color:#032F62">'(prefers-reduced-motion: reduce)'</span><span style="color:#24292E">).matches</span></span>
+<span class="line"><span style="color:#D73A49">        &#x26;&#x26;</span><span style="color:#24292E"> window.innerHeight </span><span style="color:#D73A49">&gt;=</span><span style="color:#24292E"> config.minViewportHeight;</span></span>
+<span class="line"><span style="color:#24292E">&#125;</span></span></code></pre>
+          <div class="mt-8 grid gap-6 sm:grid-cols-3">
+            <figure class="capture">
+              <img
+                class="w-full"
+                src="../src/img/burger-js-closed.webp"
+                width="780"
+                height="1688"
+                alt="Navigation mobile de Giggr avec JavaScript : l'en-tête et son bouton burger, menu fermé."
+                loading="lazy"
+              />
+              <figcaption class="capture__caption">
+                Avec JavaScript, fermé : l'en-tête et son bouton burger.
+              </figcaption>
+            </figure>
+            <figure class="capture">
+              <img
+                class="w-full"
+                src="../src/img/burger-js-open.webp"
+                width="780"
+                height="1688"
+                alt="Navigation mobile de Giggr avec JavaScript : le menu plein écran ouvert depuis le bouton burger."
+                loading="lazy"
+              />
+              <figcaption class="capture__caption">
+                Avec JavaScript, ouvert : le menu plein écran (Alpine).
+              </figcaption>
+            </figure>
+            <figure class="capture">
+              <img
+                class="w-full"
+                src="../src/img/burger-no-js.webp"
+                width="780"
+                height="1688"
+                alt="Navigation mobile de Giggr sans JavaScript : la navigation de secours du noscript, une liste de liens."
+                loading="lazy"
+              />
+              <figcaption class="capture__caption">
+                Sans JavaScript : la navigation de secours du &lt;noscript&gt; (liens, déconnexion en POST).
+              </figcaption>
+            </figure>
+          </div>
         </div>
       </section>
 
