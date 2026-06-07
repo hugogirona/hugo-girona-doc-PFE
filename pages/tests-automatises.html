@@ -1,4 +1,4 @@
-{{#> page-layout title="Tests automatisés" description="Tests automatisés de Giggr : au moins 30 tests Pest répartis entre navigateur et serveur, tableau de répartition, extraits commentés et couverture." num="05" heading="Tests automatisés" lede="Couverture de tests automatisés : au moins 30 tests Pest, répartis entre navigateur et serveur, avec extraits commentés." prevHref="serveur.html" prevNum="04" prevTitle="Performances serveur" nextHref="opquast.html" nextNum="06" nextTitle="Audit Opquast" }}
+{{#> page-layout title="Tests automatisés" description="Tests automatisés de Giggr : 614 tests Pest, dont 15 navigateur (Pest browser) et 599 serveur, répartis par domaine, avec extraits commentés et stratégie de couverture." num="05" heading="Tests automatisés" lede="614 tests Pest exécutés sur Giggr : 15 tests navigateur (Pest browser, vrai Chromium) et 599 tests serveur, répartis par domaine et illustrés d'extraits commentés." prevHref="serveur.html" prevNum="04" prevTitle="Performances serveur" nextHref="opquast.html" nextNum="06" nextTitle="Audit Opquast" }}
 
 <section class="border-b border-hairline">
         <div class="mx-auto max-w-6xl px-6 md:px-8 py-16 md:py-20">
@@ -6,42 +6,137 @@
                 Répartition des tests
             </h2>
             <p class="mt-5 max-w-[65ch] text-muted" id="tbl-desc-1">
-                La suite de tests de Giggr s'écrit avec Pest. La cible est d'au moins
-                30 tests au total, répartis en deux familles : les tests navigateur
-                (Pest browser), qui pilotent l'interface réelle, et les tests serveur
-                (feature et unit), qui valident la logique applicative. Le tableau
-                ci-dessous fixe les cibles ; la colonne « Écrits » sera renseignée au
-                fur et à mesure de l'écriture des tests.
+                La suite de tests de Giggr s'écrit avec Pest. Le guide impose au
+                minimum 15 tests navigateur (tests d'interface) et 15 tests serveur,
+                soit 30 au total. Giggr atteint la cible côté navigateur et la dépasse
+                largement côté serveur : <strong>614 tests</strong> au total, dont
+                <strong>15 tests navigateur</strong> qui pilotent l'interface réelle
+                dans Chromium via Pest browser, et <strong>599 tests serveur</strong>
+                (feature et unit) qui valident la logique applicative. Le détail par
+                domaine est relevé ci-dessous.
             </p>
+
+            <dl class="mt-8 grid grid-cols-2 gap-px border border-hairline-strong bg-hairline-strong sm:grid-cols-4">
+                <div class="bg-paper p-4">
+                    <dt class="text-xs uppercase tracking-wide text-muted">Total</dt>
+                    <dd class="mt-1 font-mono text-2xl tabular-nums">614</dd>
+                </div>
+                <div class="bg-paper p-4">
+                    <dt class="text-xs uppercase tracking-wide text-muted">Navigateur</dt>
+                    <dd class="mt-1 font-mono text-2xl tabular-nums">15</dd>
+                </div>
+                <div class="bg-paper p-4">
+                    <dt class="text-xs uppercase tracking-wide text-muted">Serveur</dt>
+                    <dd class="mt-1 font-mono text-2xl tabular-nums">599</dd>
+                </div>
+                <div class="bg-paper p-4">
+                    <dt class="text-xs uppercase tracking-wide text-muted">Minimum guide</dt>
+                    <dd class="mt-1 font-mono text-2xl tabular-nums">30</dd>
+                </div>
+            </dl>
+
             <div class="mt-8 overflow-x-auto border border-hairline-strong">
                 <table class="data-table" aria-describedby="tbl-desc-1">
-                    <caption class="sr-only">Répartition des tests automatisés</caption>
+                    <caption class="sr-only">Répartition des tests automatisés par famille et par domaine</caption>
                     <thead>
                     <tr>
-                        <th scope="col">Catégorie</th>
-                        <th scope="col">Cible</th>
-                        <th scope="col">Écrits</th>
+                        <th scope="col">Famille</th>
+                        <th scope="col">Domaine</th>
+                        <th scope="col">Tests</th>
                     </tr>
                     </thead>
                     <tbody>
                     <tr>
-                        <td data-label="Catégorie">Tests navigateur (Pest browser)</td>
-                        <td data-label="Cible" class="font-mono text-sm">≥ 15</td>
-                        <td data-label="Écrits" class="text-muted">à compléter</td>
+                        <td data-label="Famille">Navigateur</td>
+                        <td data-label="Domaine">Parcours d'interface réels (Pest browser, Chromium)</td>
+                        <td data-label="Tests" class="font-mono tabular-nums">15</td>
                     </tr>
                     <tr>
-                        <td data-label="Catégorie">Tests serveur (feature / unit)</td>
-                        <td data-label="Cible" class="font-mono text-sm">≥ 15</td>
-                        <td data-label="Écrits" class="text-muted">à compléter</td>
+                        <td data-label="Famille">Serveur</td>
+                        <td data-label="Domaine">Composants Livewire</td>
+                        <td data-label="Tests" class="font-mono tabular-nums">217</td>
                     </tr>
                     <tr>
-                        <td data-label="Catégorie">Total</td>
-                        <td data-label="Cible" class="font-mono text-sm">≥ 30</td>
-                        <td data-label="Écrits" class="text-muted">à compléter</td>
+                        <td data-label="Famille">Serveur</td>
+                        <td data-label="Domaine">Modèles et relations</td>
+                        <td data-label="Tests" class="font-mono tabular-nums">128</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Famille">Serveur</td>
+                        <td data-label="Domaine">Pages et parcours</td>
+                        <td data-label="Tests" class="font-mono tabular-nums">81</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Famille">Serveur</td>
+                        <td data-label="Domaine">Actions métier</td>
+                        <td data-label="Tests" class="font-mono tabular-nums">44</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Famille">Serveur</td>
+                        <td data-label="Domaine">Authentification</td>
+                        <td data-label="Tests" class="font-mono tabular-nums">39</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Famille">Serveur</td>
+                        <td data-label="Domaine">Seeders et données de référence</td>
+                        <td data-label="Tests" class="font-mono tabular-nums">26</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Famille">Serveur</td>
+                        <td data-label="Domaine">Traitements médias (jobs)</td>
+                        <td data-label="Tests" class="font-mono tabular-nums">15</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Famille">Serveur</td>
+                        <td data-label="Domaine">Formulaire de contact</td>
+                        <td data-label="Tests" class="font-mono tabular-nums">15</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Famille">Serveur</td>
+                        <td data-label="Domaine">Événements</td>
+                        <td data-label="Tests" class="font-mono tabular-nums">8</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Famille">Serveur</td>
+                        <td data-label="Domaine">SEO, sitemap, honeypot</td>
+                        <td data-label="Tests" class="font-mono tabular-nums">8</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Famille">Serveur</td>
+                        <td data-label="Domaine">Tests unitaires (enums)</td>
+                        <td data-label="Tests" class="font-mono tabular-nums">7</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Famille">Serveur</td>
+                        <td data-label="Domaine">Messagerie</td>
+                        <td data-label="Tests" class="font-mono tabular-nums">5</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Famille">Serveur</td>
+                        <td data-label="Domaine">Diffusion temps réel</td>
+                        <td data-label="Tests" class="font-mono tabular-nums">3</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Famille">Serveur</td>
+                        <td data-label="Domaine">Intégrité de la base (smoke)</td>
+                        <td data-label="Tests" class="font-mono tabular-nums">3</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Famille" class="font-medium">Total</td>
+                        <td data-label="Domaine" class="font-medium">Suite complète Pest</td>
+                        <td data-label="Tests" class="font-mono tabular-nums font-medium">614</td>
                     </tr>
                     </tbody>
                 </table>
             </div>
+
+            <p class="mt-6 max-w-[65ch] text-sm text-muted">
+                Les tests serveur s'exécutent en mémoire (SQLite). Les tests navigateur
+                lancent un vrai navigateur Chromium via Pest browser et Playwright. La
+                commande <code class="font-mono text-sm">pest --testsuite=Browser</code>
+                exécute la famille navigateur seule ; <code class="font-mono text-sm">pest</code>
+                exécute l'ensemble.
+            </p>
         </div>
     </section>
 
@@ -51,35 +146,214 @@
                 Extraits commentés
             </h2>
             <p class="mt-5 max-w-[65ch] text-muted">
-                Deux à trois extraits représentatifs seront commentés ici : un test
-                navigateur d'un parcours utilisateur et un ou deux tests serveur d'une
-                règle métier. Chaque extrait montrera la structure d'un test Pest
-                (arrangement, action, attente) et expliquera ce qui est vérifié. Le
-                bloc ci-dessous est un emplacement à remplacer par les extraits réels.
+                Trois extraits représentatifs, tels qu'ils figurent dans le dépôt : un
+                parcours utilisateur joué dans le navigateur, une règle d'autorisation
+                côté serveur, et une règle métier d'intégration. Chacun suit la
+                structure d'un test Pest (préparation, action, attente).
             </p>
-            <pre class="mt-8 overflow-x-auto border border-hairline-strong bg-surface p-4 font-mono text-sm"><code>// Extrait de test Pest à intégrer</code></pre>
+
+            <h3 class="mt-10 font-mono text-sm uppercase tracking-wide text-muted">
+                1. Navigateur. Connexion d'un utilisateur
+            </h3>
+            <p class="mt-3 max-w-[65ch] text-muted">
+                Dans un vrai Chromium, le test remplit le formulaire de connexion,
+                soumet, et vérifie l'arrivée sur la page <code class="font-mono text-sm">/explorer</code>
+                (redirection gérée par Fortify). Il prouve que l'authentification par
+                session, jeton CSRF compris, fonctionne de bout en bout côté interface.
+            </p>
+            <pre class="shiki github-light mt-5 overflow-x-auto border border-hairline-strong p-4 text-sm font-mono code-block" style="background-color:#fff;color:#24292e" tabindex="0"><code><span class="line"><span style="color:#6F42C1">it</span><span style="color:#24292E">(</span><span style="color:#032F62">"connecte un utilisateur avec des identifiants valides"</span><span style="color:#24292E">, </span><span style="color:#D73A49">function</span><span style="color:#24292E"> () {</span></span>
+<span class="line"><span style="color:#005CC5">    User</span><span style="color:#D73A49">::</span><span style="color:#6F42C1">factory</span><span style="color:#24292E">()</span><span style="color:#D73A49">-></span><span style="color:#6F42C1">create</span><span style="color:#24292E">([</span></span>
+<span class="line"><span style="color:#032F62">        'email'</span><span style="color:#D73A49"> =></span><span style="color:#032F62"> 'marie@exemple.com'</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#24292E">    ]);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">    $page </span><span style="color:#D73A49">=</span><span style="color:#6F42C1"> visit</span><span style="color:#24292E">(</span><span style="color:#6F42C1">path</span><span style="color:#24292E">(</span><span style="color:#032F62">'login'</span><span style="color:#24292E">));</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">    $page</span><span style="color:#D73A49">-></span><span style="color:#6F42C1">fill</span><span style="color:#24292E">(</span><span style="color:#032F62">'email'</span><span style="color:#24292E">, </span><span style="color:#032F62">'marie@exemple.com'</span><span style="color:#24292E">)</span></span>
+<span class="line"><span style="color:#D73A49">        -></span><span style="color:#6F42C1">fill</span><span style="color:#24292E">(</span><span style="color:#032F62">'password'</span><span style="color:#24292E">, </span><span style="color:#032F62">'password'</span><span style="color:#24292E">)</span></span>
+<span class="line"><span style="color:#D73A49">        -></span><span style="color:#6F42C1">click</span><span style="color:#24292E">(</span><span style="color:#032F62">'button[type="submit"]'</span><span style="color:#24292E">)</span></span>
+<span class="line"><span style="color:#D73A49">        -></span><span style="color:#6F42C1">assertPathContains</span><span style="color:#24292E">(</span><span style="color:#032F62">'explorer'</span><span style="color:#24292E">); </span><span style="color:#6A737D">// fortify.home = /explorer</span></span>
+<span class="line"><span style="color:#24292E">});</span></span></code></pre>
+
+            <h3 class="mt-10 font-mono text-sm uppercase tracking-wide text-muted">
+                2. Serveur. Un invité ne peut pas suivre un profil
+            </h3>
+            <p class="mt-3 max-w-[65ch] text-muted">
+                Règle d'autorisation : un visiteur non connecté qui tente l'action
+                <code class="font-mono text-sm">toggle</code> du bouton « Suivre »
+                reçoit une réponse 403, et aucune ligne de suivi n'est créée en base.
+                Le composant Livewire est testé directement, sans navigateur.
+            </p>
+            <pre class="shiki github-light mt-5 overflow-x-auto border border-hairline-strong p-4 text-sm font-mono code-block" style="background-color:#fff;color:#24292e" tabindex="0"><code><span class="line"><span style="color:#6F42C1">it</span><span style="color:#24292E">(</span><span style="color:#032F62">'guest cannot toggle'</span><span style="color:#24292E">, </span><span style="color:#D73A49">function</span><span style="color:#24292E"> () {</span></span>
+<span class="line"><span style="color:#24292E">    $profile </span><span style="color:#D73A49">=</span><span style="color:#005CC5"> Profile</span><span style="color:#D73A49">::</span><span style="color:#6F42C1">factory</span><span style="color:#24292E">()</span><span style="color:#D73A49">-></span><span style="color:#6F42C1">create</span><span style="color:#24292E">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#005CC5">    Livewire</span><span style="color:#D73A49">::</span><span style="color:#6F42C1">test</span><span style="color:#24292E">(</span><span style="color:#032F62">'parts.social.follow-button'</span><span style="color:#24292E">, [</span><span style="color:#032F62">'profileId'</span><span style="color:#D73A49"> =></span><span style="color:#24292E"> $profile</span><span style="color:#D73A49">-></span><span style="color:#24292E">id])</span></span>
+<span class="line"><span style="color:#D73A49">        -></span><span style="color:#6F42C1">call</span><span style="color:#24292E">(</span><span style="color:#032F62">'toggle'</span><span style="color:#24292E">)</span></span>
+<span class="line"><span style="color:#D73A49">        -></span><span style="color:#6F42C1">assertForbidden</span><span style="color:#24292E">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6F42C1">    expect</span><span style="color:#24292E">(</span><span style="color:#005CC5">Follow</span><span style="color:#D73A49">::</span><span style="color:#6F42C1">count</span><span style="color:#24292E">())</span><span style="color:#D73A49">-></span><span style="color:#6F42C1">toBe</span><span style="color:#24292E">(</span><span style="color:#005CC5">0</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">});</span></span></code></pre>
+
+            <h3 class="mt-10 font-mono text-sm uppercase tracking-wide text-muted">
+                3. Serveur. Le contact envoie un mail au bon destinataire
+            </h3>
+            <p class="mt-3 max-w-[65ch] text-muted">
+                Règle métier d'intégration : une soumission valide du formulaire de
+                contact redirige sans erreur et met en file un mail vers le
+                destinataire <em>lu depuis la configuration</em>, pas écrit en dur.
+                Le mail est intercepté avec <code class="font-mono text-sm">Mail::fake()</code>.
+            </p>
+            <pre class="shiki github-light mt-5 overflow-x-auto border border-hairline-strong p-4 text-sm font-mono code-block" style="background-color:#fff;color:#24292e" tabindex="0"><code><span class="line"><span style="color:#6F42C1">it</span><span style="color:#24292E">(</span><span style="color:#032F62">'sends a ContactMessageReceived mail to the configured recipient on a valid submission'</span><span style="color:#24292E">, </span><span style="color:#D73A49">function</span><span style="color:#24292E"> () {</span></span>
+<span class="line"><span style="color:#005CC5">    Mail</span><span style="color:#D73A49">::</span><span style="color:#6F42C1">fake</span><span style="color:#24292E">();</span></span>
+<span class="line"><span style="color:#6F42C1">    config</span><span style="color:#24292E">([</span><span style="color:#032F62">'mail.contact_recipient'</span><span style="color:#D73A49"> =></span><span style="color:#032F62"> 'gironahugo@gmail.com'</span><span style="color:#24292E">]);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#005CC5">    $this</span><span style="color:#D73A49">-></span><span style="color:#6F42C1">post</span><span style="color:#24292E">(</span><span style="color:#032F62">'/contact'</span><span style="color:#24292E">, </span><span style="color:#6F42C1">validContactPayload</span><span style="color:#24292E">())</span></span>
+<span class="line"><span style="color:#D73A49">        -></span><span style="color:#6F42C1">assertSessionHasNoErrors</span><span style="color:#24292E">()</span></span>
+<span class="line"><span style="color:#D73A49">        -></span><span style="color:#6F42C1">assertRedirect</span><span style="color:#24292E">()</span></span>
+<span class="line"><span style="color:#D73A49">        -></span><span style="color:#6F42C1">assertSessionHas</span><span style="color:#24292E">(</span><span style="color:#032F62">'contact_success'</span><span style="color:#24292E">, </span><span style="color:#005CC5">true</span><span style="color:#24292E">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#005CC5">    Mail</span><span style="color:#D73A49">::</span><span style="color:#6F42C1">assertQueued</span><span style="color:#24292E">(</span><span style="color:#005CC5">ContactMessageReceived</span><span style="color:#D73A49">::class</span><span style="color:#24292E">, </span><span style="color:#D73A49">function</span><span style="color:#24292E"> ($mail) {</span></span>
+<span class="line"><span style="color:#D73A49">        return</span><span style="color:#24292E"> $mail</span><span style="color:#D73A49">-></span><span style="color:#6F42C1">hasTo</span><span style="color:#24292E">(</span><span style="color:#032F62">'gironahugo@gmail.com'</span><span style="color:#24292E">)</span></span>
+<span class="line"><span style="color:#D73A49">            &#x26;&#x26;</span><span style="color:#24292E"> $mail</span><span style="color:#D73A49">-></span><span style="color:#6F42C1">hasReplyTo</span><span style="color:#24292E">(</span><span style="color:#032F62">'alice@example.com'</span><span style="color:#24292E">)</span></span>
+<span class="line"><span style="color:#D73A49">            &#x26;&#x26;</span><span style="color:#24292E"> $mail</span><span style="color:#D73A49">-></span><span style="color:#24292E">subjectKey </span><span style="color:#D73A49">===</span><span style="color:#032F62"> 'general'</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">    });</span></span>
+<span class="line"><span style="color:#24292E">});</span></span></code></pre>
         </div>
     </section>
 
     <section>
         <div class="mx-auto max-w-6xl px-6 md:px-8 py-16 md:py-20">
-            <div class="flex flex-wrap items-start justify-between gap-3">
-                <h2 class="font-display text-2xl font-medium md:text-3xl" style="letter-spacing: -0.02em">
-                    Couverture
-                </h2>
-                <span class="chip">à compléter</span>
-            </div>
-            <p class="mt-5 max-w-[65ch] text-muted">
-                La couverture sera mesurée avec le rapport de couverture de Pest
-                (<code class="font-mono text-sm">pest --coverage</code>). Les chiffres
-                seront reportés ici une fois la suite stabilisée ; aucune valeur n'est
-                avancée tant que la mesure n'a pas été faite. La capture ci-dessous
-                recevra le rapport généré.
+            <h2 class="font-display text-2xl font-medium md:text-3xl" style="letter-spacing: -0.02em">
+                Couverture
+            </h2>
+            <p class="mt-5 max-w-[65ch] text-muted" id="tbl-desc-2">
+                La couverture est mesurée avec Xdebug et
+                <code class="font-mono text-sm">pest --coverage</code>, sur le namespace
+                <code class="font-mono text-sm">app/</code>, c'est-à-dire la logique
+                applicative : modèles, actions, jobs, événements, notifications. Les 599
+                tests serveur couvrent <strong>88,8 % des lignes</strong>. Les composants
+                de vue Livewire vivent hors de <code class="font-mono text-sm">app/</code>
+                et sont validés séparément, tests navigateur compris (voir la répartition
+                plus haut).
             </p>
+
+            <dl class="mt-8 grid grid-cols-3 gap-px border border-hairline-strong bg-hairline-strong">
+                <div class="bg-paper p-4">
+                    <dt class="text-xs uppercase tracking-wide text-muted">Lignes</dt>
+                    <dd class="mt-1 font-mono text-2xl tabular-nums">88,8 %</dd>
+                    <dd class="font-mono text-xs text-muted tabular-nums">573 / 645</dd>
+                </div>
+                <div class="bg-paper p-4">
+                    <dt class="text-xs uppercase tracking-wide text-muted">Fonctions</dt>
+                    <dd class="mt-1 font-mono text-2xl tabular-nums">90,3 %</dd>
+                    <dd class="font-mono text-xs text-muted tabular-nums">131 / 145</dd>
+                </div>
+                <div class="bg-paper p-4">
+                    <dt class="text-xs uppercase tracking-wide text-muted">Classes</dt>
+                    <dd class="mt-1 font-mono text-2xl tabular-nums">76,7 %</dd>
+                    <dd class="font-mono text-xs text-muted tabular-nums">33 / 43</dd>
+                </div>
+            </dl>
+
+            <div class="mt-8 overflow-x-auto border border-hairline-strong">
+                <table class="data-table" aria-describedby="tbl-desc-2">
+                    <caption class="sr-only">Couverture de lignes par couche du namespace app</caption>
+                    <thead>
+                    <tr>
+                        <th scope="col">Couche</th>
+                        <th scope="col">Lignes couvertes</th>
+                        <th scope="col">Couverture</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td data-label="Couche">Actions</td>
+                        <td data-label="Lignes couvertes" class="font-mono text-sm tabular-nums">170 / 209</td>
+                        <td data-label="Couverture" class="font-mono tabular-nums">81,3 %</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Couche">Broadcasting</td>
+                        <td data-label="Lignes couvertes" class="font-mono text-sm tabular-nums">1 / 1</td>
+                        <td data-label="Couverture" class="font-mono tabular-nums">100 %</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Couche">Console</td>
+                        <td data-label="Lignes couvertes" class="font-mono text-sm tabular-nums">4 / 4</td>
+                        <td data-label="Couverture" class="font-mono tabular-nums">100 %</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Couche">Enums</td>
+                        <td data-label="Lignes couvertes" class="font-mono text-sm tabular-nums">10 / 11</td>
+                        <td data-label="Couverture" class="font-mono tabular-nums">90,9 %</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Couche">Events</td>
+                        <td data-label="Lignes couvertes" class="font-mono text-sm tabular-nums">52 / 52</td>
+                        <td data-label="Couverture" class="font-mono tabular-nums">100 %</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Couche">Http</td>
+                        <td data-label="Lignes couvertes" class="font-mono text-sm tabular-nums">18 / 18</td>
+                        <td data-label="Couverture" class="font-mono tabular-nums">100 %</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Couche">Jobs</td>
+                        <td data-label="Lignes couvertes" class="font-mono text-sm tabular-nums">40 / 40</td>
+                        <td data-label="Couverture" class="font-mono tabular-nums">100 %</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Couche">Mail</td>
+                        <td data-label="Lignes couvertes" class="font-mono text-sm tabular-nums">3 / 8</td>
+                        <td data-label="Couverture" class="font-mono tabular-nums">37,5 %</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Couche">Models</td>
+                        <td data-label="Lignes couvertes" class="font-mono text-sm tabular-nums">208 / 215</td>
+                        <td data-label="Couverture" class="font-mono tabular-nums">96,7 %</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Couche">Notifications</td>
+                        <td data-label="Lignes couvertes" class="font-mono text-sm tabular-nums">10 / 21</td>
+                        <td data-label="Couverture" class="font-mono tabular-nums">47,6 %</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Couche">Providers</td>
+                        <td data-label="Lignes couvertes" class="font-mono text-sm tabular-nums">21 / 25</td>
+                        <td data-label="Couverture" class="font-mono tabular-nums">84,0 %</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Couche">Support</td>
+                        <td data-label="Lignes couvertes" class="font-mono text-sm tabular-nums">33 / 33</td>
+                        <td data-label="Couverture" class="font-mono tabular-nums">100 %</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Couche" class="font-medium">Total app/</td>
+                        <td data-label="Lignes couvertes" class="font-mono text-sm tabular-nums font-medium">573 / 645</td>
+                        <td data-label="Couverture" class="font-mono tabular-nums font-medium">88,8 %</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p class="mt-6 max-w-[65ch] text-muted">
+                Les deux couches les plus basses sont assumées. Mail (37,5 %) et
+                Notifications (47,6 %) correspondent au gabarit du mail de contact et au
+                lien de réinitialisation de mot de passe : du rendu surtout déclenché par
+                Fortify ou par des parcours couverts côté navigateur, peu sollicité par
+                les tests serveur. Le cœur métier reste couvert de bout en bout : modèles
+                à 96,7 %, événements, jobs et couche HTTP à 100 %.
+            </p>
+
             <figure class="capture mt-8">
-                <div class="capture__frame">Capture à venir</div>
+                <img
+                    src="../src/img/coverage-pest.webp"
+                    alt="Sortie de la commande pest --coverage : couverture par fichier du namespace app de Giggr, avec un total de 88,8 % des lignes."
+                    width="2464"
+                    height="1822"
+                    class="w-full"
+                    loading="lazy"
+                />
                 <figcaption class="capture__caption">
-                    Rapport de couverture Pest. À intégrer après la première mesure.
+                    Sortie de <code class="font-mono">pest --coverage</code> sur la suite serveur (namespace app/). Total : 88,8 % des lignes. Relevé le 7 juin 2026.
                 </figcaption>
             </figure>
         </div>
