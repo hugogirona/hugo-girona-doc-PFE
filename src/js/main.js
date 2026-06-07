@@ -1,3 +1,3 @@
-import { sectionsDisclosure } from './js/sections-disclosure.js'
+import { sectionsDisclosure } from './sections-disclosure.js'
 
 (()=>{sectionsDisclosure.init();})();
