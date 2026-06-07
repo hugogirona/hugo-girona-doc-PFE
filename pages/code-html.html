@@ -1,28 +1,73 @@
-{{#> page-layout title="Qualité du code HTML" description="Qualité du code HTML de Giggr : plans de titres des pages publiques, validation Total Validator, sémantique, microdata et stratégie d'images responsives." num="01" heading="Qualité du code HTML" lede="Structure sémantique du HTML public de Giggr : plans de titres, validation Total Validator, microdata et stratégie d'images responsives." nextHref="performance.html" nextNum="02" nextTitle="Performance" }}
+{{#> page-layout title="Qualité du code HTML" description="Qualité du code HTML de Giggr : plans de titres réels des pages publiques, structure sémantique, microdata Schema.org et stratégie d'images responsives." num="01" heading="Qualité du code HTML" lede="Structure sémantique du HTML public de Giggr : un seul titre de niveau 1 par page, repères ARIA, microdata Schema.org (Person, Event, Organization) et images responsives." nextHref="performance.html" nextNum="02" nextTitle="Performance" }}
 
 <section class="border-b border-hairline">
         <div class="mx-auto max-w-6xl px-6 md:px-8 py-16 md:py-20">
-            <div class="flex flex-wrap items-start justify-between gap-3">
-                <h2 class="font-display text-2xl font-medium md:text-3xl" style="letter-spacing: -0.02em">
-                    Sémantique HTML
-                </h2>
-                <span class="chip">à compléter</span>
-            </div>
+            <h2 class="font-display text-2xl font-medium md:text-3xl" style="letter-spacing: -0.02em">
+                Sémantique HTML
+            </h2>
             <p class="mt-5 max-w-[65ch] text-muted">
-                Chaque page publique s'appuie sur des éléments de section explicites
-                (<code class="font-mono text-sm">header</code>,
+                Chaque page publique s'appuie sur des repères de structure explicites :
+                <code class="font-mono text-sm">header</code>,
                 <code class="font-mono text-sm">nav</code>,
-                <code class="font-mono text-sm">main</code>,
-                <code class="font-mono text-sm">article</code>,
-                <code class="font-mono text-sm">footer</code>) et sur une hiérarchie
-                de titres unique par page. La validation est faite avec Total Validator.
+                <code class="font-mono text-sm">main</code> et
+                <code class="font-mono text-sm">footer</code> sur toutes les pages, plus
+                <code class="font-mono text-sm">article</code> et
+                <code class="font-mono text-sm">section</code> pour les contenus listés
+                (cartes profil, annonces). La navigation porte un
+                <code class="font-mono text-sm">aria-label</code> explicite et un lien
+                d'évitement « Aller au contenu principal » ouvre chaque page.
+            </p>
+            <p class="mt-5 max-w-[65ch] text-muted">
+                La hiérarchie de titres suit une règle stricte : <strong>un seul
+                <code class="font-mono text-sm">h1</code> par page</strong>. Sur les
+                pages applicatives, ce <code class="font-mono text-sm">h1</code> est le
+                titre du site (« Bienvenue sur Giggr. », masqué visuellement mais lu par
+                les lecteurs d'écran) ; le titre de la page est alors un
+                <code class="font-mono text-sm">h2</code>. Les pages d'authentification,
+                au gabarit dédié, portent directement leur propre
+                <code class="font-mono text-sm">h1</code> (« Se connecter », « Créer un
+                compte »). La validation fine est faite avec Total Validator.
             </p>
             <figure class="capture mt-8">
-                <div class="capture__frame">Capture à venir</div>
+                <img
+                    src="../src/img/total-validator-results.webp"
+                    alt="Rapport Total Validator de la page d'accueil de Giggr : 73 erreurs, toutes de type E620 (attribut non autorisé), portant sur des attributs Livewire et Alpine."
+                    width="1200"
+                    height="803"
+                    class="w-full"
+                    loading="lazy"
+                />
                 <figcaption class="capture__caption">
-                    Total Validator, page d'accueil. Rapport à intégrer.
+                    Total Validator, page d'accueil (staging.giggr.be) : 73 erreurs, 2 avertissements. Toutes les erreurs sont de type E620.
                 </figcaption>
             </figure>
+
+            <div class="mt-8 border border-hairline-strong bg-surface p-5 md:p-6">
+                <h3 class="font-mono text-sm uppercase tracking-wide text-muted">Erreurs connues</h3>
+                <p class="mt-3 max-w-[65ch] text-muted">
+                    Les 73 erreurs relevées sont en réalité <strong>une seule et même
+                    erreur</strong>, répétée : <code class="font-mono text-sm">E620</code>,
+                    « attribute is not allowed ». Et chacune porte sur un attribut ajouté
+                    par <strong>Livewire</strong>
+                    (<code class="font-mono text-sm">wire:navigate</code>,
+                    <code class="font-mono text-sm">wire:current</code>…) ou
+                    <strong>Alpine.js</strong>
+                    (<code class="font-mono text-sm">x-data</code>,
+                    <code class="font-mono text-sm">@click</code>,
+                    <code class="font-mono text-sm">:aria-expanded</code>…). Ce sont les
+                    attributs par lesquels ces frameworks branchent l'interactivité dans le
+                    HTML : ils ne font pas partie de la spécification que Total Validator
+                    contrôle, d'où le signalement. L'outil les range d'ailleurs lui-même
+                    parmi les attributs « destinés à JavaScript ».
+                </p>
+                <p class="mt-4 max-w-[65ch] text-muted">
+                    Rien de tout cela ne touche à la <strong>sémantique</strong> du
+                    document : la hiérarchie de titres, les repères de structure et la
+                    microdata restent valides, le DOCTYPE est bien HTML5, et aucune erreur
+                    ne concerne la structure elle-même. <span class="text-ink">Reste qu'un
+                    rapport aussi rouge, ça pique un peu les yeux.</span>
+                </p>
+            </div>
         </div>
     </section>
 
@@ -31,78 +76,169 @@
             <h2 class="font-display text-2xl font-medium md:text-3xl" style="letter-spacing: -0.02em">
                 Plans de titres des pages publiques
             </h2>
-            <p class="mt-5 max-w-[65ch] text-muted" id="tbl-desc-1">
-                Un seul <code class="font-mono text-sm">h1</code> par page, puis une
-                descente de niveaux sans saut. Relevé page par page ci-dessous.
+            <p class="mt-5 max-w-[65ch] text-muted">
+                Relevé réel des titres, page par page. Un seul
+                <code class="font-mono text-sm">h1</code>, puis une descente de niveaux
+                sans saut. Les titres de repères de navigation (en-tête et pied de page)
+                sont présents pour les lecteurs d'écran, mais masqués visuellement
+                (<code class="font-mono text-sm">sr-only</code>).
             </p>
-            <div class="mt-8 overflow-x-auto border border-hairline-strong">
-                <table class="data-table" aria-describedby="tbl-desc-1">
-                    <caption class="sr-only">Plans de titres des pages publiques</caption>
-                    <thead>
-                    <tr>
-                        <th scope="col">Page</th>
-                        <th scope="col">URL</th>
-                        <th scope="col">Plan de titres</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td data-label="Page">Accueil</td>
-                        <td data-label="URL" class="font-mono text-sm">/</td>
-                        <td data-label="Plan de titres" class="text-muted">à relever</td>
-                    </tr>
-                    <tr>
-                        <td data-label="Page">Explorer</td>
-                        <td data-label="URL" class="font-mono text-sm">/explorer</td>
-                        <td data-label="Plan de titres" class="text-muted">à relever</td>
-                    </tr>
-                    <tr>
-                        <td data-label="Page">Profil public</td>
-                        <td data-label="URL" class="font-mono text-sm">/profil/{id}</td>
-                        <td data-label="Plan de titres" class="text-muted">à relever</td>
-                    </tr>
-                    <tr>
-                        <td data-label="Page">Détail d'une annonce</td>
-                        <td data-label="URL" class="font-mono text-sm">/annonces/{id}</td>
-                        <td data-label="Plan de titres" class="text-muted">à relever</td>
-                    </tr>
-                    <tr>
-                        <td data-label="Page">Connexion / Inscription</td>
-                        <td data-label="URL" class="font-mono text-sm">/connexion</td>
-                        <td data-label="Plan de titres" class="text-muted">à relever</td>
-                    </tr>
-                    <tr>
-                        <td data-label="Page">Contact</td>
-                        <td data-label="URL" class="font-mono text-sm">/contact</td>
-                        <td data-label="Plan de titres" class="text-muted">à relever</td>
-                    </tr>
-                    </tbody>
-                </table>
+
+            <div class="mt-8 border border-hairline-strong">
+                <div class="border-b border-hairline bg-surface px-4 py-2 font-mono text-xs uppercase tracking-wide text-muted">
+                    Accueil <span class="text-ink">/</span>
+                </div>
+                <ul class="px-4 py-4 font-mono text-sm leading-relaxed">
+                    <li><span class="text-muted">h1</span> Bienvenue sur Giggr. <span class="text-muted text-xs">titre de site, sr-only</span></li>
+                    <li class="pl-6"><span class="text-muted">h2</span> La musique est une passion qui se partage</li>
+                    <li class="pl-6"><span class="text-muted">h2</span> Ils nous font confiance</li>
+                    <li class="pl-6"><span class="text-muted">h2</span> Le projet qui t'attend est déjà en ligne</li>
+                    <li class="pl-6"><span class="text-muted">h2</span> Les annonces du moment</li>
+                    <li class="pl-12"><span class="text-muted">h3</span> titre de chaque annonce <span class="text-muted text-xs">répété par carte</span></li>
+                    <li class="pl-6"><span class="text-muted">h2</span> Tout ce qu'il te faut, au même endroit</li>
+                    <li class="pl-12"><span class="text-muted">h3</span> Trouve ton partenaire</li>
+                    <li class="pl-12"><span class="text-muted">h3</span> Publie une annonce</li>
+                    <li class="pl-12"><span class="text-muted">h3</span> Rejoins la communauté</li>
+                    <li class="pl-6"><span class="text-muted">h2</span> Trouve le profil qu'il te manque</li>
+                    <li class="pl-6"><span class="text-muted">h2</span> Ils sont déjà sur Giggr.</li>
+                    <li class="pl-12"><span class="text-muted">h3</span> nom de chaque profil <span class="text-muted text-xs">répété par carte</span></li>
+                </ul>
+            </div>
+
+            <div class="mt-6 border border-hairline-strong">
+                <div class="border-b border-hairline bg-surface px-4 py-2 font-mono text-xs uppercase tracking-wide text-muted">
+                    Explorer
+                </div>
+                <div class="px-4 py-4">
+                    <p class="font-mono text-xs uppercase tracking-wide text-muted">/explorer/profils</p>
+                    <ul class="mt-2 font-mono text-sm leading-relaxed">
+                        <li><span class="text-muted">h1</span> Bienvenue sur Giggr. <span class="text-muted text-xs">sr-only</span></li>
+                        <li class="pl-6"><span class="text-muted">h2</span> Explorer <span class="text-muted text-xs">titre de page</span></li>
+                        <li class="pl-6"><span class="text-muted">h2</span> Filtres</li>
+                        <li class="pl-12"><span class="text-muted">h3</span> Rayon</li>
+                        <li class="pl-12"><span class="text-muted">h3</span> Instruments</li>
+                        <li class="pl-12"><span class="text-muted">h3</span> Genres</li>
+                        <li class="pl-6"><span class="text-muted">h2</span> Profils</li>
+                        <li class="pl-12"><span class="text-muted">h3</span> nom de chaque profil <span class="text-muted text-xs">répété par carte</span></li>
+                    </ul>
+                </div>
+                <div class="border-t border-hairline px-4 py-4">
+                    <p class="font-mono text-xs uppercase tracking-wide text-muted">/explorer/annonces</p>
+                    <ul class="mt-2 font-mono text-sm leading-relaxed">
+                        <li><span class="text-muted">h1</span> Bienvenue sur Giggr. <span class="text-muted text-xs">sr-only</span></li>
+                        <li class="pl-6"><span class="text-muted">h2</span> Explorer <span class="text-muted text-xs">titre de page</span></li>
+                        <li class="pl-6"><span class="text-muted">h2</span> Filtres</li>
+                        <li class="pl-12"><span class="text-muted">h3</span> Rayon</li>
+                        <li class="pl-12"><span class="text-muted">h3</span> Instruments</li>
+                        <li class="pl-12"><span class="text-muted">h3</span> Genres</li>
+                        <li class="pl-6"><span class="text-muted">h2</span> Annonces</li>
+                        <li class="pl-12"><span class="text-muted">h3</span> titre de chaque annonce <span class="text-muted text-xs">répété par carte</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mt-6 border border-hairline-strong">
+                <div class="border-b border-hairline bg-surface px-4 py-2 font-mono text-xs uppercase tracking-wide text-muted">
+                    Contact <span class="text-ink">/contact</span>
+                </div>
+                <ul class="px-4 py-4 font-mono text-sm leading-relaxed">
+                    <li><span class="text-muted">h1</span> Bienvenue sur Giggr. <span class="text-muted text-xs">sr-only</span></li>
+                    <li class="pl-6"><span class="text-muted">h2</span> Contact</li>
+                    <li class="pl-6"><span class="text-muted">h2</span> Envoyez-nous un message</li>
+                    <li class="pl-6"><span class="text-muted">h2</span> Questions fréquentes</li>
+                </ul>
+            </div>
+
+            <div class="mt-6 border border-hairline-strong">
+                <div class="border-b border-hairline bg-surface px-4 py-2 font-mono text-xs uppercase tracking-wide text-muted">
+                    Confidentialité <span class="text-ink">/politique-de-confidentialite</span>
+                </div>
+                <ul class="px-4 py-4 font-mono text-sm leading-relaxed">
+                    <li><span class="text-muted">h1</span> Bienvenue sur Giggr. <span class="text-muted text-xs">sr-only</span></li>
+                    <li class="pl-6"><span class="text-muted">h2</span> Politique de confidentialité</li>
+                    <li class="pl-6"><span class="text-muted">h2</span> Préambule</li>
+                    <li class="pl-6"><span class="text-muted">h2</span> Données que nous collectons</li>
+                    <li class="pl-6"><span class="text-muted">h2</span> Finalités du traitement</li>
+                    <li class="pl-6"><span class="text-muted">h2</span> Durée de conservation</li>
+                    <li class="pl-6"><span class="text-muted">h2</span> Partage avec des tiers</li>
+                    <li class="pl-6"><span class="text-muted">h2</span> Tes droits</li>
+                    <li class="pl-6"><span class="text-muted">h2</span> Nous contacter</li>
+                </ul>
+            </div>
+
+            <div class="mt-6 border border-hairline-strong">
+                <div class="border-b border-hairline bg-surface px-4 py-2 font-mono text-xs uppercase tracking-wide text-muted">
+                    Connexion <span class="text-ink">/connexion</span> · Inscription <span class="text-ink">/inscription</span>
+                </div>
+                <ul class="px-4 py-4 font-mono text-sm leading-relaxed">
+                    <li><span class="text-muted">h1</span> Se connecter <span class="text-muted text-xs">resp. « Créer un compte », gabarit auth, titre de page direct</span></li>
+                    <li class="pl-6"><span class="text-muted">h2</span> Rejoins la scène</li>
+                </ul>
             </div>
         </div>
     </section>
 
     <section class="border-b border-hairline">
         <div class="mx-auto max-w-6xl px-6 md:px-8 py-16 md:py-20">
-            <div class="flex flex-wrap items-start justify-between gap-3">
-                <h2 class="font-display text-2xl font-medium md:text-3xl" style="letter-spacing: -0.02em">
-                    Microdata
-                </h2>
-                <span class="chip">à compléter</span>
-            </div>
-            <p class="mt-5 max-w-[65ch] text-muted">
-                Les profils de musiciens et les annonces exposent des données
-                structurées Schema.org (par exemple
-                <code class="font-mono text-sm">MusicGroup</code> et
-                <code class="font-mono text-sm">Person</code>), vérifiables au Rich
-                Results Test de Google.
+            <h2 class="font-display text-2xl font-medium md:text-3xl" style="letter-spacing: -0.02em">
+                Microdata
+            </h2>
+            <p class="mt-5 max-w-[65ch] text-muted" id="tbl-desc-1">
+                Les contenus pertinents exposent des données structurées
+                <strong>Schema.org en microdata</strong> (attributs
+                <code class="font-mono text-sm">itemscope</code>,
+                <code class="font-mono text-sm">itemtype</code>,
+                <code class="font-mono text-sm">itemprop</code> dans le HTML), vérifiables
+                au Rich Results Test de Google et au Schema Markup Validator.
             </p>
-            <figure class="capture mt-8">
-                <div class="capture__frame">Capture à venir</div>
-                <figcaption class="capture__caption">
-                    Rich Results Test, fiche profil. Rapport à intégrer.
-                </figcaption>
-            </figure>
+            <div class="mt-8 overflow-x-auto border border-hairline-strong">
+                <table class="data-table" aria-describedby="tbl-desc-1">
+                    <caption class="sr-only">Types Schema.org exposés en microdata</caption>
+                    <thead>
+                    <tr>
+                        <th scope="col">Type Schema.org</th>
+                        <th scope="col">Où</th>
+                        <th scope="col">Propriétés principales</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td data-label="Type Schema.org" class="font-mono text-sm">Person</td>
+                        <td data-label="Où">Cartes profil, fiche musicien</td>
+                        <td data-label="Propriétés principales" class="text-muted">name, url, image, address, knowsAbout</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Type Schema.org" class="font-mono text-sm">Event</td>
+                        <td data-label="Où">Cartes annonce, fiche annonce</td>
+                        <td data-label="Propriétés principales" class="text-muted">name, description, location, organizer</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Type Schema.org" class="font-mono text-sm">Organization</td>
+                        <td data-label="Où">Pied de page</td>
+                        <td data-label="Propriétés principales" class="text-muted">name, url, logo</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Type Schema.org" class="font-mono text-sm">PostalAddress, Place</td>
+                        <td data-label="Où">Imbriqués (localisation)</td>
+                        <td data-label="Propriétés principales" class="text-muted">address, addressLocality</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="mt-6 max-w-[65ch] text-muted">
+                Exemple réel : la carte d'un profil décrit une
+                <code class="font-mono text-sm">Person</code> avec une
+                <code class="font-mono text-sm">PostalAddress</code> imbriquée pour la
+                ville.
+            </p>
+            <pre class="shiki github-light mt-5 overflow-x-auto border border-hairline-strong p-4 text-sm font-mono code-block" style="background-color:#fff;color:#24292e" tabindex="0"><code><span class="line"><span style="color:#24292E">&#x3C;</span><span style="color:#22863A">div</span><span style="color:#6F42C1"> itemscope</span><span style="color:#6F42C1"> itemtype</span><span style="color:#24292E">=</span><span style="color:#032F62">"https://schema.org/Person"</span><span style="color:#24292E">&gt;</span></span>
+<span class="line"><span style="color:#24292E">    &#x3C;</span><span style="color:#22863A">link</span><span style="color:#6F42C1"> itemprop</span><span style="color:#24292E">=</span><span style="color:#032F62">"url"</span><span style="color:#6F42C1"> href</span><span style="color:#24292E">=</span><span style="color:#032F62">"</span><span style="color:#005CC5">&#123;&#123;</span><span style="color:#6F42C1"> route</span><span style="color:#032F62">('profile', ['id' </span><span style="color:#D73A49">=&gt;</span><span style="color:#24292E"> $profile</span><span style="color:#D73A49">-&gt;</span><span style="color:#24292E">id</span><span style="color:#032F62">]) </span><span style="color:#005CC5">&#125;&#125;</span><span style="color:#032F62">"</span><span style="color:#24292E">&gt;</span></span>
+<span class="line"><span style="color:#24292E">    &#x3C;</span><span style="color:#22863A">img</span><span style="color:#6F42C1"> src</span><span style="color:#24292E">=</span><span style="color:#032F62">"</span><span style="color:#005CC5">&#123;&#123;</span><span style="color:#24292E"> $profile</span><span style="color:#D73A49">-&gt;</span><span style="color:#24292E">medium</span><span style="color:#005CC5"> &#125;&#125;</span><span style="color:#032F62">"</span><span style="color:#6F42C1"> alt</span><span style="color:#24292E">=</span><span style="color:#032F62">"Photo de </span><span style="color:#005CC5">&#123;&#123;</span><span style="color:#24292E"> $name</span><span style="color:#005CC5"> &#125;&#125;</span><span style="color:#032F62">"</span><span style="color:#6F42C1"> itemprop</span><span style="color:#24292E">=</span><span style="color:#032F62">"image"</span><span style="color:#24292E">&gt;</span></span>
+<span class="line"><span style="color:#24292E">    &#x3C;</span><span style="color:#22863A">h3</span><span style="color:#6F42C1"> itemprop</span><span style="color:#24292E">=</span><span style="color:#032F62">"name"</span><span style="color:#24292E">&gt;</span><span style="color:#005CC5">&#123;&#123;</span><span style="color:#24292E"> $name </span><span style="color:#005CC5">&#125;&#125;</span><span style="color:#24292E">&#x3C;/</span><span style="color:#22863A">h3</span><span style="color:#24292E">&gt;</span></span>
+<span class="line"><span style="color:#24292E">    &#x3C;</span><span style="color:#22863A">span</span><span style="color:#6F42C1"> itemprop</span><span style="color:#24292E">=</span><span style="color:#032F62">"address"</span><span style="color:#6F42C1"> itemscope</span><span style="color:#6F42C1"> itemtype</span><span style="color:#24292E">=</span><span style="color:#032F62">"https://schema.org/PostalAddress"</span><span style="color:#24292E">&gt;</span></span>
+<span class="line"><span style="color:#24292E">        &#x3C;</span><span style="color:#22863A">span</span><span style="color:#6F42C1"> itemprop</span><span style="color:#24292E">=</span><span style="color:#032F62">"addressLocality"</span><span style="color:#24292E">&gt;</span><span style="color:#005CC5">&#123;&#123;</span><span style="color:#24292E"> $profile</span><span style="color:#D73A49">-&gt;</span><span style="color:#24292E">city</span><span style="color:#D73A49">-&gt;</span><span style="color:#24292E">name </span><span style="color:#005CC5">&#125;&#125;</span><span style="color:#24292E">&#x3C;/</span><span style="color:#22863A">span</span><span style="color:#24292E">&gt;</span></span>
+<span class="line"><span style="color:#24292E">    &#x3C;/</span><span style="color:#22863A">span</span><span style="color:#24292E">&gt;</span></span>
+<span class="line"><span style="color:#24292E">&#x3C;/</span><span style="color:#22863A">div</span><span style="color:#24292E">&gt;</span></span></code></pre>
         </div>
     </section>
 
@@ -112,18 +248,37 @@
                 Images responsives
             </h2>
             <p class="mt-5 max-w-[65ch] text-muted">
-                Les visuels (avatars, vignettes d'annonces) sont servis en plusieurs
-                variantes via <code class="font-mono text-sm">srcset</code> et
-                <code class="font-mono text-sm">sizes</code>, avec un format moderne
-                et des dimensions déclarées pour éviter tout décalage de mise en page.
-                Mécanisme déjà en place côté code, captures à intégrer.
+                Deux stratégies, selon l'origine de l'image.
             </p>
-            <figure class="capture mt-8">
-                <div class="capture__frame">Capture à venir</div>
-                <figcaption class="capture__caption">
-                    Variantes responsives servies, onglet Réseau. Capture à intégrer.
-                </figcaption>
-            </figure>
+            <p class="mt-5 max-w-[65ch] text-muted">
+                <strong>Visuels éditoriaux</strong> (hero, sections illustrées) : servis
+                en plusieurs variantes via <code class="font-mono text-sm">srcset</code>
+                et <code class="font-mono text-sm">sizes</code>, au format
+                <strong>WebP</strong>, avec dimensions déclarées
+                (<code class="font-mono text-sm">width</code>/<code class="font-mono text-sm">height</code>)
+                pour éviter tout décalage de mise en page. Les variantes sont produites au
+                build par Vite.
+            </p>
+            <pre class="shiki github-light mt-5 overflow-x-auto border border-hairline-strong p-4 text-sm font-mono code-block" style="background-color:#fff;color:#24292e" tabindex="0"><code><span class="line"><span style="color:#24292E">&#x3C;</span><span style="color:#22863A">img</span></span>
+<span class="line"><span style="color:#6F42C1">    src</span><span style="color:#24292E">=</span><span style="color:#032F62">"</span><span style="color:#005CC5">&#123;&#123;</span><span style="color:#6F42C1"> Vite</span><span style="color:#D73A49">::</span><span style="color:#6F42C1">asset</span><span style="color:#032F62">('resources/img/hero-guy.webp') </span><span style="color:#005CC5">&#125;&#125;</span><span style="color:#032F62">"</span></span>
+<span class="line"><span style="color:#6F42C1">    srcset</span><span style="color:#24292E">=</span><span style="color:#032F62">"</span><span style="color:#005CC5">&#123;&#123;</span><span style="color:#6F42C1"> Vite</span><span style="color:#D73A49">::</span><span style="color:#6F42C1">asset</span><span style="color:#032F62">('resources/img/hero-guy-640w.webp') </span><span style="color:#005CC5">&#125;&#125;</span><span style="color:#032F62"> 640w,</span></span>
+<span class="line"><span style="color:#005CC5">            &#123;&#123;</span><span style="color:#6F42C1"> Vite</span><span style="color:#D73A49">::</span><span style="color:#6F42C1">asset</span><span style="color:#032F62">('resources/img/hero-guy.webp') </span><span style="color:#005CC5">&#125;&#125;</span><span style="color:#032F62"> 1280w"</span></span>
+<span class="line"><span style="color:#6F42C1">    sizes</span><span style="color:#24292E">=</span><span style="color:#032F62">"(min-width: 768px) 576px, 100vw"</span></span>
+<span class="line"><span style="color:#6F42C1">    alt</span><span style="color:#24292E">=</span><span style="color:#032F62">"Musicien entouré d'instruments de musique"</span></span>
+<span class="line"><span style="color:#6F42C1">    width</span><span style="color:#24292E">=</span><span style="color:#032F62">"723"</span><span style="color:#6F42C1"> height</span><span style="color:#24292E">=</span><span style="color:#032F62">"636"</span></span>
+<span class="line"><span style="color:#6F42C1">    fetchpriority</span><span style="color:#24292E">=</span><span style="color:#032F62">"high"</span><span style="color:#6F42C1"> decoding</span><span style="color:#24292E">=</span><span style="color:#032F62">"async"</span></span>
+<span class="line"><span style="color:#24292E">/&gt;</span></span></code></pre>
+            <p class="mt-8 max-w-[65ch] text-muted">
+                <strong>Contenus utilisateurs</strong> (avatars, galerie média) :
+                <strong>redimensionnés côté serveur</strong> avec
+                <code class="font-mono text-sm">intervention/image</code> (v4), de manière
+                asynchrone via les jobs
+                <code class="font-mono text-sm">ProcessAvatarImage</code> et
+                <code class="font-mono text-sm">ProcessMediaImage</code> à l'upload :
+                plusieurs tailles sont générées, et les cartes consomment la variante
+                adaptée (par exemple <code class="font-mono text-sm">$profile->medium</code>),
+                sans repasser par le fichier d'origine.
+            </p>
         </div>
     </section>
 
