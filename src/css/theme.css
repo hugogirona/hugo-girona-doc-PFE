@@ -12,9 +12,9 @@
   --color-positive: #15803d;
   --color-danger: #b91c1c;
 
-  --font-display: "Geist Variable", ui-sans-serif, system-ui, sans-serif;
-  --font-body: "Geist Variable", ui-sans-serif, system-ui, sans-serif;
-  --font-mono: "Geist Mono Variable", ui-monospace, "SFMono-Regular", monospace;
+  --font-display: "Geist Variable", "Geist Fallback", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Geist Variable", "Geist Fallback", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Geist Mono Variable", "Geist Mono Fallback", ui-monospace, "SFMono-Regular", monospace;
 
   --radius: 0px;
 }
