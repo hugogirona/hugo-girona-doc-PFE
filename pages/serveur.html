@@ -1,109 +1,135 @@
-{{#> page-layout title="Performances serveur" description="Performances serveur de Giggr : nombre de requêtes, temps de réponse et absence de N+1, relevés via Laravel Debugbar et Telescope." num="04" heading="Performances serveur" lede="Performances côté serveur : nombre de requêtes, temps de réponse et absence de problèmes N+1, relevés via Laravel Debugbar et Telescope." prevHref="accessibilite.html" prevNum="03" prevTitle="Accessibilité" nextHref="tests-automatises.html" nextNum="05" nextTitle="Tests automatisés" }}
+{{#> page-layout title="Performances serveur" description="Performances serveur de Giggr : nombre de requêtes SQL, temps de réponse et N+1 maîtrisés par eager loading, relevés via Laravel Debugbar." num="04" heading="Performances serveur" lede="Performances côté serveur de Giggr : nombre de requêtes SQL, temps de traitement et absence de N+1 grâce à l'eager loading, relevés via Laravel Debugbar." prevHref="accessibilite.html" prevNum="03" prevTitle="Accessibilité" nextHref="tests-automatises.html" nextNum="05" nextTitle="Tests automatisés" }}
 
 <section class="border-b border-hairline">
         <div class="mx-auto max-w-6xl px-6 md:px-8 py-16 md:py-20">
-            <div class="flex flex-wrap items-start justify-between gap-3">
-                <h2 class="font-display text-2xl font-medium md:text-3xl" style="letter-spacing: -0.02em">
-                    Nombre de requêtes par page
-                </h2>
-                <span class="chip">à compléter</span>
-            </div>
+            <h2 class="font-display text-2xl font-medium md:text-3xl" style="letter-spacing: -0.02em">
+                Requêtes et temps par page
+            </h2>
             <p class="mt-5 max-w-[65ch] text-muted" id="tbl-desc-1">
-                Pour chaque page clé de Giggr, on relève le nombre de requêtes SQL
-                émises ainsi que le temps cumulé passé en base. Les valeurs sont
-                lues dans Laravel Debugbar, onglet Database, en chargement à froid
-                puis après cache applicatif. Relevés à effectuer page par page.
+                Pour chaque page clé, relevé du nombre de requêtes SQL, du temps de
+                traitement serveur et de la mémoire, lus dans
+                <strong>Laravel Debugbar</strong> (le seul profileur embarqué dans Giggr).
+                Mesures faites en local (<code class="font-mono text-sm">artisan serve</code>),
+                avec données de démonstration ; Debugbar ajoute un léger surcoût mais les
+                ordres de grandeur sont représentatifs.
             </p>
             <div class="mt-8 overflow-x-auto border border-hairline-strong">
                 <table class="data-table" aria-describedby="tbl-desc-1">
-                    <caption class="sr-only">Requêtes SQL et temps de réponse par page</caption>
+                    <caption class="sr-only">Requêtes SQL, temps serveur et mémoire par page</caption>
                     <thead>
                     <tr>
                         <th scope="col">Page</th>
                         <th scope="col">URL</th>
-                        <th scope="col">Requêtes SQL</th>
-                        <th scope="col">Temps</th>
+                        <th scope="col">Requêtes</th>
+                        <th scope="col">Temps serveur</th>
+                        <th scope="col">Mémoire</th>
                     </tr>
                     </thead>
                     <tbody>
                     <tr>
                         <td data-label="Page">Accueil</td>
                         <td data-label="URL" class="font-mono text-sm">/</td>
-                        <td data-label="Requêtes SQL" class="text-muted">à relever</td>
-                        <td data-label="Temps" class="text-muted">à relever</td>
+                        <td data-label="Requêtes" class="font-mono tabular-nums">12</td>
+                        <td data-label="Temps serveur" class="font-mono tabular-nums">58 ms</td>
+                        <td data-label="Mémoire" class="font-mono tabular-nums">4 Mo</td>
                     </tr>
                     <tr>
-                        <td data-label="Page">Explorer</td>
-                        <td data-label="URL" class="font-mono text-sm">/explorer</td>
-                        <td data-label="Requêtes SQL" class="text-muted">à relever</td>
-                        <td data-label="Temps" class="text-muted">à relever</td>
+                        <td data-label="Page">Explorer (profils)</td>
+                        <td data-label="URL" class="font-mono text-sm">/explorer/profils</td>
+                        <td data-label="Requêtes" class="font-mono tabular-nums">15</td>
+                        <td data-label="Temps serveur" class="font-mono tabular-nums">59 ms</td>
+                        <td data-label="Mémoire" class="font-mono tabular-nums">4 Mo</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Page">Explorer (annonces)</td>
+                        <td data-label="URL" class="font-mono text-sm">/explorer/annonces</td>
+                        <td data-label="Requêtes" class="font-mono tabular-nums">15</td>
+                        <td data-label="Temps serveur" class="font-mono tabular-nums">51 ms</td>
+                        <td data-label="Mémoire" class="font-mono tabular-nums">3 Mo</td>
                     </tr>
                     <tr>
                         <td data-label="Page">Profil public</td>
                         <td data-label="URL" class="font-mono text-sm">/profil/{id}</td>
-                        <td data-label="Requêtes SQL" class="text-muted">à relever</td>
-                        <td data-label="Temps" class="text-muted">à relever</td>
+                        <td data-label="Requêtes" class="font-mono tabular-nums">3</td>
+                        <td data-label="Temps serveur" class="font-mono tabular-nums">13 ms</td>
+                        <td data-label="Mémoire" class="font-mono tabular-nums">2 Mo</td>
                     </tr>
                     <tr>
                         <td data-label="Page">Détail d'une annonce</td>
                         <td data-label="URL" class="font-mono text-sm">/annonces/{id}</td>
-                        <td data-label="Requêtes SQL" class="text-muted">à relever</td>
-                        <td data-label="Temps" class="text-muted">à relever</td>
+                        <td data-label="Requêtes" class="font-mono tabular-nums">3</td>
+                        <td data-label="Temps serveur" class="font-mono tabular-nums">12 ms</td>
+                        <td data-label="Mémoire" class="font-mono tabular-nums">2 Mo</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Page">Contact</td>
+                        <td data-label="URL" class="font-mono text-sm">/contact</td>
+                        <td data-label="Requêtes" class="font-mono tabular-nums">2</td>
+                        <td data-label="Temps serveur" class="font-mono tabular-nums">29 ms</td>
+                        <td data-label="Mémoire" class="font-mono tabular-nums">2 Mo</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Page">Confidentialité</td>
+                        <td data-label="URL" class="font-mono text-sm">/politique-de-confidentialite</td>
+                        <td data-label="Requêtes" class="font-mono tabular-nums">2</td>
+                        <td data-label="Temps serveur" class="font-mono tabular-nums">31 ms</td>
+                        <td data-label="Mémoire" class="font-mono tabular-nums">2 Mo</td>
                     </tr>
                     </tbody>
                 </table>
             </div>
-        </div>
-    </section>
-
-    <section class="border-b border-hairline">
-        <div class="mx-auto max-w-6xl px-6 md:px-8 py-16 md:py-20">
-            <div class="flex flex-wrap items-start justify-between gap-3">
-                <h2 class="font-display text-2xl font-medium md:text-3xl" style="letter-spacing: -0.02em">
-                    Temps de réponse
-                </h2>
-                <span class="chip">à compléter</span>
-            </div>
-            <p class="mt-5 max-w-[65ch] text-muted">
-                Le temps de réponse mesure la durée de traitement côté serveur, de
-                la réception de la requête à l'envoi de la réponse. Il est relevé
-                dans Laravel Debugbar (onglet Timeline) ou dans Laravel Telescope
-                (entrées Requests), qui décompose le temps de chargement de
-                l'application, des requêtes SQL et du rendu des vues Livewire.
-                Valeurs à mesurer sur les pages clés.
+            <p class="mt-6 max-w-[65ch] text-muted">
+                Le contraste est parlant : une grille d'exploration entière (douze
+                cartes avec leurs musiciens, villes, instruments et genres) tient en
+                <strong>15 requêtes</strong>, et la fiche d'un profil ou d'une annonce en
+                <strong>3</strong>. Les pages statiques (contact, confidentialité)
+                descendent à 2, dont la session.
             </p>
-            <figure class="capture mt-8">
-                <div class="capture__frame">Capture à venir</div>
-                <figcaption class="capture__caption">
-                    Laravel Debugbar (Timeline) ou Telescope (Requests). Relevé à intégrer.
-                </figcaption>
-            </figure>
         </div>
     </section>
 
     <section>
         <div class="mx-auto max-w-6xl px-6 md:px-8 py-16 md:py-20">
-            <div class="flex flex-wrap items-start justify-between gap-3">
-                <h2 class="font-display text-2xl font-medium md:text-3xl" style="letter-spacing: -0.02em">
-                    Problèmes N+1 maîtrisés
-                </h2>
-                <span class="chip">à compléter</span>
-            </div>
+            <h2 class="font-display text-2xl font-medium md:text-3xl" style="letter-spacing: -0.02em">
+                Problèmes N+1 maîtrisés
+            </h2>
             <p class="mt-5 max-w-[65ch] text-muted">
-                Un problème N+1 survient lorsqu'une requête principale en déclenche
-                une supplémentaire par enregistrement lié, par exemple une requête
-                par annonce pour aller chercher son profil ou ses instruments. Pour
-                l'éviter, les relations sont préchargées avec l'eager loading
-                d'Eloquent (<code class="font-mono text-sm">with()</code>), de sorte
-                que les données liées (annonces, instruments, profils) sont
-                récupérées en un nombre fixe de requêtes plutôt qu'en une requête
-                par ligne. Le contrôle se fait dans Laravel Debugbar en comparant le
-                nombre de requêtes avant et après préchargement.
+                Un problème N+1 survient quand une requête principale en déclenche une
+                supplémentaire par enregistrement lié : par exemple une requête par
+                profil pour aller chercher sa ville, ses instruments ou ses genres. Sur
+                la grille d'exploration (douze profils), ce serait douze requêtes de
+                base, plus quatre par profil, soit une soixantaine.
+            </p>
+            <p class="mt-5 max-w-[65ch] text-muted">
+                Giggr l'évite avec l'<strong>eager loading</strong> d'Eloquent : un seul
+                <code class="font-mono text-sm">with()</code> précharge toutes les
+                relations affichées, qui sont alors récupérées en un nombre fixe de
+                requêtes groupées (<code class="font-mono text-sm">where ... in (...)</code>),
+                indépendant du nombre de cartes.
+            </p>
+            <pre class="shiki github-light mt-5 overflow-x-auto border border-hairline-strong p-4 text-sm font-mono code-block" style="background-color:#fff;color:#24292e" tabindex="0"><code><span class="line"><span style="color:#6A737D">// pages/explore : un seul with() précharge les relations affichées</span></span>
+<span class="line"><span style="color:#D73A49">return</span><span style="color:#005CC5"> Profile</span><span style="color:#D73A49">::</span><span style="color:#6F42C1">query</span><span style="color:#24292E">()</span></span>
+<span class="line"><span style="color:#D73A49">    -&gt;</span><span style="color:#6F42C1">with</span><span style="color:#24292E">([</span><span style="color:#032F62">'user'</span><span style="color:#24292E">, </span><span style="color:#032F62">'city'</span><span style="color:#24292E">, </span><span style="color:#032F62">'instruments'</span><span style="color:#24292E">, </span><span style="color:#032F62">'genres'</span><span style="color:#24292E">])</span></span>
+<span class="line"><span style="color:#D73A49">    -&gt;</span><span style="color:#6F42C1">when</span><span style="color:#24292E">(</span><span style="color:#005CC5">$this</span><span style="color:#D73A49">-&gt;</span><span style="color:#24292E">filterCityId </span><span style="color:#D73A49">!==</span><span style="color:#005CC5"> null</span><span style="color:#24292E">, </span><span style="color:#D73A49">fn</span><span style="color:#24292E"> ($q) =&gt; $q</span><span style="color:#D73A49">-&gt;</span><span style="color:#6F42C1">where</span><span style="color:#24292E">(</span><span style="color:#032F62">'city_id'</span><span style="color:#24292E">, </span><span style="color:#005CC5">$this</span><span style="color:#D73A49">-&gt;</span><span style="color:#24292E">filterCityId))</span></span>
+<span class="line"><span style="color:#D73A49">    -&gt;</span><span style="color:#6F42C1">paginate</span><span style="color:#24292E">(</span><span style="color:#005CC5">12</span><span style="color:#24292E">);</span></span></code></pre>
+            <p class="mt-8 max-w-[65ch] text-muted">
+                Le résultat se lit directement dans Debugbar : la page liste
+                <strong>15 requêtes</strong> pour toute la grille, dont les requêtes
+                groupées <code class="font-mono text-sm">in (...)</code> qui chargent d'un
+                coup les musiciens, villes, instruments et genres de tous les profils, au
+                lieu d'une requête par carte.
             </p>
             <figure class="capture mt-8">
-                <div class="capture__frame">Capture à venir</div>
+                <img
+                    src="../src/img/debugbar-queries.webp"
+                    alt="Laravel Debugbar, onglet Database sur la page Explorer de Giggr : 15 requêtes, dont les requêtes groupées where id in (...) de l'eager loading des relations."
+                    width="2640"
+                    height="986"
+                    class="w-full"
+                    loading="lazy"
+                />
                 <figcaption class="capture__caption">
-                    Laravel Debugbar, comparaison avant / après eager loading. Captures à intégrer.
+                    Debugbar, onglet Database sur Explorer (profils) : 15 requêtes pour la grille entière, dont les requêtes groupées de l'eager loading.
                 </figcaption>
             </figure>
         </div>
