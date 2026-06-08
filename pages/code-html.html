@@ -1,4 +1,4 @@
-{{#> page-layout title="Qualité du code HTML" description="Qualité du code HTML de Giggr : plans de titres réels des pages publiques, structure sémantique, microdata Schema.org et stratégie d’images responsives." num="01" heading="Qualité du code HTML" lede="Structure sémantique du HTML public de Giggr : un seul titre de niveau 1 par page, repères ARIA, microdata Schema.org (Person, Event, Organization) et images responsives." nextHref="performance.html" nextNum="02" nextTitle="Performance" }}
+{{#> page-layout title="Qualité du code HTML" description="Qualité du code HTML de Giggr&nbsp;: plans de titres réels des pages publiques, structure sémantique, microdata Schema.org et stratégie d’images responsives." num="01" heading="Qualité du code HTML" lede="Structure sémantique du HTML public de Giggr&nbsp;: un seul titre de niveau 1 par page, repères ARIA, microdata Schema.org (Person, Event, Organization) et images responsives." nextHref="performance.html" nextNum="02" nextTitle="Performance" }}
 
 <section id="semantique-html" class="scroll-mt-24 border-b border-hairline">
         <div class="mx-auto max-w-6xl px-6 md:px-8 py-16 md:py-20">
@@ -6,7 +6,7 @@
                 Sémantique <abbr title="HyperText Markup Language">HTML</abbr>
             </h2>
             <p class="mt-5 max-w-[65ch] text-muted">
-                Chaque page publique s’appuie sur des repères de structure explicites :
+                Chaque page publique s’appuie sur des repères de structure explicites&nbsp;:
                 <code class="font-mono text-sm">header</code>,
                 <code class="font-mono text-sm">nav</code>,
                 <code class="font-mono text-sm">main</code> et
@@ -15,18 +15,18 @@
                 <code class="font-mono text-sm">section</code> pour les contenus listés
                 (cartes profil, annonces). La navigation porte un
                 <code class="font-mono text-sm">aria-label</code> explicite et un lien
-                d’évitement « Aller au contenu principal » ouvre chaque page.
+                d’évitement «&#8239;Aller au contenu principal&#8239;» ouvre chaque page.
             </p>
             <p class="mt-5 max-w-[65ch] text-muted">
-                La hiérarchie de titres suit une règle stricte : <strong>un seul
+                La hiérarchie de titres suit une règle stricte&nbsp;: <strong>un seul
                 <code class="font-mono text-sm">h1</code> par page</strong>. Sur les
                 pages applicatives, ce <code class="font-mono text-sm">h1</code> est le
-                titre du site (« Bienvenue sur Giggr. », masqué visuellement mais lu par
-                les lecteurs d’écran) ; le titre de la page est alors un
+                titre du site («&#8239;Bienvenue sur Giggr.&#8239;», masqué visuellement mais lu par
+                les lecteurs d’écran)&#8239;; le titre de la page est alors un
                 <code class="font-mono text-sm">h2</code>. Les pages d’authentification,
                 au gabarit dédié, portent directement leur propre
-                <code class="font-mono text-sm">h1</code> (« Se connecter », « Créer un
-                compte »). La validation fine est faite avec Total Validator.
+                <code class="font-mono text-sm">h1</code> («&#8239;Se connecter&#8239;», «&#8239;Créer un
+                compte&#8239;»). La validation fine est faite avec Total Validator.
             </p>
             <figure class="capture mt-8">
                 <img
@@ -38,7 +38,7 @@
                     loading="lazy"
                 />
                 <figcaption class="capture__caption">
-                    Total Validator, page d’accueil (staging.giggr.be) : 73 erreurs, 2 avertissements. Toutes les erreurs sont de type E620.
+                    Total Validator, page d’accueil (staging.giggr.be)&nbsp;: 73 erreurs, 2 avertissements. Toutes les erreurs sont de type E620.
                 </figcaption>
             </figure>
 
@@ -46,8 +46,8 @@
                 <h3 class="font-mono text-sm uppercase tracking-wide text-muted">Erreurs connues</h3>
                 <p class="mt-3 max-w-[65ch] text-muted">
                     Les 73 erreurs relevées sont en réalité <strong>une seule et même
-                    erreur</strong>, répétée : <code class="font-mono text-sm">E620</code>,
-                    « attribute is not allowed ». Et chacune porte sur un attribut ajouté
+                    erreur</strong>, répétée&nbsp;: <code class="font-mono text-sm">E620</code>,
+                    «&#8239;attribute is not allowed&#8239;». Et chacune porte sur un attribut ajouté
                     par <strong>Livewire</strong>
                     (<code class="font-mono text-sm">wire:navigate</code>,
                     <code class="font-mono text-sm">wire:current</code>…) ou
@@ -56,13 +56,13 @@
                     <code class="font-mono text-sm">@click</code>,
                     <code class="font-mono text-sm">:aria-expanded</code>…). Ce sont les
                     attributs par lesquels ces frameworks branchent l’interactivité dans le
-                    <abbr title="HyperText Markup Language">HTML</abbr> : ils ne font pas partie de la spécification que Total Validator
+                    <abbr title="HyperText Markup Language">HTML</abbr>&nbsp;: ils ne font pas partie de la spécification que Total Validator
                     contrôle, d’où le signalement. L’outil les range d’ailleurs lui-même
-                    parmi les attributs « destinés à JavaScript ».
+                    parmi les attributs «&#8239;destinés à JavaScript&#8239;».
                 </p>
                 <p class="mt-4 max-w-[65ch] text-muted">
                     Rien de tout cela ne touche à la <strong>sémantique</strong> du
-                    document : la hiérarchie de titres, les repères de structure et la
+                    document&nbsp;: la hiérarchie de titres, les repères de structure et la
                     microdata restent valides, le DOCTYPE est bien HTML5, et aucune erreur
                     ne concerne la structure elle-même. <span class="text-ink">Reste qu’un
                     rapport aussi rouge, ça pique un peu les yeux.</span>
@@ -73,7 +73,7 @@
                     <abbr title="HyperText Markup Language">HTML</abbr>5,
                     <abbr title="Cascading Style Sheets">CSS</abbr> niveau 3). Une fois
                     le balisage corrigé, ses seules alertes restantes sont des
-                    <strong>faux positifs <abbr title="Cascading Style Sheets">CSS</abbr></strong> :
+                    <strong>faux positifs <abbr title="Cascading Style Sheets">CSS</abbr></strong>&nbsp;:
                     des sélecteurs modernes (<code class="font-mono text-sm">:where()</code>,
                     <code class="font-mono text-sm">:is()</code>) et des valeurs récentes
                     générés par Tailwind&nbsp;v4, que la version 18.6 de l’outil ne reconnaît
@@ -183,7 +183,7 @@
                     Connexion <span class="text-ink">/connexion</span> · Inscription <span class="text-ink">/inscription</span>
                 </div>
                 <ul class="px-4 py-4 font-mono text-sm leading-relaxed">
-                    <li><span class="text-muted">h1</span> Se connecter <span class="text-muted text-xs">resp. « Créer un compte », gabarit auth, titre de page direct</span></li>
+                    <li><span class="text-muted">h1</span> Se connecter <span class="text-muted text-xs">resp. «&#8239;Créer un compte&#8239;», gabarit auth, titre de page direct</span></li>
                     <li class="pl-6"><span class="text-muted">h2</span> Rejoins la scène</li>
                 </ul>
             </div>
@@ -238,7 +238,7 @@
                 </table>
             </div>
             <p class="mt-6 max-w-[65ch] text-muted">
-                Exemple réel : la carte d’un profil décrit une
+                Exemple réel&nbsp;: la carte d’un profil décrit une
                 <code class="font-mono text-sm">Person</code> avec une
                 <code class="font-mono text-sm">PostalAddress</code> imbriquée pour la
                 ville.
@@ -263,7 +263,7 @@
                 Deux stratégies, selon l’origine de l’image.
             </p>
             <p class="mt-5 max-w-[65ch] text-muted">
-                <strong>Visuels éditoriaux</strong> (hero, sections illustrées) : servis
+                <strong>Visuels éditoriaux</strong> (hero, sections illustrées)&nbsp;: servis
                 en plusieurs variantes via <code class="font-mono text-sm">srcset</code>
                 et <code class="font-mono text-sm">sizes</code>, au format
                 <strong>WebP</strong>, avec dimensions déclarées
@@ -281,12 +281,12 @@
 <span class="line"><span style="color:#6F42C1">    fetchpriority</span><span style="color:#24292E">=</span><span style="color:#032F62">"high"</span><span style="color:#6F42C1"> decoding</span><span style="color:#24292E">=</span><span style="color:#032F62">"async"</span></span>
 <span class="line"><span style="color:#24292E">/&gt;</span></span></code></pre>
             <p class="mt-8 max-w-[65ch] text-muted">
-                <strong>Contenus utilisateurs</strong> (avatars, galerie média) :
+                <strong>Contenus utilisateurs</strong> (avatars, galerie média)&nbsp;:
                 <strong>redimensionnés côté serveur</strong> avec
                 <code class="font-mono text-sm">intervention/image</code> (v4), de manière
                 asynchrone via les jobs
                 <code class="font-mono text-sm">ProcessAvatarImage</code> et
-                <code class="font-mono text-sm">ProcessMediaImage</code> à l’upload :
+                <code class="font-mono text-sm">ProcessMediaImage</code> à l’upload&nbsp;:
                 plusieurs tailles sont générées, et les cartes consomment la variante
                 adaptée (par exemple <code class="font-mono text-sm">$profile-&gt;medium</code>),
                 sans repasser par le fichier d’origine.
