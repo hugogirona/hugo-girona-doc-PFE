@@ -5,30 +5,25 @@
         <h2 class="font-display text-2xl font-medium md:text-3xl" style="letter-spacing: -0.02em">
             Participant
         </h2>
-        <div class="mt-8 overflow-x-auto border border-hairline-strong">
-            <table class="data-table">
-                <caption class="sr-only">Profil du participant P1</caption>
-                <tbody>
-                <tr>
-                    <th scope="row" class="text-left">Participant</th>
-                    <td>P1</td>
-                </tr>
-                <tr>
-                    <th scope="row" class="text-left">Profil</th>
-                    <td class="text-muted">Musicien amateur, guitariste, cherche à rejoindre un groupe.</td>
-                </tr>
-                <tr>
-                    <th scope="row" class="text-left">Date de la session</th>
-                    <td class="font-mono text-sm text-muted">à planifier</td>
-                </tr>
-            </tbody>
-            </table>
-        </div>
+        <dl class="mt-8 divide-y divide-hairline border border-hairline-strong">
+            <div class="flex flex-col gap-1 px-4 py-3 sm:flex-row sm:gap-6 sm:px-6">
+                <dt class="label sm:w-48 sm:shrink-0">Participant</dt>
+                <dd>P1</dd>
+            </div>
+            <div class="flex flex-col gap-1 px-4 py-3 sm:flex-row sm:gap-6 sm:px-6">
+                <dt class="label sm:w-48 sm:shrink-0">Profil</dt>
+                <dd class="text-muted">Musicien amateur, guitariste, cherche à rejoindre un groupe.</dd>
+            </div>
+            <div class="flex flex-col gap-1 px-4 py-3 sm:flex-row sm:gap-6 sm:px-6">
+                <dt class="label sm:w-48 sm:shrink-0">Date de la session</dt>
+                <dd class="font-mono text-sm text-muted">à planifier</dd>
+            </div>
+        </dl>
         <p class="mt-6 max-w-[65ch] text-muted">
-            Le participant réalise les
-            <a href="tests-utilisateurs.html" class="link">5 tâches du protocole</a>
+            Le participant déroule le parcours de référence
+            <a href="recherche-utilisateur.html#parcours-trouver-un-groupe" class="link">« Trouver un groupe »</a>
             en verbalisant à voix haute. La session est enregistrée en screencast avec
-            piste audio, puis commentée tâche par tâche ci-dessous.
+            piste audio, puis commentée étape par étape ci-dessous.
         </p>
     </div>
 </section>
@@ -68,37 +63,51 @@
             <span class="chip">à compléter</span>
         </div>
         <p class="mt-5 max-w-[65ch] text-muted" id="tbl-desc-deroule">
-            Observation tâche par tâche : ce que le participant cherche, comprend ou ce
-            qui le bloque, en regard du screencast.
+            Observation étape par étape du parcours
+            <a href="recherche-utilisateur.html#parcours-trouver-un-groupe" class="link">« Trouver un groupe »</a> :
+            ce que le participant cherche, comprend ou ce qui le bloque, en regard du
+            screencast.
         </p>
         <div class="mt-8 overflow-x-auto border border-hairline-strong">
             <table class="data-table" aria-describedby="tbl-desc-deroule">
-                <caption class="sr-only">Observations par tâche pour le participant P1</caption>
+                <caption class="sr-only">Observations par étape pour le participant P1</caption>
                 <thead>
                 <tr>
-                    <th scope="col">Tâche</th>
+                    <th scope="col">Étape</th>
                     <th scope="col">Observation</th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr>
-                    <td data-label="Tâche">1. Trouver une annonce de guitariste à Bruxelles</td>
+                    <td data-label="Étape">1. Arrive sur l'accueil via Google</td>
                     <td data-label="Observation" class="text-muted">à compléter</td>
                 </tr>
                 <tr>
-                    <td data-label="Tâche">2. Créer un compte</td>
+                    <td data-label="Étape">2. Ouvre les annonces et arrive sur l'explorateur</td>
                     <td data-label="Observation" class="text-muted">à compléter</td>
                 </tr>
                 <tr>
-                    <td data-label="Tâche">3. Publier une annonce « Je cherche »</td>
+                    <td data-label="Étape">3. Filtre par instrument « Guitare » et ville « Bruxelles »</td>
                     <td data-label="Observation" class="text-muted">à compléter</td>
                 </tr>
                 <tr>
-                    <td data-label="Tâche">4. Filtrer les profils de musiciens par instrument et ville</td>
+                    <td data-label="Étape">4. Repère une annonce de groupe cherchant un guitariste</td>
                     <td data-label="Observation" class="text-muted">à compléter</td>
                 </tr>
                 <tr>
-                    <td data-label="Tâche">5. Contacter un musicien via la messagerie</td>
+                    <td data-label="Étape">5. Lit le détail de l'annonce</td>
+                    <td data-label="Observation" class="text-muted">à compléter</td>
+                </tr>
+                <tr>
+                    <td data-label="Étape">6. Ouvre la messagerie via « Contacter »</td>
+                    <td data-label="Observation" class="text-muted">à compléter</td>
+                </tr>
+                <tr>
+                    <td data-label="Étape">7. Envoie un message</td>
+                    <td data-label="Observation" class="text-muted">à compléter</td>
+                </tr>
+                <tr>
+                    <td data-label="Étape">8. Reçoit une réponse et convient d'une rencontre</td>
                     <td data-label="Observation" class="text-muted">à compléter</td>
                 </tr>
                 </tbody>
@@ -131,7 +140,7 @@
         </div>
         <p class="mt-8 text-sm text-muted">
             Retour à la
-            <a href="tests-utilisateurs.html" class="link">vue d'ensemble des tests utilisateurs</a>.
+            <a href="tests-utilisateurs.html#screencasts" class="link">vue d'ensemble des tests utilisateurs</a>.
         </p>
     </div>
 </section>
