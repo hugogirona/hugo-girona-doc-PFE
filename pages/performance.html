@@ -1,140 +1,233 @@
-{{#> page-layout title="Performances" description="Performance de Giggr : Lighthouse, GTmetrix et contrôle des contrastes sur les pages publiques." num="02" heading="Performance" lede="Mesures de performance perçue et réelle : Lighthouse, GTmetrix et contrôle des contrastes sur les pages publiques." prevHref="code-html.html" prevNum="01" prevTitle="Qualité du code HTML" nextHref="accessibilite.html" nextNum="03" nextTitle="Accessibilité" }}
+{{#> page-layout title="Performance et accessibilité" description="Audit Lighthouse de Giggr (performance, accessibilité, bonnes pratiques, SEO) sur desktop et mobile, Web Vitals et contrôle des contrastes WCAG AA." num="02" heading="Performance et accessibilité" lede="Audit Lighthouse de Giggr sur desktop et mobile : scores, Web Vitals et contrôle des contrastes de la palette au regard de WCAG AA." prevHref="code-html.html" prevNum="01" prevTitle="Qualité du code HTML" nextHref="accessibilite.html" nextNum="03" nextTitle="Accessibilité" }}
 
 <section class="border-b border-hairline">
         <div class="mx-auto max-w-6xl px-6 md:px-8 py-16 md:py-20">
-            <div class="flex flex-wrap items-start justify-between gap-3">
-                <h2 class="font-display text-2xl font-medium md:text-3xl" style="letter-spacing: -0.02em">
-                    Scores Lighthouse
-                </h2>
-                <span class="chip">à compléter</span>
-            </div>
+            <h2 class="font-display text-2xl font-medium md:text-3xl" style="letter-spacing: -0.02em">
+                Lighthouse
+            </h2>
             <p class="mt-5 max-w-[65ch] text-muted" id="tbl-desc-1">
-                Les audits Lighthouse portent sur les pages publiques de Giggr et
-                couvrent quatre catégories. Les cibles sont fixées en amont ; le
-                relevé sera renseigné après exécution des audits.
+                Audit Lighthouse de la page d'accueil sur staging.giggr.be, avec les deux
+                profils : desktop et mobile (mobile bridé en 4G lente, c'est le plus
+                sévère). Quatre catégories sont notées sur 100.
             </p>
             <div class="mt-8 overflow-x-auto border border-hairline-strong">
                 <table class="data-table" aria-describedby="tbl-desc-1">
-                    <caption class="sr-only">Scores Lighthouse : cibles et relevés</caption>
+                    <caption class="sr-only">Scores Lighthouse desktop et mobile</caption>
                     <thead>
                     <tr>
-                        <th scope="col">Indicateur</th>
+                        <th scope="col">Catégorie</th>
+                        <th scope="col">Desktop</th>
+                        <th scope="col">Mobile</th>
                         <th scope="col">Cible</th>
-                        <th scope="col">Relevé</th>
                     </tr>
                     </thead>
                     <tbody>
                     <tr>
-                        <td data-label="Indicateur">Performance</td>
+                        <td data-label="Catégorie">Performance</td>
+                        <td data-label="Desktop" class="font-mono tabular-nums text-positive">100</td>
+                        <td data-label="Mobile" class="font-mono tabular-nums text-accent">86</td>
                         <td data-label="Cible" class="font-mono text-sm">≥ 95</td>
-                        <td data-label="Relevé" class="text-muted">à mesurer</td>
                     </tr>
                     <tr>
-                        <td data-label="Indicateur">Accessibilité</td>
+                        <td data-label="Catégorie">Accessibilité</td>
+                        <td data-label="Desktop" class="font-mono tabular-nums text-positive">100</td>
+                        <td data-label="Mobile" class="font-mono tabular-nums text-positive">100</td>
                         <td data-label="Cible" class="font-mono text-sm">≥ 95</td>
-                        <td data-label="Relevé" class="text-muted">à mesurer</td>
                     </tr>
                     <tr>
-                        <td data-label="Indicateur">Bonnes pratiques</td>
+                        <td data-label="Catégorie">Bonnes pratiques</td>
+                        <td data-label="Desktop" class="font-mono tabular-nums text-positive">100</td>
+                        <td data-label="Mobile" class="font-mono tabular-nums text-positive">100</td>
                         <td data-label="Cible" class="font-mono text-sm">≥ 95</td>
-                        <td data-label="Relevé" class="text-muted">à mesurer</td>
                     </tr>
                     <tr>
-                        <td data-label="Indicateur">SEO</td>
+                        <td data-label="Catégorie"><abbr title="Search Engine Optimization">SEO</abbr></td>
+                        <td data-label="Desktop" class="font-mono tabular-nums text-positive">100</td>
+                        <td data-label="Mobile" class="font-mono tabular-nums text-positive">100</td>
                         <td data-label="Cible" class="font-mono text-sm">≥ 90</td>
-                        <td data-label="Relevé" class="text-muted">à mesurer</td>
                     </tr>
                     </tbody>
                 </table>
             </div>
             <figure class="capture mt-8">
-                <div class="capture__frame">Capture à venir</div>
+                <img
+                    src="../src/img/lighthouse-desktop.webp"
+                    alt="Rapport Lighthouse desktop de la page d'accueil de Giggr : performance, accessibilité, bonnes pratiques et SEO à 100."
+                    width="2000"
+                    height="222"
+                    class="w-full"
+                    loading="lazy"
+                />
                 <figcaption class="capture__caption">
-                    Rapport Lighthouse, page d'accueil. Rapport à intégrer.
+                    Lighthouse desktop, page d'accueil : 100 dans les quatre catégories.
                 </figcaption>
             </figure>
+            <figure class="capture mt-6">
+                <img
+                    src="../src/img/lighthouse-mobile.webp"
+                    alt="Rapport Lighthouse mobile de la page d'accueil de Giggr : accessibilité, bonnes pratiques et SEO à 100, performance à 79."
+                    width="2000"
+                    height="222"
+                    class="w-full"
+                    loading="lazy"
+                />
+                <figcaption class="capture__caption">
+                    Lighthouse mobile : accessibilité, bonnes pratiques et <abbr title="Search Engine Optimization">SEO</abbr> à 100 ; performance à 86.
+                </figcaption>
+            </figure>
+            <p class="mt-6 max-w-[65ch] text-muted">
+                Accessibilité, bonnes pratiques et <abbr title="Search Engine Optimization">SEO</abbr> sont à <strong>100 sur les deux
+                profils</strong>, et la performance desktop est parfaite. Côté mobile, la
+                <strong>stabilisation des polices</strong> (police de secours aux métriques
+                et préchargement de la police des titres) a fait chuter le Speed Index de
+                7,1 s à 1,6 s et remonter la performance de 79 à <strong>86</strong>. Il
+                subsiste un décalage de mise en page résiduel (<abbr title="Cumulative Layout Shift">CLS</abbr> 0,141, encore au-dessus
+                du seuil), provenant d'un autre élément que les polices, à investiguer.
+            </p>
         </div>
     </section>
 
     <section class="border-b border-hairline">
         <div class="mx-auto max-w-6xl px-6 md:px-8 py-16 md:py-20">
-            <div class="flex flex-wrap items-start justify-between gap-3">
-                <h2 class="font-display text-2xl font-medium md:text-3xl" style="letter-spacing: -0.02em">
-                    GTmetrix
-                </h2>
-                <span class="chip">à compléter</span>
-            </div>
+            <h2 class="font-display text-2xl font-medium md:text-3xl" style="letter-spacing: -0.02em">
+                Web Vitals
+            </h2>
             <p class="mt-5 max-w-[65ch] text-muted" id="tbl-desc-2">
-                GTmetrix complète Lighthouse en mesurant le rendu sur un poste
-                distant et fournit un grade global ainsi que les principaux
-                indicateurs Web Vitals. Le relevé sera renseigné après exécution
-                des audits.
+                Les métriques de chargement mesurées par Lighthouse, desktop et mobile,
+                face aux seuils recommandés. Un audit GTmetrix externe peut compléter ce
+                relevé sur un poste distant.
             </p>
             <div class="mt-8 overflow-x-auto border border-hairline-strong">
                 <table class="data-table" aria-describedby="tbl-desc-2">
-                    <caption class="sr-only">Indicateurs GTmetrix : cibles et relevés</caption>
+                    <caption class="sr-only">Web Vitals desktop et mobile face aux seuils</caption>
                     <thead>
                     <tr>
                         <th scope="col">Métrique</th>
-                        <th scope="col">Cible</th>
-                        <th scope="col">Relevé</th>
+                        <th scope="col">Desktop</th>
+                        <th scope="col">Mobile</th>
+                        <th scope="col">Seuil</th>
                     </tr>
                     </thead>
                     <tbody>
                     <tr>
-                        <td data-label="Métrique">Grade</td>
-                        <td data-label="Cible" class="font-mono text-sm">A</td>
-                        <td data-label="Relevé" class="text-muted">à mesurer</td>
+                        <td data-label="Métrique">First Contentful Paint</td>
+                        <td data-label="Desktop" class="font-mono tabular-nums">0,3 s</td>
+                        <td data-label="Mobile" class="font-mono tabular-nums">1,3 s</td>
+                        <td data-label="Seuil" class="font-mono text-sm">&lt; 1,8 s</td>
                     </tr>
                     <tr>
-                        <td data-label="Métrique">LCP (Largest Contentful Paint)</td>
-                        <td data-label="Cible" class="font-mono text-sm">&lt; 2.5 s</td>
-                        <td data-label="Relevé" class="text-muted">à mesurer</td>
+                        <td data-label="Métrique">Largest Contentful Paint</td>
+                        <td data-label="Desktop" class="font-mono tabular-nums">0,6 s</td>
+                        <td data-label="Mobile" class="font-mono tabular-nums">3,4 s</td>
+                        <td data-label="Seuil" class="font-mono text-sm">&lt; 2,5 s</td>
                     </tr>
                     <tr>
-                        <td data-label="Métrique">TBT (Total Blocking Time)</td>
-                        <td data-label="Cible" class="font-mono text-sm">&lt; 200 ms</td>
-                        <td data-label="Relevé" class="text-muted">à mesurer</td>
+                        <td data-label="Métrique">Total Blocking Time</td>
+                        <td data-label="Desktop" class="font-mono tabular-nums">0 ms</td>
+                        <td data-label="Mobile" class="font-mono tabular-nums">0 ms</td>
+                        <td data-label="Seuil" class="font-mono text-sm">&lt; 200 ms</td>
                     </tr>
                     <tr>
-                        <td data-label="Métrique">CLS (Cumulative Layout Shift)</td>
-                        <td data-label="Cible" class="font-mono text-sm">&lt; 0.1</td>
-                        <td data-label="Relevé" class="text-muted">à mesurer</td>
+                        <td data-label="Métrique">Cumulative Layout Shift</td>
+                        <td data-label="Desktop" class="font-mono tabular-nums">0,001</td>
+                        <td data-label="Mobile" class="font-mono tabular-nums text-accent">0,141</td>
+                        <td data-label="Seuil" class="font-mono text-sm">&lt; 0,1</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Métrique">Speed Index</td>
+                        <td data-label="Desktop" class="font-mono tabular-nums">0,5 s</td>
+                        <td data-label="Mobile" class="font-mono tabular-nums">1,6 s</td>
+                        <td data-label="Seuil" class="font-mono text-sm">&lt; 3,4 s</td>
                     </tr>
                     </tbody>
                 </table>
             </div>
-            <figure class="capture mt-8">
-                <div class="capture__frame">Capture à venir</div>
-                <figcaption class="capture__caption">
-                    Rapport GTmetrix, page d'accueil. Rapport à intégrer.
-                </figcaption>
-            </figure>
+            <p class="mt-6 max-w-[65ch] text-muted">
+                Le temps de blocage est nul (aucun JavaScript long) et le Speed Index est
+                désormais bon sur les deux profils. Restent hors seuil, côté mobile
+                uniquement, le <abbr title="Largest Contentful Paint">LCP</abbr> (3,4 s) et le <abbr title="Cumulative Layout Shift">CLS</abbr> résiduel (0,141), liés au chargement
+                et à la stabilité des visuels au-dessus de la ligne de flottaison.
+            </p>
         </div>
     </section>
 
     <section>
         <div class="mx-auto max-w-6xl px-6 md:px-8 py-16 md:py-20">
-            <div class="flex flex-wrap items-start justify-between gap-3">
-                <h2 class="font-display text-2xl font-medium md:text-3xl" style="letter-spacing: -0.02em">
-                    Contrôle des contrastes
-                </h2>
-                <span class="chip">à compléter</span>
-            </div>
-            <p class="mt-5 max-w-[65ch] text-muted">
-                Les couleurs de la palette de Giggr sont vérifiées au regard du
-                niveau WCAG AA, qui exige un ratio de contraste d'au moins
-                <code class="font-mono text-sm">4.5:1</code> pour le texte courant et
-                <code class="font-mono text-sm">3:1</code> pour le grand texte. Chaque
-                association de premier plan et d'arrière-plan utilisée dans
-                l'interface sera relevée et confrontée à ces seuils.
+            <h2 class="font-display text-2xl font-medium md:text-3xl" style="letter-spacing: -0.02em">
+                Contrôle des contrastes
+            </h2>
+            <p class="mt-5 max-w-[65ch] text-muted" id="tbl-desc-3">
+                Ratios de contraste de la palette de Giggr au regard de
+                <strong><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> AA</strong> : au moins <code class="font-mono text-sm">4.5:1</code>
+                pour le texte courant et <code class="font-mono text-sm">3:1</code> pour le
+                grand texte. L'audit Lighthouse, qui inclut le contraste, place
+                l'accessibilité à 100 ; le détail des couples utilisés est ci-dessous.
             </p>
-            <figure class="capture mt-8">
-                <div class="capture__frame">Capture à venir</div>
-                <figcaption class="capture__caption">
-                    Vérification des ratios de contraste sur la palette. Relevé à intégrer.
-                </figcaption>
-            </figure>
+            <div class="mt-8 overflow-x-auto border border-hairline-strong">
+                <table class="data-table" aria-describedby="tbl-desc-3">
+                    <caption class="sr-only">Ratios de contraste de la palette face à <abbr title="Web Content Accessibility Guidelines">WCAG</abbr> AA</caption>
+                    <thead>
+                    <tr>
+                        <th scope="col">Couple (premier plan sur fond)</th>
+                        <th scope="col">Ratio</th>
+                        <th scope="col">Niveau</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td data-label="Couple (premier plan sur fond)">Titres sur fond clair</td>
+                        <td data-label="Ratio" class="font-mono tabular-nums">12,97:1</td>
+                        <td data-label="Niveau" class="font-mono text-sm text-positive">AA</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Couple (premier plan sur fond)">Texte courant sur fond clair</td>
+                        <td data-label="Ratio" class="font-mono tabular-nums">10,23:1</td>
+                        <td data-label="Niveau" class="font-mono text-sm text-positive">AA</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Couple (premier plan sur fond)">Texte secondaire sur fond clair</td>
+                        <td data-label="Ratio" class="font-mono tabular-nums">6,30:1</td>
+                        <td data-label="Niveau" class="font-mono text-sm text-positive">AA</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Couple (premier plan sur fond)">Légendes sur fond clair</td>
+                        <td data-label="Ratio" class="font-mono tabular-nums">5,02:1</td>
+                        <td data-label="Niveau" class="font-mono text-sm text-positive">AA</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Couple (premier plan sur fond)">Accent (terracotta) sur fond clair</td>
+                        <td data-label="Ratio" class="font-mono tabular-nums">4,88:1</td>
+                        <td data-label="Niveau" class="font-mono text-sm text-positive">AA</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Couple (premier plan sur fond)">Texte sur fond foncé</td>
+                        <td data-label="Ratio" class="font-mono tabular-nums">10,23:1</td>
+                        <td data-label="Niveau" class="font-mono text-sm text-positive">AA</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Couple (premier plan sur fond)">Légendes sur fond foncé</td>
+                        <td data-label="Ratio" class="font-mono tabular-nums">4,73:1</td>
+                        <td data-label="Niveau" class="font-mono text-sm text-positive">AA</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Couple (premier plan sur fond)">Accent (corail) sur fond foncé</td>
+                        <td data-label="Ratio" class="font-mono tabular-nums">3,93:1</td>
+                        <td data-label="Niveau" class="font-mono text-sm text-accent">AA grand texte</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Couple (premier plan sur fond)">Texte indicatif (placeholder) sur fond clair</td>
+                        <td data-label="Ratio" class="font-mono tabular-nums">2,86:1</td>
+                        <td data-label="Niveau" class="font-mono text-sm text-danger">sous le seuil</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="mt-6 max-w-[65ch] text-muted">
+                L'ensemble des textes porteurs d'information passe AA. Deux couples sont à
+                surveiller : l'accent corail sur fond foncé, réservé au grand texte, et le
+                texte indicatif des champs (placeholder), sous le seuil mais non porteur
+                d'information essentielle.
+            </p>
         </div>
     </section>
 
