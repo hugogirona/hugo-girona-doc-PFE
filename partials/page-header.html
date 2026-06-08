@@ -1,6 +1,12 @@
 <section class="border-b border-hairline-strong">
   <div class="mx-auto max-w-6xl px-6 md:px-8 py-14 md:py-20">
-    <a href="{{root}}index.html#sommaire" class="link font-mono text-sm">← Retour au sommaire</a>
+    <div class="flex flex-wrap items-center gap-2 font-mono text-sm">
+      <a href="{{root}}index.html#sommaire" class="link">← Retour au sommaire</a>
+      {{#if crumbHref}}
+      <span class="text-muted" aria-hidden="true">/</span>
+      <a href="{{root}}pages/{{crumbHref}}" class="link">{{crumbTitle}}</a>
+      {{/if}}
+    </div>
     <div class="mt-10 flex items-baseline gap-4">
       <span class="font-mono text-base text-accent" aria-hidden="true">{{num}}</span>
       <h2

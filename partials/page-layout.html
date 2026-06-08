@@ -8,10 +8,12 @@
     <a href="#content" class="label sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:bg-ink focus:px-4 focus:py-2 focus:text-paper">Aller au contenu</a>
     {{> header root="../" }}
     <main id="content">
-      {{> page-header num=num title=heading lede=lede root="../" }}
+      {{> page-header num=num title=heading lede=lede crumbHref=crumbHref crumbTitle=crumbTitle root="../" }}
       {{> @partial-block }}
     </main>
+    {{#unless noPager}}
     {{> page-pager root="../" prevHref=prevHref prevNum=prevNum prevTitle=prevTitle nextHref=nextHref nextNum=nextNum nextTitle=nextTitle }}
+    {{/unless}}
     {{> footer root="../" }}
   </body>
 </html>
