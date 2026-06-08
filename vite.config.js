@@ -22,6 +22,7 @@ export default defineConfig({
                 serveur: at('pages/serveur.html'),
                 'tests-automatises': at('pages/tests-automatises.html'),
                 opquast: at('pages/opquast.html'),
+                'etude-existant': at('pages/etude-existant.html'),
                 'recherche-utilisateur': at('pages/recherche-utilisateur.html'),
                 'tests-utilisateurs': at('pages/tests-utilisateurs.html'),
                 'test-utilisateur-p1': at('pages/test-utilisateur-p1.html'),
