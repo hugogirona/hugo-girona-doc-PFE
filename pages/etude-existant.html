@@ -1,4 +1,4 @@
-{{#> page-layout title="Étude de l’existant" description="Étude de l’existant pour Giggr&nbsp;: analyse des plateformes de mise en relation de musiciens (interface, architecture, utilisabilité, accessibilité, SEO), avec ce qui est à retenir, à éviter et à adapter." num="07" heading="Étude de l’existant" lede="Analyse comparative des plateformes existantes de mise en relation de musiciens, pour situer Giggr&nbsp;: ce qui est à retenir, à éviter et à adapter." prevHref="opquast.html" prevNum="06" prevTitle="Audit Opquast" nextHref="recherche-utilisateur.html" nextNum="08" nextTitle="Recherche utilisateur" }}
+{{#> page-layout title="Étude de l’existant" description="Étude de l’existant pour Giggr&nbsp;: analyse réelle de BandMix, Vampr et JoinMyBand (interface, accessibilité, SEO) avec captures, audits axe-core, forces/faiblesses et comparaison à Giggr." num="07" heading="Étude de l’existant" lede="Analyse comparative des plateformes existantes de mise en relation de musiciens — captures et audits réels — pour situer Giggr&nbsp;: forces, faiblesses, similitudes et différences." prevHref="opquast.html" prevNum="06" prevTitle="Audit Opquast" nextHref="recherche-utilisateur.html" nextNum="08" nextTitle="Recherche utilisateur" }}
 
 <section class="border-b border-hairline">
     <div class="mx-auto max-w-6xl px-6 md:px-8 py-16 md:py-20">
@@ -6,129 +6,258 @@
             Démarche
         </h2>
         <p class="mt-5 max-w-[65ch] text-muted">
-            L’étude porte sur les plateformes comparables — les services de mise en
-            relation entre musiciens — et sur la solution informelle la plus répandue,
-            les groupes Facebook. Chaque plateforme est examinée sous cinq angles, puis
-            on en tire ce qui est à <strong>retenir</strong>, à <strong>éviter</strong>,
-            et ce qui peut s’<strong>adapter</strong> au contexte de Giggr. L’analyse
-            détaillée et les captures annotées par plateforme sont rassemblées plus bas.
+            Trois plateformes comparables ont été auditées le 8 juin 2026, plus la
+            solution informelle de référence (les groupes Facebook). Pour chacune des
+            trois plateformes&nbsp;: une capture réelle de la page d’accueil, un relevé des
+            signaux de structure et de référencement (langue, méta-description, titres,
+            alternatives d’images) et un audit d’accessibilité automatisé avec axe-core,
+            exactement le même outil et les mêmes règles WCAG que pour Giggr. On en tire,
+            plateforme par plateforme, les forces, les faiblesses, et les similitudes et
+            différences avec Giggr.
         </p>
-        <ul class="mt-8 grid gap-px border border-hairline-strong bg-hairline-strong sm:grid-cols-2 lg:grid-cols-5">
-            <li class="bg-paper p-5">
-                <p class="label">Interface</p>
-                <p class="mt-2 text-sm text-muted">Lisibilité, hiérarchie, repères visuels.</p>
-            </li>
-            <li class="bg-paper p-5">
-                <p class="label">Architecture</p>
-                <p class="mt-2 text-sm text-muted">Organisation des contenus et des parcours.</p>
-            </li>
-            <li class="bg-paper p-5">
-                <p class="label">Utilisabilité</p>
-                <p class="mt-2 text-sm text-muted">Facilité à accomplir les tâches clés.</p>
-            </li>
-            <li class="bg-paper p-5">
-                <p class="label">Accessibilité</p>
-                <p class="mt-2 text-sm text-muted">Contrastes, clavier, alternatives.</p>
-            </li>
-            <li class="bg-paper p-5">
-                <p class="label"><abbr title="Search Engine Optimization">SEO</abbr></p>
-                <p class="mt-2 text-sm text-muted">Indexabilité, balises, structure.</p>
-            </li>
-        </ul>
+        <p class="mt-4 max-w-[65ch] text-muted">
+            Les groupes Facebook, derrière authentification, ne sont pas audités
+            automatiquement, mais restent la pratique la plus répandue aujourd’hui.
+        </p>
     </div>
 </section>
 
 <section class="border-b border-hairline">
     <div class="mx-auto max-w-6xl px-6 md:px-8 py-16 md:py-20">
-        <div class="flex flex-wrap items-start justify-between gap-3">
-            <h2 class="font-display text-2xl font-medium md:text-3xl" style="letter-spacing: -0.02em">
-                Plateformes comparées
-            </h2>
-            <span class="chip">analyse à compléter</span>
-        </div>
-        <p class="mt-5 max-w-[65ch] text-muted">
-            Quatre références, des plus proches de Giggr (petites annonces de musiciens)
-            à la solution informelle de référence. Pour chacune&nbsp;: une capture annotée et
-            ce qu’on en retient ou évite.
+        <h2 class="font-display text-2xl font-medium md:text-3xl" style="letter-spacing: -0.02em">
+            BandMix
+        </h2>
+        <p class="mt-2 font-mono text-sm text-muted">
+            <a href="https://www.bandmix.com" rel="noopener" class="link">bandmix.com ↗</a> · annonces de musiciens
+            (États-Unis)
         </p>
-
+        <p class="mt-5 max-w-[65ch] text-muted">
+            Le concurrent le plus proche de Giggr&nbsp;: des petites annonces de musiciens et
+            de groupes, cherchables par instrument et par localisation (code postal). La
+            barre de recherche «&#8239;Qui cherchez-vous&#8239;? + lieu&#8239;» occupe le centre de la page
+            d’accueil — exactement l’action centrale de Giggr.
+        </p>
+        <figure class="capture mt-8">
+            <picture>
+                <source media="(min-width: 640px)" srcset="../src/img/benchmark-bandmix.webp" width="1280" height="900">
+                <img src="../src/img/benchmark-bandmix-mobile.webp"
+                     alt="Page d’accueil de BandMix&nbsp;: thème sombre, recherche par instrument et code postal."
+                     width="780" height="1688" class="w-full" loading="lazy">
+            </picture>
+            <figcaption class="capture__caption">BandMix, page d’accueil (audit du 8 juin 2026).</figcaption>
+        </figure>
         <div class="mt-8 grid gap-px border border-hairline-strong bg-hairline-strong md:grid-cols-2">
-            <article class="bg-paper p-6 md:p-8">
-                <div class="flex flex-wrap items-baseline justify-between gap-2">
-                    <h3 class="font-display text-xl font-medium" style="letter-spacing: -0.01em">BandMix</h3>
-                    <a href="https://www.bandmix.fr/" rel="noopener" class="link font-mono text-xs">bandmix.fr ↗</a>
-                </div>
-                <p class="mt-3 text-sm text-muted">
-                    Petites annonces de musiciens et de groupes, filtrables par instrument
-                    et localisation. C’est le concurrent le plus directement comparable à Giggr.
-                </p>
-                <figure class="capture mt-6">
-                    <div class="capture__frame">Capture à annoter</div>
-                    <figcaption class="capture__caption">BandMix — page de recherche. Capture annotée à intégrer.</figcaption>
-                </figure>
-                <dl class="mt-6 space-y-3 text-sm">
-                    <div><dt class="label text-positive">À retenir</dt><dd class="mt-1 text-muted">à compléter</dd></div>
-                    <div><dt class="label text-accent">À éviter</dt><dd class="mt-1 text-muted">à compléter</dd></div>
-                </dl>
-            </article>
+            <div class="bg-paper p-6">
+                <h3 class="label text-positive">Forces</h3>
+                <ul class="mt-3 space-y-2 text-muted">
+                    <li>Recherche par instrument + localisation mise en avant dès l’accueil.</li>
+                    <li>Large base d’utilisateurs, preuve sociale (témoignages).</li>
+                </ul>
+            </div>
+            <div class="bg-paper p-6">
+                <h3 class="label text-accent">Faiblesses</h3>
+                <ul class="mt-3 space-y-2 text-muted">
+                    <li>Interface dense et datée (thème sombre chargé, années 2010).</li>
+                    <li>Contact réservé aux abonnés payants (Premium).</li>
+                    <li>Accessibilité faible&nbsp;: 81 nœuds en échec à l’audit axe (cibles tactiles trop petites,
+                        contrastes insuffisants), 5 images sur 10 sans alternative.
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <p class="mt-6 max-w-[65ch] text-muted">
+            <strong>Face à Giggr.</strong> Même logique de recherche par instrument et
+            par ville (similitude). Mais Giggr ouvre le contact gratuitement via une
+            messagerie intégrée, vise un public local (Belgique) et soigne
+            l’accessibilité (0 violation contre 81 nœuds).
+        </p>
+    </div>
+</section>
 
-            <article class="bg-paper p-6 md:p-8">
-                <div class="flex flex-wrap items-baseline justify-between gap-2">
-                    <h3 class="font-display text-xl font-medium" style="letter-spacing: -0.01em">Vampr</h3>
-                    <a href="https://vampr.me" rel="noopener" class="link font-mono text-xs">vampr.me ↗</a>
-                </div>
-                <p class="mt-3 text-sm text-muted">
-                    Réseau social pour musiciens, fondé sur un appariement par profil
-                    (logique proche du «&#8239;swipe&#8239;») et une dimension communautaire forte.
-                </p>
-                <figure class="capture mt-6">
-                    <div class="capture__frame">Capture à annoter</div>
-                    <figcaption class="capture__caption">Vampr — découverte de profils. Capture annotée à intégrer.</figcaption>
-                </figure>
-                <dl class="mt-6 space-y-3 text-sm">
-                    <div><dt class="label text-positive">À retenir</dt><dd class="mt-1 text-muted">à compléter</dd></div>
-                    <div><dt class="label text-accent">À éviter</dt><dd class="mt-1 text-muted">à compléter</dd></div>
-                </dl>
-            </article>
+<section class="border-b border-hairline">
+    <div class="mx-auto max-w-6xl px-6 md:px-8 py-16 md:py-20">
+        <h2 class="font-display text-2xl font-medium md:text-3xl" style="letter-spacing: -0.02em">
+            Vampr
+        </h2>
+        <p class="mt-2 font-mono text-sm text-muted">
+            <a href="https://vampr.me" rel="noopener" class="link">vampr.me ↗</a> · réseau social de musiciens
+            (application mobile)
+        </p>
+        <p class="mt-5 max-w-[65ch] text-muted">
+            Un réseau social pour musiciens, fondé sur un appariement par profil (logique
+            proche du «&#8239;swipe&#8239;»). C’est avant tout une application mobile&nbsp;: le site web
+            n’est qu’une vitrine de téléchargement (App Store, Google Play).
+        </p>
+        <figure class="capture mt-8">
+            <picture>
+                <source media="(min-width: 640px)" srcset="../src/img/benchmark-vampr.webp" width="1280" height="900">
+                <img src="../src/img/benchmark-vampr-mobile.webp"
+                     alt="Page d’accueil de Vampr&nbsp;: visuel moderne, boutons de téléchargement de l’application."
+                     width="780" height="1688" class="w-full" loading="lazy">
+            </picture>
+            <figcaption class="capture__caption">Vampr, page d’accueil (audit du 8 juin 2026).</figcaption>
+        </figure>
+        <div class="mt-8 grid gap-px border border-hairline-strong bg-hairline-strong md:grid-cols-2">
+            <div class="bg-paper p-6">
+                <h3 class="label text-positive">Forces</h3>
+                <ul class="mt-3 space-y-2 text-muted">
+                    <li>Visuel moderne et soigné, forte dimension communautaire.</li>
+                    <li>Découverte par profils et collaborations à grande échelle.</li>
+                </ul>
+            </div>
+            <div class="bg-paper p-6">
+                <h3 class="label text-accent">Faiblesses</h3>
+                <ul class="mt-3 space-y-2 text-muted">
+                    <li>Pas de produit web&nbsp;: il faut installer l’application.</li>
+                    <li>Appariement opaque (algorithme), peu de filtres explicites.</li>
+                    <li>Accessibilité perfectible&nbsp;: 15 nœuds axe (cadres sans titre, contrastes) et 4 balises h1
+                        sur une même page (hiérarchie de titres incorrecte).
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <p class="mt-6 max-w-[65ch] text-muted">
+            <strong>Face à Giggr.</strong> Même objectif de mise en relation de musiciens
+            par profils (similitude). Mais Giggr est une application web (aucune
+            installation), avec des filtres explicites (instrument, ville) plutôt qu’un
+            appariement opaque, et un ancrage local.
+        </p>
+    </div>
+</section>
 
-            <article class="bg-paper p-6 md:p-8">
-                <div class="flex flex-wrap items-baseline justify-between gap-2">
-                    <h3 class="font-display text-xl font-medium" style="letter-spacing: -0.01em">JoinMyBand</h3>
-                    <a href="https://www.joinmyband.co.uk" rel="noopener" class="link font-mono text-xs">joinmyband.co.uk ↗</a>
-                </div>
-                <p class="mt-3 text-sm text-muted">
-                    Annonces de musiciens et de groupes, orientées Royaume-Uni. Interface
-                    classique de site d’annonces, centrée sur la liste de résultats.
-                </p>
-                <figure class="capture mt-6">
-                    <div class="capture__frame">Capture à annoter</div>
-                    <figcaption class="capture__caption">JoinMyBand — liste d’annonces. Capture annotée à intégrer.</figcaption>
-                </figure>
-                <dl class="mt-6 space-y-3 text-sm">
-                    <div><dt class="label text-positive">À retenir</dt><dd class="mt-1 text-muted">à compléter</dd></div>
-                    <div><dt class="label text-accent">À éviter</dt><dd class="mt-1 text-muted">à compléter</dd></div>
-                </dl>
-            </article>
+<section class="border-b border-hairline">
+    <div class="mx-auto max-w-6xl px-6 md:px-8 py-16 md:py-20">
+        <h2 class="font-display text-2xl font-medium md:text-3xl" style="letter-spacing: -0.02em">
+            JoinMyBand
+        </h2>
+        <p class="mt-2 font-mono text-sm text-muted">
+            <a href="https://www.joinmyband.co.uk" rel="noopener" class="link">joinmyband.co.uk ↗</a> · annonces de
+            musiciens (Royaume-Uni)
+        </p>
+        <p class="mt-5 max-w-[65ch] text-muted">
+            Un site d’annonces gratuit pour musiciens, façon tableau d’annonces classique.
+            Sobre techniquement, mais resté à une esthétique d’un autre âge.
+        </p>
+        <figure class="capture mt-8">
+            <picture>
+                <source media="(min-width: 640px)" srcset="../src/img/benchmark-joinmyband.webp" width="1280" height="900">
+                <img
+                        src="../src/img/benchmark-joinmyband-mobile.webp"
+                        alt="Page d’accueil de JoinMyBand&nbsp;: annonces de musiciens, modale cookies au chargement."
+                        width="780"
+                        height="1688"
+                        class="w-full"
+                        loading="lazy">
+            </picture>
+            <figcaption class="capture__caption">JoinMyBand, page d’accueil avec sa modale cookies (audit du 8 juin
+                2026).
+            </figcaption>
+        </figure>
+        <div class="mt-8 grid gap-px border border-hairline-strong bg-hairline-strong md:grid-cols-2">
+            <div class="bg-paper p-6">
+                <h3 class="label text-positive">Forces</h3>
+                <ul class="mt-3 space-y-2 text-muted">
+                    <li>Gratuit et simple à l’extrême.</li>
+                    <li>Sobre techniquement&nbsp;: 0 violation à l’audit axe (HTML simple et sémantique), pages très
+                        légères.
+                    </li>
+                </ul>
+            </div>
+            <div class="bg-paper p-6">
+                <h3 class="label text-accent">Faiblesses</h3>
+                <ul class="mt-3 space-y-2 text-muted">
+                    <li>Esthétique très datée, modale cookies intrusif au chargement.</li>
+                    <li>Filtrage et expérience minimalistes, aucune fiche structurée.</li>
+                </ul>
+            </div>
+        </div>
+        <p class="mt-6 max-w-[65ch] text-muted">
+            <strong>Face à Giggr.</strong> Mêmes annonces gratuites, publier et parcourir
+            (similitude). Mais Giggr propose des profils structurés, un filtrage par
+            instrument et ville, une messagerie intégrée et une interface moderne, là où
+            JoinMyBand reste un simple fil d’annonces.
+        </p>
+    </div>
+</section>
 
-            <article class="bg-paper p-6 md:p-8">
-                <div class="flex flex-wrap items-baseline justify-between gap-2">
-                    <h3 class="font-display text-xl font-medium" style="letter-spacing: -0.01em">Groupes Facebook</h3>
-                    <span class="font-mono text-xs text-muted">solution informelle</span>
-                </div>
-                <p class="mt-3 text-sm text-muted">
-                    La pratique la plus courante aujourd’hui&nbsp;: poster dans des groupes
-                    locaux. Aucun filtre par instrument ou ville, information dispersée et
-                    non structurée — c’est le manque que Giggr cherche à combler.
-                </p>
-                <figure class="capture mt-6">
-                    <div class="capture__frame">Capture à annoter</div>
-                    <figcaption class="capture__caption">Groupe Facebook de musiciens. Capture annotée à intégrer.</figcaption>
-                </figure>
-                <dl class="mt-6 space-y-3 text-sm">
-                    <div><dt class="label text-positive">À retenir</dt><dd class="mt-1 text-muted">à compléter</dd></div>
-                    <div><dt class="label text-accent">À éviter</dt><dd class="mt-1 text-muted">à compléter</dd></div>
-                </dl>
-            </article>
+<section class="border-b border-hairline">
+    <div class="mx-auto max-w-6xl px-6 md:px-8 py-16 md:py-20">
+        <h2 class="font-display text-2xl font-medium md:text-3xl" style="letter-spacing: -0.02em">
+            Groupes Facebook
+        </h2>
+        <p class="mt-2 font-mono text-sm text-muted">solution informelle · non auditée (accès derrière
+            authentification)</p>
+        <p class="mt-5 max-w-[65ch] text-muted">
+            La pratique la plus répandue aujourd’hui&nbsp;: poster dans des groupes locaux de
+            musiciens. C’est gratuit et l’audience est déjà là, mais sans aucun filtre par
+            instrument ou par ville&nbsp;: l’information est dispersée, noyée dans le fil, sans
+            fiche ni mise en relation cadrée. C’est précisément le manque que Giggr comble
+            — centraliser, structurer et filtrer.
+        </p>
+    </div>
+</section>
+
+<section class="border-b border-hairline">
+    <div class="mx-auto max-w-6xl px-6 md:px-8 py-16 md:py-20">
+        <h2 class="font-display text-2xl font-medium md:text-3xl" style="letter-spacing: -0.02em">
+            Grille comparative
+        </h2>
+        <p class="mt-5 max-w-[65ch] text-muted" id="tbl-desc-bench">
+            Synthèse chiffrée, avec Giggr en regard. La colonne accessibilité reprend le
+            nombre de nœuds en échec à l’audit axe-core de la page d’accueil (au 8 juin 2026).
+        </p>
+        <div class="mt-8 overflow-x-auto border border-hairline-strong">
+            <table class="data-table" aria-describedby="tbl-desc-bench">
+                <caption class="sr-only">Comparaison des plateformes et de Giggr</caption>
+                <thead>
+                <tr>
+                    <th scope="col">Plateforme</th>
+                    <th scope="col">Type</th>
+                    <th scope="col">Recherche instrument + lieu</th>
+                    <th scope="col">Prise de contact</th>
+                    <th scope="col">Accessibilité (axe, accueil)</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td data-label="Plateforme">BandMix</td>
+                    <td data-label="Type">Annonces web</td>
+                    <td data-label="Recherche instrument + lieu">Oui, centrale</td>
+                    <td data-label="Prise de contact">Payante (Premium)</td>
+                    <td data-label="Accessibilité (axe, accueil)" class="font-mono tabular-nums text-danger">81 nœuds
+                    </td>
+                </tr>
+                <tr>
+                    <td data-label="Plateforme">Vampr</td>
+                    <td data-label="Type">App mobile (web = vitrine)</td>
+                    <td data-label="Recherche instrument + lieu">Non (appariement)</td>
+                    <td data-label="Prise de contact">Dans l’application</td>
+                    <td data-label="Accessibilité (axe, accueil)" class="font-mono tabular-nums text-accent">15 nœuds
+                    </td>
+                </tr>
+                <tr>
+                    <td data-label="Plateforme">JoinMyBand</td>
+                    <td data-label="Type">Annonces web</td>
+                    <td data-label="Recherche instrument + lieu">Basique</td>
+                    <td data-label="Prise de contact">Gratuite</td>
+                    <td data-label="Accessibilité (axe, accueil)" class="font-mono tabular-nums text-positive">0</td>
+                </tr>
+                <tr>
+                    <td data-label="Plateforme">Groupes Facebook</td>
+                    <td data-label="Type">Réseau généraliste</td>
+                    <td data-label="Recherche instrument + lieu">Non</td>
+                    <td data-label="Prise de contact">Messagerie Facebook</td>
+                    <td data-label="Accessibilité (axe, accueil)" class="text-muted">non audité</td>
+                </tr>
+                <tr class="font-medium">
+                    <td data-label="Plateforme">Giggr</td>
+                    <td data-label="Type">App web</td>
+                    <td data-label="Recherche instrument + lieu">Oui (filtres)</td>
+                    <td data-label="Prise de contact">Messagerie intégrée, gratuite</td>
+                    <td data-label="Accessibilité (axe, accueil)" class="font-mono tabular-nums text-positive">0</td>
+                </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 </section>
@@ -138,32 +267,41 @@
         <h2 class="font-display text-2xl font-medium md:text-3xl" style="letter-spacing: -0.02em">
             Synthèse et positionnement de Giggr
         </h2>
-        <p class="mt-5 max-w-[65ch] text-muted">
-            Ce que l’analyse de l’existant nous dit de la place à prendre pour Giggr.
-        </p>
         <div class="mt-8 grid gap-px border border-hairline-strong bg-hairline-strong md:grid-cols-3">
             <div class="bg-paper p-6">
                 <h3 class="label text-positive">À retenir</h3>
-                <p class="mt-3 text-muted">à compléter à partir de l’analyse.</p>
+                <ul class="mt-3 space-y-2 text-muted">
+                    <li>La recherche par instrument + localisation comme action centrale (BandMix).</li>
+                    <li>La gratuité et la simplicité (JoinMyBand).</li>
+                    <li>Le soin visuel moderne (Vampr).</li>
+                </ul>
             </div>
             <div class="bg-paper p-6">
                 <h3 class="label text-accent">À éviter</h3>
-                <p class="mt-3 text-muted">à compléter à partir de l’analyse.</p>
+                <ul class="mt-3 space-y-2 text-muted">
+                    <li>Le mur payant pour contacter et le fouillis daté (BandMix).</li>
+                    <li>L’enfermement «&#8239;app seulement&#8239;» et l’appariement opaque (Vampr).</li>
+                    <li>L’esthétique vieillissante et le modale cookies (JoinMyBand).</li>
+                    <li>La dispersion sans filtres (Facebook).</li>
+                </ul>
             </div>
             <div class="bg-paper p-6">
                 <h3 class="label">À adapter pour Giggr</h3>
-                <p class="mt-3 text-muted">à compléter à partir de l’analyse.</p>
+                <ul class="mt-3 space-y-2 text-muted">
+                    <li>Centralisation et filtres explicites (instrument, ville).</li>
+                    <li>Messagerie intégrée et gratuite.</li>
+                    <li>Accessibilité exemplaire et ancrage local, sans installation.</li>
+                </ul>
             </div>
         </div>
         <p class="mt-8 max-w-[65ch] text-muted">
-            En l’état, la mise en relation des musiciens est soit dispersée (groupes
-            Facebook, sans filtre), soit éloignée du besoin local (plateformes
-            généralistes ou anglophones). Giggr se positionne sur la
-            <strong>centralisation des profils et des annonces</strong>, le
-            <strong>filtrage par instrument et par ville</strong>, des
-            <strong>annonces typées</strong> et une <strong>messagerie intégrée</strong> —
-            des choix directement issus des besoins relevés dans la
-            <a href="recherche-utilisateur.html#personas" class="link">recherche utilisateur</a>.
+            Aucune solution ne réunit à la fois la recherche locale par instrument, la
+            prise de contact gratuite et une interface moderne et accessible&nbsp;: les
+            annonces sont soit payantes au contact (BandMix), soit datées (JoinMyBand),
+            soit enfermées dans une application au matching opaque (Vampr), soit
+            dispersées sans structure (Facebook). Giggr se positionne précisément sur
+            cette place laissée vacante — des choix directement issus des besoins relevés
+            dans la <a href="recherche-utilisateur.html#personas" class="link">recherche utilisateur</a>.
         </p>
     </div>
 </section>
