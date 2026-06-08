@@ -38,7 +38,7 @@
                   <td data-label="Sans JavaScript" class="text-muted">Nécessite JavaScript et une connexion WebSocket ; sans cela, les nouveaux messages n'arrivent pas en direct.</td>
                 </tr>
                 <tr>
-                  <td data-label="Brique">GSAP</td>
+                  <td data-label="Brique"><abbr title="GreenSock Animation Platform">GSAP</abbr></td>
                   <td data-label="Rôle dans Giggr" class="text-muted">Animations au scroll : empilement épinglé des blocs (<code class="font-mono text-sm">feature-stack</code>), carrousel.</td>
                   <td data-label="Sans JavaScript" class="text-muted">Le contenu reste lisible sans l'animation ; l'effet est aussi désactivé si <code class="font-mono text-sm">prefers-reduced-motion</code> est demandé.</td>
                 </tr>
@@ -55,7 +55,7 @@
           </h2>
           <p class="mt-5 max-w-[65ch] text-muted">
             Giggr s'appuie sur Livewire 4 pour rendre l'interface réactive sans
-            écrire d'API cliente. Quatre usages principaux :
+            écrire d'<abbr title="Application Programming Interface">API</abbr> cliente. Quatre usages principaux :
           </p>
           <ul class="mt-6 max-w-[68ch] space-y-3 text-muted">
             <li>
@@ -159,7 +159,7 @@
             <li>
               <strong class="font-medium text-ink">Menu burger</strong> : le bouton
               hamburger (Alpine) est <code class="font-mono text-sm">data-js-only</code>.
-              Sans JavaScript, une navigation de secours <strong>entièrement en CSS</strong>,
+              Sans JavaScript, une navigation de secours <strong>entièrement en <abbr title="Cascading Style Sheets">CSS</abbr></strong>,
               listée dans un <code class="font-mono text-sm">&lt;noscript&gt;</code>, prend
               le relais (liens des pages publiques, déconnexion en formulaire POST).
             </li>
@@ -189,7 +189,7 @@
             formulaires Livewire, la messagerie temps réel et les retours de chargement.
           </p>
           <p class="mt-8 max-w-[65ch] text-muted">
-            Côté mouvement, l'animation d'empilement (GSAP) lit la préférence système
+            Côté mouvement, l'animation d'empilement (<abbr title="GreenSock Animation Platform">GSAP</abbr>) lit la préférence système
             avant de s'activer : si l'utilisateur demande un mouvement réduit, ou si la
             fenêtre est trop courte, elle ne se déclenche pas et le contenu s'affiche
             normalement.

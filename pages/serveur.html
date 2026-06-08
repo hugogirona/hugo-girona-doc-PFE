@@ -6,7 +6,7 @@
                 Requêtes et temps par page
             </h2>
             <p class="mt-5 max-w-[65ch] text-muted" id="tbl-desc-1">
-                Pour chaque page clé, relevé du nombre de requêtes SQL, du temps de
+                Pour chaque page clé, relevé du nombre de requêtes <abbr title="Structured Query Language">SQL</abbr>, du temps de
                 traitement serveur et de la mémoire, lus dans
                 <strong>Laravel Debugbar</strong> (le seul profileur embarqué dans Giggr).
                 Mesures faites en local (<code class="font-mono text-sm">artisan serve</code>),
@@ -15,11 +15,11 @@
             </p>
             <div class="mt-8 overflow-x-auto border border-hairline-strong">
                 <table class="data-table" aria-describedby="tbl-desc-1">
-                    <caption class="sr-only">Requêtes SQL, temps serveur et mémoire par page</caption>
+                    <caption class="sr-only">Requêtes <abbr title="Structured Query Language">SQL</abbr>, temps serveur et mémoire par page</caption>
                     <thead>
                     <tr>
                         <th scope="col">Page</th>
-                        <th scope="col">URL</th>
+                        <th scope="col"><abbr title="Uniform Resource Locator">URL</abbr></th>
                         <th scope="col">Requêtes</th>
                         <th scope="col">Temps serveur</th>
                         <th scope="col">Mémoire</th>
@@ -91,10 +91,10 @@
     <section>
         <div class="mx-auto max-w-6xl px-6 md:px-8 py-16 md:py-20">
             <h2 class="font-display text-2xl font-medium md:text-3xl" style="letter-spacing: -0.02em">
-                Problèmes N+1 maîtrisés
+                Problèmes <abbr title="une requête supplémentaire par enregistrement lié">N+1</abbr> maîtrisés
             </h2>
             <p class="mt-5 max-w-[65ch] text-muted">
-                Un problème N+1 survient quand une requête principale en déclenche une
+                Un problème <abbr title="une requête supplémentaire par enregistrement lié">N+1</abbr> survient quand une requête principale en déclenche une
                 supplémentaire par enregistrement lié : par exemple une requête par
                 profil pour aller chercher sa ville, ses instruments ou ses genres. Sur
                 la grille d'exploration (douze profils), ce serait douze requêtes de
