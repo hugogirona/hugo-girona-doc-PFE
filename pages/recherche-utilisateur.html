@@ -1,15 +1,33 @@
-{{#> page-layout title="Recherche utilisateur" description="Recherche utilisateur de Giggr : personas et parcours qui cadrent les choix de conception et préparent les tests utilisateurs." num="07" heading="Recherche utilisateur" lede="Recherche utilisateur en amont : personas et parcours qui cadrent les choix de conception et les tests." prevHref="opquast.html" prevNum="06" prevTitle="Audit Opquast" nextHref="tests-utilisateurs.html" nextNum="08" nextTitle="Tests utilisateurs" }}
+{{#> page-layout title="Recherche utilisateur" description="Recherche utilisateur de Giggr : démarche, personas (besoins et frustrations), parcours et synthèse besoins → fonctionnalités qui cadrent la conception et préparent les tests utilisateurs." num="07" heading="Recherche utilisateur" lede="Recherche utilisateur en amont : démarche, personas, parcours et synthèse besoins → réponses de Giggr qui cadrent les choix de conception et les tests." prevHref="opquast.html" prevNum="06" prevTitle="Audit Opquast" nextHref="tests-utilisateurs.html" nextNum="08" nextTitle="Tests utilisateurs" }}
 
 <section class="border-b border-hairline">
+        <div class="mx-auto max-w-6xl px-6 md:px-8 py-16 md:py-20">
+            <h2 class="font-display text-2xl font-medium md:text-3xl" style="letter-spacing: -0.02em">
+                Démarche
+            </h2>
+            <p class="mt-5 max-w-[65ch] text-muted">
+                Les personas et parcours ci-dessous sont des hypothèses de travail,
+                construites à partir de l'analyse du besoin — des musiciens amateurs qui
+                veulent former ou rejoindre un groupe — et des limites des solutions
+                existantes, principalement les groupes Facebook et les petites annonces,
+                où l'information est dispersée, non filtrable et sans mise en relation
+                cadrée. Ils servent à arbitrer les choix de conception (fonctionnalités,
+                vocabulaire, parcours) et de scénarios de référence aux
+                <a href="tests-utilisateurs.html" class="link">tests utilisateurs</a>,
+                qui les confrontent à de vrais usages.
+            </p>
+        </div>
+    </section>
+
+    <section class="border-b border-hairline">
         <div class="mx-auto max-w-6xl px-6 md:px-8 py-16 md:py-20">
             <h2 class="font-display text-2xl font-medium md:text-3xl" style="letter-spacing: -0.02em">
                 Personas
             </h2>
             <p class="mt-5 max-w-[65ch] text-muted">
-                Trois personas synthétisent les profils visés par Giggr. Ils servent
-                de référence pour arbitrer les fonctionnalités, le vocabulaire et les
-                parcours décrits plus bas. Chaque persona porte un instrument, un
-                contexte d'usage et un objectif unique.
+                Trois personas synthétisent les profils visés par Giggr. Chacun porte un
+                contexte d'usage, un objectif, mais aussi les frustrations vécues
+                aujourd'hui et les besoins auxquels l'outil doit répondre.
             </p>
 
             <div class="mt-8 grid gap-px border border-hairline-strong bg-hairline-strong md:grid-cols-3">
@@ -39,6 +57,21 @@
                                 Trouver un groupe à rejoindre.
                             </dd>
                         </div>
+                        <div>
+                            <dt class="label">Frustrations</dt>
+                            <dd class="mt-1 leading-relaxed text-muted">
+                                Les annonces sont éparpillées sur des groupes Facebook,
+                                sans filtre par instrument ni par ville ; difficile de
+                                savoir qui recrute vraiment.
+                            </dd>
+                        </div>
+                        <div>
+                            <dt class="label">Besoins</dt>
+                            <dd class="mt-1 leading-relaxed text-muted">
+                                Repérer vite les groupes qui cherchent un guitariste près
+                                de chez elle, et les contacter sans donner son numéro.
+                            </dd>
+                        </div>
                     </dl>
                 </article>
 
@@ -58,13 +91,28 @@
                         <div>
                             <dt class="label">Contexte</dt>
                             <dd class="mt-1 leading-relaxed text-muted">
-                                Cherche des musiciens pour jouer régulièrement.
+                                Batteur expérimenté, monte un projet et cherche des
+                                musiciens pour jouer régulièrement.
                             </dd>
                         </div>
                         <div>
                             <dt class="label">Objectif</dt>
                             <dd class="mt-1 leading-relaxed text-muted">
                                 Publier une annonce et recruter des musiciens.
+                            </dd>
+                        </div>
+                        <div>
+                            <dt class="label">Frustrations</dt>
+                            <dd class="mt-1 leading-relaxed text-muted">
+                                Quand il poste ailleurs, l'annonce est vite noyée dans le
+                                fil et il reçoit beaucoup de contacts hors sujet.
+                            </dd>
+                        </div>
+                        <div>
+                            <dt class="label">Besoins</dt>
+                            <dd class="mt-1 leading-relaxed text-muted">
+                                Publier une annonce claire (instruments recherchés, ville)
+                                et ne recevoir que des contacts pertinents.
                             </dd>
                         </div>
                     </dl>
@@ -86,7 +134,8 @@
                         <div>
                             <dt class="label">Contexte</dt>
                             <dd class="mt-1 leading-relaxed text-muted">
-                                Cherche des musiciens pour former un groupe de pop.
+                                Chanteuse, veut former un groupe de pop et part de zéro
+                                côté musiciens.
                             </dd>
                         </div>
                         <div>
@@ -95,13 +144,27 @@
                                 Trouver des musiciens et former un groupe.
                             </dd>
                         </div>
+                        <div>
+                            <dt class="label">Frustrations</dt>
+                            <dd class="mt-1 leading-relaxed text-muted">
+                                Aucun endroit centralisé pour trouver des musiciens par
+                                instrument ; elle doit recouper plusieurs plateformes.
+                            </dd>
+                        </div>
+                        <div>
+                            <dt class="label">Besoins</dt>
+                            <dd class="mt-1 leading-relaxed text-muted">
+                                Parcourir des profils filtrés par instrument et par ville,
+                                et entamer la conversation facilement.
+                            </dd>
+                        </div>
                     </dl>
                 </article>
             </div>
         </div>
     </section>
 
-    <section>
+    <section class="border-b border-hairline">
         <div class="mx-auto max-w-6xl px-6 md:px-8 py-16 md:py-20">
             <h2 class="font-display text-2xl font-medium md:text-3xl" style="letter-spacing: -0.02em">
                 Parcours utilisateurs
@@ -226,6 +289,48 @@
                         </li>
                     </ol>
                 </article>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="mx-auto max-w-6xl px-6 md:px-8 py-16 md:py-20">
+            <h2 class="font-display text-2xl font-medium md:text-3xl" style="letter-spacing: -0.02em">
+                Des besoins aux réponses de Giggr
+            </h2>
+            <p class="mt-5 max-w-[65ch] text-muted" id="tbl-desc-besoins">
+                Les frustrations communes aux trois personas se traduisent directement
+                en fonctionnalités de Giggr. C'est le fil qui relie la recherche aux
+                choix de conception.
+            </p>
+            <div class="mt-8 overflow-x-auto border border-hairline-strong">
+                <table class="data-table" aria-describedby="tbl-desc-besoins">
+                    <caption class="sr-only">Problèmes identifiés et réponses apportées par Giggr</caption>
+                    <thead>
+                    <tr>
+                        <th scope="col">Problème identifié</th>
+                        <th scope="col">Réponse de Giggr</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td data-label="Problème identifié">Annonces et profils éparpillés sur des groupes Facebook</td>
+                        <td data-label="Réponse de Giggr">Une page Explorer qui centralise musiciens et annonces</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Problème identifié">Impossible de filtrer par instrument ou par ville</td>
+                        <td data-label="Réponse de Giggr">Des filtres par instrument et par localité</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Problème identifié">Intentions floues, contacts hors sujet</td>
+                        <td data-label="Réponse de Giggr">Des annonces typées (« je cherche » / « je propose ») avec instruments et ville</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Problème identifié">Devoir donner ses coordonnées pour être contacté</td>
+                        <td data-label="Réponse de Giggr">Une messagerie intégrée, sans partage de numéro</td>
+                    </tr>
+                    </tbody>
+                </table>
             </div>
 
             <p class="mt-8 text-sm text-muted">
