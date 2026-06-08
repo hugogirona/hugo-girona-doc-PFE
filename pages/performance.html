@@ -1,4 +1,4 @@
-{{#> page-layout title="Performance et accessibilité" description="Audit Lighthouse de Giggr (performance, accessibilité, bonnes pratiques, SEO) sur desktop et mobile, Web Vitals et contrôle des contrastes WCAG AA." num="02" heading="Performance et accessibilité" lede="Audit Lighthouse de Giggr sur desktop et mobile : scores, Web Vitals et contrôle des contrastes de la palette au regard de WCAG AA." prevHref="code-html.html" prevNum="01" prevTitle="Qualité du code HTML" nextHref="accessibilite.html" nextNum="03" nextTitle="Accessibilité" }}
+{{#> page-layout title="Performance et accessibilité" description="Audit Lighthouse de Giggr (performance, accessibilité, bonnes pratiques, SEO) sur desktop et mobile, Web Vitals et contrôle des contrastes WCAG AA." num="02" heading="Performance et accessibilité" lede="Audit Lighthouse de Giggr sur desktop et mobile : scores, Web Vitals et contrôle des contrastes de la palette au regard de WCAG AA." prevHref="code-html.html" prevNum="01" prevTitle="Qualité du code HTML" nextHref="accessibilite.html" nextNum="03" nextTitle="Accessibilité" }}
 
 <section class="border-b border-hairline">
         <div class="mx-auto max-w-6xl px-6 md:px-8 py-16 md:py-20">
@@ -6,8 +6,8 @@
                 Lighthouse
             </h2>
             <p class="mt-5 max-w-[65ch] text-muted" id="tbl-desc-1">
-                Audit Lighthouse de la page d'accueil sur staging.giggr.be, avec les deux
-                profils : desktop et mobile (mobile bridé en 4G lente, c'est le plus
+                Audit Lighthouse de la page d’accueil sur staging.giggr.be, avec les deux
+                profils : desktop et mobile (mobile bridé en 4G lente, c’est le plus
                 sévère). Quatre catégories sont notées sur 100.
             </p>
             <div class="mt-8 overflow-x-auto border border-hairline-strong">
@@ -52,33 +52,33 @@
             <figure class="capture mt-8">
                 <img
                     src="../src/img/lighthouse-desktop.webp"
-                    alt="Rapport Lighthouse desktop de la page d'accueil de Giggr."
+                    alt="Rapport Lighthouse desktop de la page d’accueil de Giggr."
                     width="2000"
                     height="222"
                     class="w-full"
                     loading="lazy"
                 />
                 <figcaption class="capture__caption">
-                    Lighthouse desktop, page d'accueil : 100 dans les quatre catégories.
+                    Lighthouse desktop, page d’accueil : 100 dans les quatre catégories.
                 </figcaption>
             </figure>
             <figure class="capture mt-6">
                 <img
                     src="../src/img/lighthouse-mobile.webp"
-                    alt="Rapport Lighthouse mobile de la page d'accueil de Giggr."
+                    alt="Rapport Lighthouse mobile de la page d’accueil de Giggr."
                     width="2000"
                     height="222"
                     class="w-full"
                     loading="lazy"
                 />
                 <figcaption class="capture__caption">
-                    Lighthouse mobile : accessibilité, bonnes pratiques et <abbr title="Search Engine Optimization">SEO</abbr> à 100 ; performance à 86.
+                    Lighthouse mobile : accessibilité, bonnes pratiques et <abbr title="Search Engine Optimization">SEO</abbr> à 100 ; performance à 86.
                 </figcaption>
             </figure>
             <p class="mt-6 max-w-[65ch] text-muted">
                 Accessibilité, bonnes pratiques et <abbr title="Search Engine Optimization">SEO</abbr> sont à <strong>100 sur les deux
                 profils</strong>, et la performance desktop est parfaite. Côté mobile, la
-                performance atteint <strong>86</strong>, avec un Speed Index de 1,6 s et un
+                performance atteint <strong>86</strong>, avec un Speed Index de 1,6 s et un
                 temps de blocage nul. Il subsiste un décalage de mise en page résiduel
                 (<abbr title="Cumulative Layout Shift">CLS</abbr> 0,141, encore au-dessus du seuil), à investiguer.
             </p>
@@ -109,21 +109,21 @@
                     <tbody>
                     <tr>
                         <td data-label="Métrique">First Contentful Paint</td>
-                        <td data-label="Desktop" class="font-mono tabular-nums">0,3 s</td>
-                        <td data-label="Mobile" class="font-mono tabular-nums">1,3 s</td>
-                        <td data-label="Seuil" class="font-mono text-sm">&lt; 1,8 s</td>
+                        <td data-label="Desktop" class="font-mono tabular-nums">0,3 s</td>
+                        <td data-label="Mobile" class="font-mono tabular-nums">1,3 s</td>
+                        <td data-label="Seuil" class="font-mono text-sm">&lt; 1,8 s</td>
                     </tr>
                     <tr>
                         <td data-label="Métrique">Largest Contentful Paint</td>
-                        <td data-label="Desktop" class="font-mono tabular-nums">0,6 s</td>
-                        <td data-label="Mobile" class="font-mono tabular-nums">3,4 s</td>
-                        <td data-label="Seuil" class="font-mono text-sm">&lt; 2,5 s</td>
+                        <td data-label="Desktop" class="font-mono tabular-nums">0,6 s</td>
+                        <td data-label="Mobile" class="font-mono tabular-nums">3,4 s</td>
+                        <td data-label="Seuil" class="font-mono text-sm">&lt; 2,5 s</td>
                     </tr>
                     <tr>
                         <td data-label="Métrique">Total Blocking Time</td>
-                        <td data-label="Desktop" class="font-mono tabular-nums">0 ms</td>
-                        <td data-label="Mobile" class="font-mono tabular-nums">0 ms</td>
-                        <td data-label="Seuil" class="font-mono text-sm">&lt; 200 ms</td>
+                        <td data-label="Desktop" class="font-mono tabular-nums">0 ms</td>
+                        <td data-label="Mobile" class="font-mono tabular-nums">0 ms</td>
+                        <td data-label="Seuil" class="font-mono text-sm">&lt; 200 ms</td>
                     </tr>
                     <tr>
                         <td data-label="Métrique">Cumulative Layout Shift</td>
@@ -133,9 +133,9 @@
                     </tr>
                     <tr>
                         <td data-label="Métrique">Speed Index</td>
-                        <td data-label="Desktop" class="font-mono tabular-nums">0,5 s</td>
-                        <td data-label="Mobile" class="font-mono tabular-nums">1,6 s</td>
-                        <td data-label="Seuil" class="font-mono text-sm">&lt; 3,4 s</td>
+                        <td data-label="Desktop" class="font-mono tabular-nums">0,5 s</td>
+                        <td data-label="Mobile" class="font-mono tabular-nums">1,6 s</td>
+                        <td data-label="Seuil" class="font-mono text-sm">&lt; 3,4 s</td>
                     </tr>
                     </tbody>
                 </table>
@@ -143,7 +143,7 @@
             <p class="mt-6 max-w-[65ch] text-muted">
                 Le temps de blocage est nul (aucun JavaScript long) et le Speed Index est
                 désormais bon sur les deux profils. Restent hors seuil, côté mobile
-                uniquement, le <abbr title="Largest Contentful Paint">LCP</abbr> (3,4 s) et le <abbr title="Cumulative Layout Shift">CLS</abbr> résiduel (0,141), liés au chargement
+                uniquement, le <abbr title="Largest Contentful Paint">LCP</abbr> (3,4 s) et le <abbr title="Cumulative Layout Shift">CLS</abbr> résiduel (0,141), liés au chargement
                 et à la stabilité des visuels au-dessus de la ligne de flottaison.
             </p>
         </div>
@@ -156,10 +156,10 @@
             </h2>
             <p class="mt-5 max-w-[65ch] text-muted" id="tbl-desc-3">
                 Ratios de contraste de la palette de Giggr au regard de
-                <strong><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> AA</strong> : au moins <code class="font-mono text-sm">4.5:1</code>
+                <strong><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> AA</strong> : au moins <code class="font-mono text-sm">4.5:1</code>
                 pour le texte courant et <code class="font-mono text-sm">3:1</code> pour le
-                grand texte. L'audit Lighthouse, qui inclut le contraste, place
-                l'accessibilité à 100 ; le détail des couples utilisés est ci-dessous.
+                grand texte. L’audit Lighthouse, qui inclut le contraste, place
+                l’accessibilité à 100 ; le détail des couples utilisés est ci-dessous.
             </p>
             <div class="mt-8 overflow-x-auto border border-hairline-strong">
                 <table class="data-table" aria-describedby="tbl-desc-3">
@@ -221,10 +221,10 @@
                 </table>
             </div>
             <p class="mt-6 max-w-[65ch] text-muted">
-                L'ensemble des textes porteurs d'information passe AA. Deux couples sont à
-                surveiller : l'accent corail sur fond foncé, réservé au grand texte, et le
+                L’ensemble des textes porteurs d’information passe AA. Deux couples sont à
+                surveiller : l’accent corail sur fond foncé, réservé au grand texte, et le
                 texte indicatif des champs (placeholder), sous le seuil mais non porteur
-                d'information essentielle.
+                d’information essentielle.
             </p>
         </div>
     </section>

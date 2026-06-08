@@ -1,22 +1,22 @@
-{{#> page-layout title="Accessibilité" description="Accessibilité de Giggr : audit automatisé axe-core WCAG 2.2 AA sur les pages publiques (0 violation), niveau visé AA et faux positifs documentés." num="03" heading="Accessibilité" lede="Niveau d'accessibilité visé AA : audit automatisé axe-core WCAG 2.2 sur les pages publiques, aucune violation et faux positifs documentés." prevHref="performance.html" prevNum="02" prevTitle="Performance" nextHref="serveur.html" nextNum="04" nextTitle="Performances serveur" }}
+{{#> page-layout title="Accessibilité" description="Accessibilité de Giggr : audit automatisé axe-core WCAG 2.2 AA sur les pages publiques (0 violation), niveau visé AA et faux positifs documentés." num="03" heading="Accessibilité" lede="Niveau d’accessibilité visé AA : audit automatisé axe-core WCAG 2.2 sur les pages publiques, aucune violation et faux positifs documentés." prevHref="performance.html" prevNum="02" prevTitle="Performance" nextHref="serveur.html" nextNum="04" nextTitle="Performances serveur" }}
 
 <section class="border-b border-hairline">
         <div class="mx-auto max-w-6xl px-6 md:px-8 py-16 md:py-20">
             <div class="flex flex-wrap items-start justify-between gap-3">
                 <h2 class="font-display text-2xl font-medium md:text-3xl" style="letter-spacing: -0.02em">
-                    Niveau visé : AA
+                    Niveau visé : AA
                 </h2>
             </div>
             <p class="mt-5 max-w-[65ch] text-muted">
-                La cible d'accessibilité fixée pour les pages publiques de Giggr est
+                La cible d’accessibilité fixée pour les pages publiques de Giggr est
                 la conformité aux
                 <span class="font-mono text-sm"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.2</span> niveau AA. Ce niveau
-                couvre les critères A et AA : contrastes suffisants, navigation au
+                couvre les critères A et AA : contrastes suffisants, navigation au
                 clavier, libellés de formulaires, alternatives textuelles et ordre
                 de lecture cohérent. Le respect de cette cible est vérifié par un
-                audit automatisé <abbr title="Accessibility Engine, moteur d'audit de Deque">axe-core</abbr> (le moteur de référence, aussi
-                utilisé par Lighthouse) et corroboré par le score d'accessibilité
-                Lighthouse ; les relevés sont consignés ci-dessous.
+                audit automatisé <abbr title="Accessibility Engine, moteur d’audit de Deque">axe-core</abbr> (le moteur de référence, aussi
+                utilisé par Lighthouse) et corroboré par le score d’accessibilité
+                Lighthouse ; les relevés sont consignés ci-dessous.
             </p>
         </div>
     </section>
@@ -29,12 +29,12 @@
                 </h2>
             </div>
             <p class="mt-5 max-w-[65ch] text-muted" id="tbl-desc-axe">
-                <abbr title="Accessibility Engine, moteur d'audit de Deque">axe-core</abbr> 4.10.2 est exécuté via Playwright sur les six pages
+                <abbr title="Accessibility Engine, moteur d’audit de Deque">axe-core</abbr> 4.10.2 est exécuté via Playwright sur les six pages
                 publiques de <span class="font-mono text-sm">staging.giggr.be</span>, avec
                 les jeux de règles
                 <span class="font-mono text-sm"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.0, 2.1 et 2.2</span>
                 niveaux A et AA. Chaque règle non respectée est une
-                <em>violation</em> ; les contrôles que l'outil ne peut pas trancher
+                <em>violation</em> ; les contrôles que l’outil ne peut pas trancher
                 automatiquement sont marqués <em>à vérifier</em> et examinés à la main
                 (voir les faux positifs).
             </p>
@@ -97,14 +97,14 @@
             </div>
             <p class="mt-8 max-w-[65ch] text-muted">
                 Les six pages ne présentent aucune violation. Un premier passage avait
-                relevé un seul écart, sur la page <span class="font-mono text-sm">/explorer</span> :
-                le compteur d'onglet <span class="font-mono text-sm">(50)</span>, en gris
+                relevé un seul écart, sur la page <span class="font-mono text-sm">/explorer</span> :
+                le compteur d’onglet <span class="font-mono text-sm">(50)</span>, en gris
                 <span class="font-mono text-sm">#969696</span> sur
-                <span class="font-mono text-sm">#ededed</span>, n'offrait qu'un contraste de
+                <span class="font-mono text-sm">#ededed</span>, n’offrait qu’un contraste de
                 <span class="font-mono text-sm">2,52:1</span> pour un seuil AA de
                 <span class="font-mono text-sm">4,5:1</span>. Il a été corrigé en retirant
-                l'opacité appliquée au compteur, ce qui porte son contraste à environ
-                <span class="font-mono text-sm">5,7:1</span> ; le contrôle suivant ne
+                l’opacité appliquée au compteur, ce qui porte son contraste à environ
+                <span class="font-mono text-sm">5,7:1</span> ; le contrôle suivant ne
                 relève plus aucune violation.
             </p>
         </div>
@@ -117,9 +117,9 @@
             </h2>
             <p class="mt-5 max-w-[65ch] text-muted" id="tbl-desc-1">
                 Certains avertissements remontés par les outils ne correspondent pas
-                à un réel problème d'accessibilité. Chaque écart connu est justifié
-                ici : la règle visée, l'outil qui la signale et la raison pour
-                laquelle l'alerte est considérée comme un faux positif.
+                à un réel problème d’accessibilité. Chaque écart connu est justifié
+                ici : la règle visée, l’outil qui la signale et la raison pour
+                laquelle l’alerte est considérée comme un faux positif.
             </p>
             <div class="mt-8 overflow-x-auto border border-hairline-strong">
                 <table class="data-table" aria-describedby="tbl-desc-1">
@@ -128,22 +128,22 @@
                     <tr>
                         <th scope="col">Règle</th>
                         <th scope="col">Outil</th>
-                        <th scope="col">Pourquoi c'est un faux positif</th>
+                        <th scope="col">Pourquoi c’est un faux positif</th>
                     </tr>
                     </thead>
                     <tbody>
                     <tr>
-                        <td data-label="Règle"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 1.4.3 — contraste (<span class="font-mono text-sm">color-contrast</span>), titre « partage »</td>
+                        <td data-label="Règle"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 1.4.3 — contraste (<span class="font-mono text-sm">color-contrast</span>), titre « partage »</td>
                         <td data-label="Outil">axe-core</td>
                         <td data-label="Pourquoi c'est un faux positif">
-                            Sur le titre animé de l'accueil
+                            Sur le titre animé de l’accueil
                             (<span class="font-mono text-sm">.hero-underline</span>), axe
                             ne peut pas déterminer la couleur de fond à cause du
                             pseudo-élément <span class="font-mono text-sm">::after</span> du
-                            soulignement. Le texte est de l'encre foncée
+                            soulignement. Le texte est de l’encre foncée
                             (<span class="font-mono text-sm">#0a0a0a</span>) sur fond papier
                             (<span class="font-mono text-sm">#fafaf9</span>), soit un
-                            contraste d'environ <span class="font-mono text-sm">18:1</span> :
+                            contraste d’environ <span class="font-mono text-sm">18:1</span> :
                             aucun défaut réel.
                         </td>
                     </tr>
@@ -152,10 +152,10 @@
                         <td data-label="Outil">axe-core</td>
                         <td data-label="Pourquoi c'est un faux positif">
                             Sur le champ <span class="font-mono text-sm">message</span> du
-                            formulaire de contact, axe signale un fond « partiellement
-                            masqué par un autre élément » et ne peut donc pas le calculer.
+                            formulaire de contact, axe signale un fond « partiellement
+                            masqué par un autre élément » et ne peut donc pas le calculer.
                             Le <span class="font-mono text-sm">textarea</span> a un fond
-                            blanc et un texte foncé : le contraste est conforme.
+                            blanc et un texte foncé : le contraste est conforme.
                         </td>
                     </tr>
                     </tbody>
@@ -164,7 +164,7 @@
             <p class="mt-8 text-sm text-muted">
                 Voir aussi le
                 <a href="performance.html#contrastes" class="link">contrôle des contrastes de la palette</a>
-                et le score d'accessibilité Lighthouse (100 / 100).
+                et le score d’accessibilité Lighthouse (100 / 100).
             </p>
         </div>
     </section>

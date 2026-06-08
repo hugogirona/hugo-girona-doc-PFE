@@ -1,4 +1,4 @@
-{{#> page-layout title="JavaScript et dégradation gracieuse" description="JavaScript de Giggr : composants Livewire, interactions Alpine, messagerie temps réel via Laravel Echo et Reverb, animations GSAP, et comportement sans JavaScript." num="10" heading="JavaScript et dégradation gracieuse" lede="Rôle de JavaScript dans Giggr : réactivité Livewire, état Alpine, messagerie temps réel (Echo et Reverb), animations GSAP, et comportement sans JavaScript." prevHref="tests-utilisateurs.html" prevNum="09" prevTitle="Tests utilisateurs" }}
+{{#> page-layout title="JavaScript et dégradation gracieuse" description="JavaScript de Giggr : composants Livewire, interactions Alpine, messagerie temps réel via Laravel Echo et Reverb, animations GSAP, et comportement sans JavaScript." num="10" heading="JavaScript et dégradation gracieuse" lede="Rôle de JavaScript dans Giggr : réactivité Livewire, état Alpine, messagerie temps réel (Echo et Reverb), animations GSAP, et comportement sans JavaScript." prevHref="tests-utilisateurs.html" prevNum="09" prevTitle="Tests utilisateurs" }}
 
 <section class="border-b border-hairline">
         <div class="mx-auto max-w-6xl px-6 md:px-8 py-16 md:py-20">
@@ -6,9 +6,9 @@
             Les briques JavaScript de Giggr
           </h2>
           <p class="mt-5 max-w-[65ch] text-muted" id="tbl-desc-1">
-            L'interface de Giggr est rendue côté serveur (Blade), puis enrichie par
+            L’interface de Giggr est rendue côté serveur (Blade), puis enrichie par
             JavaScript. Quatre briques se partagent ce rôle. Le tableau indique,
-            pour chacune, sa fonction dans l'application et ce qui reste accessible
+            pour chacune, sa fonction dans l’application et ce qui reste accessible
             sans JavaScript.
           </p>
           <div class="mt-8 overflow-x-auto border border-hairline-strong">
@@ -24,23 +24,23 @@
               <tbody>
                 <tr>
                   <td data-label="Brique">Livewire 4</td>
-                  <td data-label="Rôle dans Giggr" class="text-muted">Composants dynamiques rendus côté serveur : filtres d'exploration, formulaires, navigation <code class="font-mono text-sm">wire:navigate</code>, états de chargement.</td>
+                  <td data-label="Rôle dans Giggr" class="text-muted">Composants dynamiques rendus côté serveur : filtres d’exploration, formulaires, navigation <code class="font-mono text-sm">wire:navigate</code>, états de chargement.</td>
                   <td data-label="Sans JavaScript" class="text-muted">Le contenu Blade reste consultable et les liens fonctionnent en navigation classique. Les mises à jour dynamiques (filtres, formulaires) nécessitent JavaScript.</td>
                 </tr>
                 <tr>
                   <td data-label="Brique">Alpine.js</td>
-                  <td data-label="Rôle dans Giggr" class="text-muted">État d'interface côté client (embarqué par Livewire) : panneaux ouverts ou fermés, modes édition, carrousel d'accueil.</td>
-                  <td data-label="Sans JavaScript" class="text-muted">Les éléments restent affichés dans leur état initial ; les bascules purement visuelles ne répondent plus.</td>
+                  <td data-label="Rôle dans Giggr" class="text-muted">État d’interface côté client (embarqué par Livewire) : panneaux ouverts ou fermés, modes édition, carrousel d’accueil.</td>
+                  <td data-label="Sans JavaScript" class="text-muted">Les éléments restent affichés dans leur état initial ; les bascules purement visuelles ne répondent plus.</td>
                 </tr>
                 <tr>
                   <td data-label="Brique">Laravel Echo + Reverb</td>
-                  <td data-label="Rôle dans Giggr" class="text-muted">Messagerie en temps réel : diffusion de l'événement <code class="font-mono text-sm">MessageSent</code> sur un canal privé de conversation, réception par WebSocket.</td>
-                  <td data-label="Sans JavaScript" class="text-muted">Nécessite JavaScript et une connexion WebSocket ; sans cela, les nouveaux messages n'arrivent pas en direct.</td>
+                  <td data-label="Rôle dans Giggr" class="text-muted">Messagerie en temps réel : diffusion de l’événement <code class="font-mono text-sm">MessageSent</code> sur un canal privé de conversation, réception par WebSocket.</td>
+                  <td data-label="Sans JavaScript" class="text-muted">Nécessite JavaScript et une connexion WebSocket ; sans cela, les nouveaux messages n’arrivent pas en direct.</td>
                 </tr>
                 <tr>
                   <td data-label="Brique"><abbr title="GreenSock Animation Platform">GSAP</abbr></td>
-                  <td data-label="Rôle dans Giggr" class="text-muted">Animations au scroll : empilement épinglé des blocs (<code class="font-mono text-sm">feature-stack</code>), carrousel.</td>
-                  <td data-label="Sans JavaScript" class="text-muted">Le contenu reste lisible sans l'animation ; l'effet est aussi désactivé si <code class="font-mono text-sm">prefers-reduced-motion</code> est demandé.</td>
+                  <td data-label="Rôle dans Giggr" class="text-muted">Animations au scroll : empilement épinglé des blocs (<code class="font-mono text-sm">feature-stack</code>), carrousel.</td>
+                  <td data-label="Sans JavaScript" class="text-muted">Le contenu reste lisible sans l’animation ; l’effet est aussi désactivé si <code class="font-mono text-sm">prefers-reduced-motion</code> est demandé.</td>
                 </tr>
               </tbody>
             </table>
@@ -54,28 +54,28 @@
             Réactivité côté serveur (Livewire)
           </h2>
           <p class="mt-5 max-w-[65ch] text-muted">
-            Giggr s'appuie sur Livewire 4 pour rendre l'interface réactive sans
-            écrire d'<abbr title="Application Programming Interface">API</abbr> cliente. Quatre usages principaux :
+            Giggr s’appuie sur Livewire 4 pour rendre l’interface réactive sans
+            écrire d’<abbr title="Application Programming Interface">API</abbr> cliente. Quatre usages principaux :
           </p>
           <ul class="mt-6 max-w-[68ch] space-y-3 text-muted">
             <li>
-              <span class="font-mono text-sm text-ink">wire:navigate</span> : navigation
+              <span class="font-mono text-sm text-ink">wire:navigate</span> : navigation
               de type application (sans rechargement complet) sur les liens du site.
               Sans JavaScript, ces liens redeviennent une navigation classique.
             </li>
             <li>
-              <span class="font-mono text-sm text-ink">wire:model.live</span> : filtres
+              <span class="font-mono text-sm text-ink">wire:model.live</span> : filtres
               en direct, notamment le tiroir de filtres de la page Explorer
               (<code class="font-mono text-sm">explore/filter-drawer</code>) et le
               sélecteur de localité.
             </li>
             <li>
-              <span class="font-mono text-sm text-ink">wire:submit</span> : formulaires
-              (paramètres, profil, annonce, composition d'un message) traités côté
+              <span class="font-mono text-sm text-ink">wire:submit</span> : formulaires
+              (paramètres, profil, annonce, composition d’un message) traités côté
               serveur sans rechargement.
             </li>
             <li>
-              <span class="font-mono text-sm text-ink">wire:loading</span> : retours
+              <span class="font-mono text-sm text-ink">wire:loading</span> : retours
               visuels pendant les requêtes (désactivation de bouton, indicateur de
               chargement).
             </li>
@@ -88,7 +88,7 @@
               <source src="../src/video/explore-filter.webm" type="video/webm" />
             </video>
             <figcaption class="capture__caption">
-              Filtre Explorer en direct : ouverture du tiroir, sélection d'instruments et de genres, puis application. Résultats mis à jour par Livewire sans rechargement.
+              Filtre Explorer en direct : ouverture du tiroir, sélection d’instruments et de genres, puis application. Résultats mis à jour par Livewire sans rechargement.
             </figcaption>
           </figure>
         </div>
@@ -98,23 +98,23 @@
         <div class="mx-auto max-w-6xl px-6 md:px-8 py-16 md:py-20">
           <div class="flex flex-wrap items-start justify-between gap-3">
             <h2 class="font-display text-2xl font-medium md:text-3xl" style="letter-spacing: -0.02em">
-              Temps réel : la messagerie
+              Temps réel : la messagerie
             </h2>
             <span class="chip">à compléter</span>
           </div>
           <p class="mt-5 max-w-[65ch] text-muted">
-            La messagerie fonctionne en temps réel. À l'envoi, l'action serveur
+            La messagerie fonctionne en temps réel. À l’envoi, l’action serveur
             <code class="font-mono text-sm">SendMessage</code> diffuse un événement
             <code class="font-mono text-sm">MessageSent</code> sur un canal privé de
             conversation (<code class="font-mono text-sm">ConversationChannel</code>).
             Côté client, Laravel Echo, connecté au serveur Reverb par WebSocket,
-            reçoit l'événement et met à jour le fil de discussion
+            reçoit l’événement et met à jour le fil de discussion
             (<code class="font-mono text-sm">thread-messages</code>) sans rechargement.
           </p>
           <figure class="capture mt-8">
             <div class="capture__frame">Capture à venir</div>
             <figcaption class="capture__caption">
-              Réception d'un message en direct (Echo et Reverb). Capture à intégrer.
+              Réception d’un message en direct (Echo et Reverb). Capture à intégrer.
             </figcaption>
           </figure>
         </div>
@@ -126,14 +126,14 @@
             Dégradation gracieuse et mouvement
           </h2>
           <p class="mt-5 max-w-[65ch] text-muted">
-            Le contenu de Giggr est rendu côté serveur en Blade : pages, profils et
+            Le contenu de Giggr est rendu côté serveur en Blade : pages, profils et
             annonces restent consultables sans JavaScript, et la navigation par liens
-            fonctionne. JavaScript ajoute la réactivité par-dessus, et l'application
+            fonctionne. JavaScript ajoute la réactivité par-dessus, et l’application
             prévoit explicitement son absence.
           </p>
           <p class="mt-5 max-w-[65ch] text-muted">
-            Le mécanisme est systématique : tout élément qui dépend de JavaScript porte
-            l'attribut <code class="font-mono text-sm">data-js-only</code>, et un
+            Le mécanisme est systématique : tout élément qui dépend de JavaScript porte
+            l’attribut <code class="font-mono text-sm">data-js-only</code>, et un
             <code class="font-mono text-sm">&lt;noscript&gt;</code> le masque quand
             JavaScript est absent. Un équivalent statique prend alors le relais.
           </p>
@@ -157,41 +157,41 @@
 <span class="line"><span style="color:#24292E">&#x3C;/</span><span style="color:#22863A">noscript</span><span style="color:#24292E">&gt;</span></span></code></pre>
           <ul class="mt-8 max-w-[68ch] space-y-3 text-muted">
             <li>
-              <strong class="font-medium text-ink">Menu burger</strong> : le bouton
+              <strong class="font-medium text-ink">Menu burger</strong> : le bouton
               hamburger (Alpine) est <code class="font-mono text-sm">data-js-only</code>.
               Sans JavaScript, une navigation de secours <strong>entièrement en <abbr title="Cascading Style Sheets">CSS</abbr></strong>,
               listée dans un <code class="font-mono text-sm">&lt;noscript&gt;</code>, prend
               le relais (liens des pages publiques, déconnexion en formulaire POST).
             </li>
             <li>
-              <strong class="font-medium text-ink">FAQ (page Contact)</strong> : c'est
+              <strong class="font-medium text-ink">FAQ (page Contact)</strong> : c’est
               Alpine qui replie les réponses
               (<code class="font-mono text-sm">:class</code> appliquant
               <code class="font-mono text-sm">grid-rows-[0fr]</code>). Sans JavaScript, ce
-              binding ne s'applique pas : l'état par défaut est <strong>ouvert</strong>,
+              binding ne s’applique pas : l’état par défaut est <strong>ouvert</strong>,
               donc toutes les réponses restent lisibles.
             </li>
             <li>
-              <strong class="font-medium text-ink">Carrousel d'accueil</strong> : c'est un
+              <strong class="font-medium text-ink">Carrousel d’accueil</strong> : c’est un
               conteneur à défilement natif. Sans JavaScript, on fait toujours défiler les
-              cartes horizontalement ; seuls les boutons et les points de pagination
+              cartes horizontalement ; seuls les boutons et les points de pagination
               deviennent inertes.
             </li>
             <li>
-              <strong class="font-medium text-ink">Formulaires d'authentification et de
-              contact</strong> : de simples
+              <strong class="font-medium text-ink">Formulaires d’authentification et de
+              contact</strong> : de simples
               <code class="font-mono text-sm">&lt;form method="POST"&gt;</code> traités
               côté serveur, qui fonctionnent sans JavaScript.
             </li>
           </ul>
           <p class="mt-8 max-w-[65ch] text-muted">
-            Ce qui reste réservé à JavaScript : les filtres en direct, la soumission des
+            Ce qui reste réservé à JavaScript : les filtres en direct, la soumission des
             formulaires Livewire, la messagerie temps réel et les retours de chargement.
           </p>
           <p class="mt-8 max-w-[65ch] text-muted">
-            Côté mouvement, l'animation d'empilement (<abbr title="GreenSock Animation Platform">GSAP</abbr>) lit la préférence système
-            avant de s'activer : si l'utilisateur demande un mouvement réduit, ou si la
-            fenêtre est trop courte, elle ne se déclenche pas et le contenu s'affiche
+            Côté mouvement, l’animation d’empilement (<abbr title="GreenSock Animation Platform">GSAP</abbr>) lit la préférence système
+            avant de s’activer : si l’utilisateur demande un mouvement réduit, ou si la
+            fenêtre est trop courte, elle ne se déclenche pas et le contenu s’affiche
             normalement.
           </p>
           <pre class="shiki github-light mt-5 overflow-x-auto border border-hairline-strong p-4 text-sm font-mono code-block" style="background-color:#fff;color:#24292e" tabindex="0"><code><span class="line"><span style="color:#D73A49">function</span><span style="color:#6F42C1"> canStack</span><span style="color:#24292E">() &#123;</span></span>
@@ -205,11 +205,11 @@
                 src="../src/img/burger-js-closed.webp"
                 width="780"
                 height="1688"
-                alt="Navigation mobile de Giggr avec JavaScript : l'en-tête et son bouton burger, menu fermé."
+                alt="Navigation mobile de Giggr avec JavaScript : l’en-tête et son bouton burger, menu fermé."
                 loading="lazy"
               />
               <figcaption class="capture__caption">
-                Avec JavaScript, fermé : l'en-tête et son bouton burger.
+                Avec JavaScript, fermé : l’en-tête et son bouton burger.
               </figcaption>
             </figure>
             <figure class="capture">
@@ -218,11 +218,11 @@
                 src="../src/img/burger-js-open.webp"
                 width="780"
                 height="1688"
-                alt="Navigation mobile de Giggr avec JavaScript : menu plein écran ouvert."
+                alt="Navigation mobile de Giggr avec JavaScript : menu plein écran ouvert."
                 loading="lazy"
               />
               <figcaption class="capture__caption">
-                Avec JavaScript, ouvert : le menu plein écran (Alpine).
+                Avec JavaScript, ouvert : le menu plein écran (Alpine).
               </figcaption>
             </figure>
             <figure class="capture">
@@ -231,11 +231,11 @@
                 src="../src/img/burger-no-js.webp"
                 width="780"
                 height="1688"
-                alt="Navigation mobile de Giggr sans JavaScript : navigation de secours du noscript."
+                alt="Navigation mobile de Giggr sans JavaScript : navigation de secours du noscript."
                 loading="lazy"
               />
               <figcaption class="capture__caption">
-                Sans JavaScript : la navigation de secours du &lt;noscript&gt; (liens, déconnexion en POST).
+                Sans JavaScript : la navigation de secours du &lt;noscript&gt; (liens, déconnexion en POST).
               </figcaption>
             </figure>
           </div>

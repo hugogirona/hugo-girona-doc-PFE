@@ -1,4 +1,4 @@
-{{#> page-layout title="Tests automatisés" description="Tests automatisés de Giggr : 619 tests Pest, dont 15 navigateur (Pest browser) et 604 serveur, répartis par domaine, avec extraits commentés et stratégie de couverture." num="05" heading="Tests automatisés" lede="619 tests Pest exécutés sur Giggr : 15 tests navigateur (Pest browser, vrai Chromium) et 604 tests serveur, répartis par domaine et illustrés d'extraits commentés." prevHref="serveur.html" prevNum="04" prevTitle="Performances serveur" nextHref="opquast.html" nextNum="06" nextTitle="Audit Opquast" }}
+{{#> page-layout title="Tests automatisés" description="Tests automatisés de Giggr : 619 tests Pest, dont 15 navigateur (Pest browser) et 604 serveur, répartis par domaine, avec extraits commentés et stratégie de couverture." num="05" heading="Tests automatisés" lede="619 tests Pest exécutés sur Giggr : 15 tests navigateur (Pest browser, vrai Chromium) et 604 tests serveur, répartis par domaine et illustrés d’extraits commentés." prevHref="serveur.html" prevNum="04" prevTitle="Performances serveur" nextHref="opquast.html" nextNum="06" nextTitle="Audit Opquast" }}
 
 <section class="border-b border-hairline">
         <div class="mx-auto max-w-6xl px-6 md:px-8 py-16 md:py-20">
@@ -6,11 +6,11 @@
                 Répartition des tests
             </h2>
             <p class="mt-5 max-w-[65ch] text-muted" id="tbl-desc-1">
-                La suite de tests de Giggr s'écrit avec Pest. Le guide impose au
-                minimum 15 tests navigateur (tests d'interface) et 15 tests serveur,
+                La suite de tests de Giggr s’écrit avec Pest. Le guide impose au
+                minimum 15 tests navigateur (tests d’interface) et 15 tests serveur,
                 soit 30 au total. Giggr atteint la cible côté navigateur et la dépasse
-                largement côté serveur : <strong>619 tests</strong> au total, dont
-                <strong>15 tests navigateur</strong> qui pilotent l'interface réelle
+                largement côté serveur : <strong>619 tests</strong> au total, dont
+                <strong>15 tests navigateur</strong> qui pilotent l’interface réelle
                 dans Chromium via Pest browser, et <strong>604 tests serveur</strong>
                 (feature et unit) qui valident la logique applicative. Le détail par
                 domaine est relevé ci-dessous.
@@ -48,7 +48,7 @@
                     <tbody>
                     <tr>
                         <td data-label="Famille">Navigateur</td>
-                        <td data-label="Domaine">Parcours d'interface réels (Pest browser, Chromium)</td>
+                        <td data-label="Domaine">Parcours d’interface réels (Pest browser, Chromium)</td>
                         <td data-label="Tests" class="font-mono tabular-nums">15</td>
                     </tr>
                     <tr>
@@ -131,11 +131,11 @@
             </div>
 
             <p class="mt-6 max-w-[65ch] text-sm text-muted">
-                Les tests serveur s'exécutent en mémoire (SQLite). Les tests navigateur
+                Les tests serveur s’exécutent en mémoire (SQLite). Les tests navigateur
                 lancent un vrai navigateur Chromium via Pest browser et Playwright. La
                 commande <code class="font-mono text-sm">pest --testsuite=Browser</code>
-                exécute la famille navigateur seule ; <code class="font-mono text-sm">pest</code>
-                exécute l'ensemble.
+                exécute la famille navigateur seule ; <code class="font-mono text-sm">pest</code>
+                exécute l’ensemble.
             </p>
         </div>
     </section>
@@ -146,19 +146,19 @@
                 Extraits commentés
             </h2>
             <p class="mt-5 max-w-[65ch] text-muted">
-                Trois extraits représentatifs, tels qu'ils figurent dans le dépôt : un
-                parcours utilisateur joué dans le navigateur, une règle d'autorisation
-                côté serveur, et une règle métier d'intégration. Chacun suit la
-                structure d'un test Pest (préparation, action, attente).
+                Trois extraits représentatifs, tels qu’ils figurent dans le dépôt : un
+                parcours utilisateur joué dans le navigateur, une règle d’autorisation
+                côté serveur, et une règle métier d’intégration. Chacun suit la
+                structure d’un test Pest (préparation, action, attente).
             </p>
 
             <h3 class="mt-10 font-mono text-sm uppercase tracking-wide text-muted">
-                1. Navigateur. Connexion d'un utilisateur
+                1. Navigateur. Connexion d’un utilisateur
             </h3>
             <p class="mt-3 max-w-[65ch] text-muted">
                 Dans un vrai Chromium, le test remplit le formulaire de connexion,
-                soumet, et vérifie l'arrivée sur la page <code class="font-mono text-sm">/explorer</code>
-                (redirection gérée par Fortify). Il prouve que l'authentification par
+                soumet, et vérifie l’arrivée sur la page <code class="font-mono text-sm">/explorer</code>
+                (redirection gérée par Fortify). Il prouve que l’authentification par
                 session, jeton CSRF compris, fonctionne de bout en bout côté interface.
             </p>
             <pre class="shiki github-light mt-5 overflow-x-auto border border-hairline-strong p-4 text-sm font-mono code-block" style="background-color:#fff;color:#24292e" tabindex="0"><code><span class="line"><span style="color:#6F42C1">it</span><span style="color:#24292E">(</span><span style="color:#032F62">"connecte un utilisateur avec des identifiants valides"</span><span style="color:#24292E">, </span><span style="color:#D73A49">function</span><span style="color:#24292E"> () {</span></span>
@@ -178,9 +178,9 @@
                 2. Serveur. Un invité ne peut pas suivre un profil
             </h3>
             <p class="mt-3 max-w-[65ch] text-muted">
-                Règle d'autorisation : un visiteur non connecté qui tente l'action
-                <code class="font-mono text-sm">toggle</code> du bouton « Suivre »
-                reçoit une réponse 403, et aucune ligne de suivi n'est créée en base.
+                Règle d’autorisation : un visiteur non connecté qui tente l’action
+                <code class="font-mono text-sm">toggle</code> du bouton « Suivre »
+                reçoit une réponse 403, et aucune ligne de suivi n’est créée en base.
                 Le composant Livewire est testé directement, sans navigateur.
             </p>
             <pre class="shiki github-light mt-5 overflow-x-auto border border-hairline-strong p-4 text-sm font-mono code-block" style="background-color:#fff;color:#24292e" tabindex="0"><code><span class="line"><span style="color:#6F42C1">it</span><span style="color:#24292E">(</span><span style="color:#032F62">'guest cannot toggle'</span><span style="color:#24292E">, </span><span style="color:#D73A49">function</span><span style="color:#24292E"> () {</span></span>
@@ -197,7 +197,7 @@
                 3. Serveur. Le contact envoie un mail au bon destinataire
             </h3>
             <p class="mt-3 max-w-[65ch] text-muted">
-                Règle métier d'intégration : une soumission valide du formulaire de
+                Règle métier d’intégration : une soumission valide du formulaire de
                 contact redirige sans erreur et met en file un mail vers le
                 destinataire <em>lu depuis la configuration</em>, pas écrit en dur.
                 Le mail est intercepté avec <code class="font-mono text-sm">Mail::fake()</code>.
@@ -228,9 +228,9 @@
             <p class="mt-5 max-w-[65ch] text-muted" id="tbl-desc-2">
                 La couverture est mesurée avec Xdebug et
                 <code class="font-mono text-sm">pest --coverage</code>, sur le namespace
-                <code class="font-mono text-sm">app/</code>, c'est-à-dire la logique
-                applicative : modèles, actions, jobs, événements, notifications. Les 604
-                tests serveur couvrent <strong>88,9 % des lignes</strong>. Les composants
+                <code class="font-mono text-sm">app/</code>, c’est-à-dire la logique
+                applicative : modèles, actions, jobs, événements, notifications. Les 604
+                tests serveur couvrent <strong>88,9 % des lignes</strong>. Les composants
                 de vue Livewire vivent hors de <code class="font-mono text-sm">app/</code>
                 et sont validés séparément, tests navigateur compris (voir la répartition
                 plus haut).
@@ -239,17 +239,17 @@
             <dl class="mt-8 grid grid-cols-3 gap-px border border-hairline-strong bg-hairline-strong">
                 <div class="bg-paper p-4">
                     <dt class="text-xs uppercase tracking-wide text-muted">Lignes</dt>
-                    <dd class="mt-1 font-mono text-2xl tabular-nums">88,9 %</dd>
+                    <dd class="mt-1 font-mono text-2xl tabular-nums">88,9 %</dd>
                     <dd class="font-mono text-xs text-muted tabular-nums">586 / 659</dd>
                 </div>
                 <div class="bg-paper p-4">
                     <dt class="text-xs uppercase tracking-wide text-muted">Fonctions</dt>
-                    <dd class="mt-1 font-mono text-2xl tabular-nums">89,7 %</dd>
+                    <dd class="mt-1 font-mono text-2xl tabular-nums">89,7 %</dd>
                     <dd class="font-mono text-xs text-muted tabular-nums">130 / 145</dd>
                 </div>
                 <div class="bg-paper p-4">
                     <dt class="text-xs uppercase tracking-wide text-muted">Classes</dt>
-                    <dd class="mt-1 font-mono text-2xl tabular-nums">73,9 %</dd>
+                    <dd class="mt-1 font-mono text-2xl tabular-nums">73,9 %</dd>
                     <dd class="font-mono text-xs text-muted tabular-nums">34 / 46</dd>
                 </div>
             </dl>
@@ -268,79 +268,79 @@
                     <tr>
                         <td data-label="Couche">Actions</td>
                         <td data-label="Lignes couvertes" class="font-mono text-sm tabular-nums">170 / 209</td>
-                        <td data-label="Couverture" class="font-mono tabular-nums">81,3 %</td>
+                        <td data-label="Couverture" class="font-mono tabular-nums">81,3 %</td>
                     </tr>
                     <tr>
                         <td data-label="Couche">Broadcasting</td>
                         <td data-label="Lignes couvertes" class="font-mono text-sm tabular-nums">1 / 1</td>
-                        <td data-label="Couverture" class="font-mono tabular-nums">100 %</td>
+                        <td data-label="Couverture" class="font-mono tabular-nums">100 %</td>
                     </tr>
                     <tr>
                         <td data-label="Couche">Console</td>
                         <td data-label="Lignes couvertes" class="font-mono text-sm tabular-nums">4 / 4</td>
-                        <td data-label="Couverture" class="font-mono tabular-nums">100 %</td>
+                        <td data-label="Couverture" class="font-mono tabular-nums">100 %</td>
                     </tr>
                     <tr>
                         <td data-label="Couche">Enums</td>
                         <td data-label="Lignes couvertes" class="font-mono text-sm tabular-nums">10 / 11</td>
-                        <td data-label="Couverture" class="font-mono tabular-nums">90,9 %</td>
+                        <td data-label="Couverture" class="font-mono tabular-nums">90,9 %</td>
                     </tr>
                     <tr>
                         <td data-label="Couche">Events</td>
                         <td data-label="Lignes couvertes" class="font-mono text-sm tabular-nums">52 / 52</td>
-                        <td data-label="Couverture" class="font-mono tabular-nums">100 %</td>
+                        <td data-label="Couverture" class="font-mono tabular-nums">100 %</td>
                     </tr>
                     <tr>
                         <td data-label="Couche">Http</td>
                         <td data-label="Lignes couvertes" class="font-mono text-sm tabular-nums">18 / 18</td>
-                        <td data-label="Couverture" class="font-mono tabular-nums">100 %</td>
+                        <td data-label="Couverture" class="font-mono tabular-nums">100 %</td>
                     </tr>
                     <tr>
                         <td data-label="Couche">Jobs</td>
                         <td data-label="Lignes couvertes" class="font-mono text-sm tabular-nums">40 / 40</td>
-                        <td data-label="Couverture" class="font-mono tabular-nums">100 %</td>
+                        <td data-label="Couverture" class="font-mono tabular-nums">100 %</td>
                     </tr>
                     <tr>
                         <td data-label="Couche">Mail</td>
                         <td data-label="Lignes couvertes" class="font-mono text-sm tabular-nums">6 / 16</td>
-                        <td data-label="Couverture" class="font-mono tabular-nums">37,5 %</td>
+                        <td data-label="Couverture" class="font-mono tabular-nums">37,5 %</td>
                     </tr>
                     <tr>
                         <td data-label="Couche">Models</td>
                         <td data-label="Lignes couvertes" class="font-mono text-sm tabular-nums">216 / 223</td>
-                        <td data-label="Couverture" class="font-mono tabular-nums">96,9 %</td>
+                        <td data-label="Couverture" class="font-mono tabular-nums">96,9 %</td>
                     </tr>
                     <tr>
                         <td data-label="Couche">Notifications</td>
                         <td data-label="Lignes couvertes" class="font-mono text-sm tabular-nums">10 / 21</td>
-                        <td data-label="Couverture" class="font-mono tabular-nums">47,6 %</td>
+                        <td data-label="Couverture" class="font-mono tabular-nums">47,6 %</td>
                     </tr>
                     <tr>
                         <td data-label="Couche">Providers</td>
                         <td data-label="Lignes couvertes" class="font-mono text-sm tabular-nums">21 / 25</td>
-                        <td data-label="Couverture" class="font-mono tabular-nums">84,0 %</td>
+                        <td data-label="Couverture" class="font-mono tabular-nums">84,0 %</td>
                     </tr>
                     <tr>
                         <td data-label="Couche">Support</td>
                         <td data-label="Lignes couvertes" class="font-mono text-sm tabular-nums">38 / 39</td>
-                        <td data-label="Couverture" class="font-mono tabular-nums">97,4 %</td>
+                        <td data-label="Couverture" class="font-mono tabular-nums">97,4 %</td>
                     </tr>
                     <tr>
                         <td data-label="Couche" class="font-medium">Total app/</td>
                         <td data-label="Lignes couvertes" class="font-mono text-sm tabular-nums font-medium">586 / 659</td>
-                        <td data-label="Couverture" class="font-mono tabular-nums font-medium">88,9 %</td>
+                        <td data-label="Couverture" class="font-mono tabular-nums font-medium">88,9 %</td>
                     </tr>
                     </tbody>
                 </table>
             </div>
 
             <p class="mt-6 max-w-[65ch] text-muted">
-                Les deux couches les plus basses sont assumées. Mail (37,5 %) et
-                Notifications (47,6 %) correspondent au gabarit du mail de contact et au
-                lien de réinitialisation de mot de passe : du rendu surtout déclenché par
+                Les deux couches les plus basses sont assumées. Mail (37,5 %) et
+                Notifications (47,6 %) correspondent au gabarit du mail de contact et au
+                lien de réinitialisation de mot de passe : du rendu surtout déclenché par
                 Fortify ou par des parcours couverts côté navigateur, peu sollicité par
-                les tests serveur. Le cœur métier reste couvert de bout en bout : modèles
-                à 96,9 %, événements, jobs et couche HTTP à 100 %.
+                les tests serveur. Le cœur métier reste couvert de bout en bout : modèles
+                à 96,9 %, événements, jobs et couche HTTP à 100 %.
             </p>
 
             <figure class="capture mt-8">
@@ -353,7 +353,7 @@
                     loading="lazy"
                 />
                 <figcaption class="capture__caption">
-                    Sortie de <code class="font-mono">pest --coverage</code> sur la suite serveur (namespace app/). Total : 88,9 % des lignes. Relevé le 8 juin 2026.
+                    Sortie de <code class="font-mono">pest --coverage</code> sur la suite serveur (namespace app/). Total : 88,9 % des lignes. Relevé le 8 juin 2026.
                 </figcaption>
             </figure>
         </div>
