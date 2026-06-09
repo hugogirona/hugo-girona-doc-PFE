@@ -96,27 +96,73 @@
 
       <section class="border-b border-hairline">
         <div class="mx-auto max-w-6xl px-6 md:px-8 py-16 md:py-20">
-          <div class="flex flex-wrap items-start justify-between gap-3">
-            <h2 class="font-display text-2xl font-medium md:text-3xl" style="letter-spacing: -0.02em">
-              Temps réel&nbsp;: la messagerie
-            </h2>
-            <span class="chip">à compléter</span>
-          </div>
+          <h2 class="font-display text-2xl font-medium md:text-3xl" style="letter-spacing: -0.02em">
+            Temps réel&nbsp;: la messagerie
+          </h2>
           <p class="mt-5 max-w-[65ch] text-muted">
-            La messagerie fonctionne en temps réel. À l’envoi, l’action serveur
-            <code class="font-mono text-sm">SendMessage</code> diffuse un événement
-            <code class="font-mono text-sm">MessageSent</code> sur un canal privé de
-            conversation (<code class="font-mono text-sm">ConversationChannel</code>).
-            Côté client, Laravel Echo, connecté au serveur Reverb par WebSocket,
-            reçoit l’événement et met à jour le fil de discussion
-            (<code class="font-mono text-sm">thread-messages</code>) sans rechargement.
+            La messagerie est l’usage le plus exigeant de JavaScript dans Giggr&nbsp;: les
+            messages arrivent en direct, sans rechargement et sans API cliente à écrire.
+            Tout repose sur la diffusion d’événements (broadcasting) de Laravel, reçue
+            côté client par Laravel Echo via un serveur WebSocket Reverb.
           </p>
-          <figure class="capture mt-8">
-            <div class="capture__frame">Capture à venir</div>
-            <figcaption class="capture__caption">
-              Réception d’un message en direct (Echo et Reverb). Capture à intégrer.
-            </figcaption>
-          </figure>
+          <h3 class="mt-8 font-mono text-sm uppercase tracking-wide text-muted">Le chemin d’un message</h3>
+          <ol class="mt-4 max-w-[68ch] space-y-3 text-muted">
+            <li class="flex gap-4">
+              <span class="font-mono text-accent" aria-hidden="true">1</span>
+              <span>À l’envoi, le composant de conversation appelle l’action serveur
+                <code class="font-mono text-sm">SendMessage</code>, qui enregistre le
+                message en base.</span>
+            </li>
+            <li class="flex gap-4">
+              <span class="font-mono text-accent" aria-hidden="true">2</span>
+              <span><code class="font-mono text-sm">SendMessage</code> diffuse ensuite
+                l’événement <code class="font-mono text-sm">MessageSent</code>
+                (<code class="font-mono text-sm">ShouldBroadcast</code>) sur un canal privé
+                propre à la conversation, <code class="font-mono text-sm">ConversationChannel</code>.</span>
+            </li>
+            <li class="flex gap-4">
+              <span class="font-mono text-accent" aria-hidden="true">3</span>
+              <span>Ce canal est privé&nbsp;: son autorisation ne laisse s’y abonner que les
+                deux participants de la conversation&#8239;; un tiers ne peut pas l’écouter.</span>
+            </li>
+            <li class="flex gap-4">
+              <span class="font-mono text-accent" aria-hidden="true">4</span>
+              <span>Côté client, Laravel Echo, connecté au serveur Reverb par WebSocket,
+                est abonné au canal et reçoit l’événement.</span>
+            </li>
+            <li class="flex gap-4">
+              <span class="font-mono text-accent" aria-hidden="true">5</span>
+              <span>À la réception, le fil de discussion
+                (<code class="font-mono text-sm">thread-messages</code>) ajoute le message en
+                bas, et le compteur de messages non lus
+                (<code class="font-mono text-sm">MessagingBadge</code>) s’incrémente sur les
+                autres écrans du destinataire.</span>
+            </li>
+          </ol>
+          <p class="mt-8 max-w-[65ch] text-muted">
+            <strong class="font-medium text-ink">Accusés de lecture.</strong> Quand le
+            destinataire ouvre la conversation, l’action
+            <code class="font-mono text-sm">MarkConversationAsRead</code> marque les messages
+            comme lus et diffuse l’événement
+            <code class="font-mono text-sm">MessagesRead</code>&nbsp;: l’expéditeur voit l’état
+            passer à «&#8239;&#8239;lu&#8239;&#8239;» et le compteur de non-lus retombe à zéro, là encore en direct.
+          </p>
+          <p class="mt-5 max-w-[65ch] text-muted">
+            <strong class="font-medium text-ink">Sans JavaScript.</strong> La messagerie
+            n’est pas utilisable&nbsp;: le panneau de conversation s’ouvre via JavaScript, et le
+            formulaire d’envoi est un composant Livewire — qui a lui aussi besoin de
+            JavaScript pour fonctionner. C’est, comme les filtres en direct, une
+            fonctionnalité interactive réservée à JavaScript, et assumée comme telle&nbsp;: le
+            contenu public (profils, annonces) reste, lui, consultable sans JavaScript, mais
+            converser suppose un navigateur qui l’exécute.
+          </p>
+          <p class="mt-5 max-w-[65ch] text-muted">
+            <strong class="font-medium text-ink">Avec JavaScript mais sans WebSocket.</strong>
+            On peut alors ouvrir une conversation et envoyer un message (Livewire fonctionne
+            en HTTP classique), mais la réception en direct (Echo et Reverb) ne se fait plus&nbsp;:
+            les nouveaux messages n’apparaissent qu’à la prochaine interaction ou au
+            rechargement de la page.
+          </p>
         </div>
       </section>
 
