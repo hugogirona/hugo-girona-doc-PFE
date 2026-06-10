@@ -1,4 +1,4 @@
-{{#> page-layout title="Tests automatisés" description="Tests automatisés de Giggr&nbsp;: 619 tests Pest, dont 15 navigateur (Pest browser) et 604 serveur, répartis par domaine, avec extraits commentés et stratégie de couverture." num="05" heading="Tests automatisés" lede="619 tests Pest exécutés sur Giggr&nbsp;: 15 tests navigateur (Pest browser, vrai Chromium) et 604 tests serveur, répartis par domaine et illustrés d’extraits commentés." prevHref="serveur.html" prevNum="04" prevTitle="Performances serveur" nextHref="opquast.html" nextNum="06" nextTitle="Audit Opquast" }}
+{{#> page-layout title="Tests automatisés" description="Tests automatisés de Giggr&nbsp;: 660 tests Pest, dont 15 navigateur (Pest browser) et 645 serveur, répartis par domaine, avec extraits commentés et stratégie de couverture." num="05" heading="Tests automatisés" lede="660 tests Pest exécutés sur Giggr&nbsp;: 15 tests navigateur (Pest browser, vrai Chromium) et 645 tests serveur, répartis par domaine et illustrés d’extraits commentés." prevHref="serveur.html" prevNum="04" prevTitle="Performances serveur" nextHref="opquast.html" nextNum="06" nextTitle="Audit Opquast" }}
 
 <section class="border-b border-hairline">
         <div class="mx-auto max-w-6xl px-6 md:px-8 py-16 md:py-20">
@@ -9,9 +9,9 @@
                 La suite de tests de Giggr s’écrit avec Pest. Le guide impose au
                 minimum 15 tests navigateur (tests d’interface) et 15 tests serveur,
                 soit 30 au total. Giggr atteint la cible côté navigateur et la dépasse
-                largement côté serveur&nbsp;: <strong>619 tests</strong> au total, dont
+                largement côté serveur&nbsp;: <strong>660 tests</strong> au total, dont
                 <strong>15 tests navigateur</strong> qui pilotent l’interface réelle
-                dans Chromium via Pest browser, et <strong>604 tests serveur</strong>
+                dans Chromium via Pest browser, et <strong>645 tests serveur</strong>
                 (feature et unit) qui valident la logique applicative. Le détail par
                 domaine est relevé ci-dessous.
             </p>
@@ -19,7 +19,7 @@
             <dl class="mt-8 grid grid-cols-2 gap-px border border-hairline-strong bg-hairline-strong sm:grid-cols-4">
                 <div class="bg-paper p-4">
                     <dt class="text-xs uppercase tracking-wide text-muted">Total</dt>
-                    <dd class="mt-1 font-mono text-2xl tabular-nums">619</dd>
+                    <dd class="mt-1 font-mono text-2xl tabular-nums">660</dd>
                 </div>
                 <div class="bg-paper p-4">
                     <dt class="text-xs uppercase tracking-wide text-muted">Navigateur</dt>
@@ -27,7 +27,7 @@
                 </div>
                 <div class="bg-paper p-4">
                     <dt class="text-xs uppercase tracking-wide text-muted">Serveur</dt>
-                    <dd class="mt-1 font-mono text-2xl tabular-nums">604</dd>
+                    <dd class="mt-1 font-mono text-2xl tabular-nums">645</dd>
                 </div>
                 <div class="bg-paper p-4">
                     <dt class="text-xs uppercase tracking-wide text-muted">Minimum guide</dt>
@@ -54,17 +54,17 @@
                     <tr>
                         <td data-label="Famille">Serveur</td>
                         <td data-label="Domaine">Composants Livewire</td>
-                        <td data-label="Tests" class="font-mono tabular-nums">214</td>
+                        <td data-label="Tests" class="font-mono tabular-nums">235</td>
                     </tr>
                     <tr>
                         <td data-label="Famille">Serveur</td>
                         <td data-label="Domaine">Modèles et relations</td>
-                        <td data-label="Tests" class="font-mono tabular-nums">132</td>
+                        <td data-label="Tests" class="font-mono tabular-nums">144</td>
                     </tr>
                     <tr>
                         <td data-label="Famille">Serveur</td>
                         <td data-label="Domaine">Pages et parcours</td>
-                        <td data-label="Tests" class="font-mono tabular-nums">85</td>
+                        <td data-label="Tests" class="font-mono tabular-nums">84</td>
                     </tr>
                     <tr>
                         <td data-label="Famille">Serveur</td>
@@ -74,7 +74,7 @@
                     <tr>
                         <td data-label="Famille">Serveur</td>
                         <td data-label="Domaine">Authentification</td>
-                        <td data-label="Tests" class="font-mono tabular-nums">39</td>
+                        <td data-label="Tests" class="font-mono tabular-nums">42</td>
                     </tr>
                     <tr>
                         <td data-label="Famille">Serveur</td>
@@ -94,7 +94,7 @@
                     <tr>
                         <td data-label="Famille">Serveur</td>
                         <td data-label="Domaine">Événements</td>
-                        <td data-label="Tests" class="font-mono tabular-nums">8</td>
+                        <td data-label="Tests" class="font-mono tabular-nums">11</td>
                     </tr>
                     <tr>
                         <td data-label="Famille">Serveur</td>
@@ -119,12 +119,17 @@
                     <tr>
                         <td data-label="Famille">Serveur</td>
                         <td data-label="Domaine">Intégrité de la base (smoke)</td>
-                        <td data-label="Tests" class="font-mono tabular-nums">3</td>
+                        <td data-label="Tests" class="font-mono tabular-nums">4</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Famille">Serveur</td>
+                        <td data-label="Domaine">Notifications (cloche, e-mail nouvel abonné)</td>
+                        <td data-label="Tests" class="font-mono tabular-nums">2</td>
                     </tr>
                     <tr>
                         <td data-label="Famille" class="font-medium">Total</td>
                         <td data-label="Domaine" class="font-medium">Suite complète Pest</td>
-                        <td data-label="Tests" class="font-mono tabular-nums font-medium">619</td>
+                        <td data-label="Tests" class="font-mono tabular-nums font-medium">660</td>
                     </tr>
                     </tbody>
                 </table>
@@ -229,8 +234,8 @@
                 La couverture est mesurée avec Xdebug et
                 <code class="font-mono text-sm">pest --coverage</code>, sur le namespace
                 <code class="font-mono text-sm">app/</code>, c’est-à-dire la logique
-                applicative&nbsp;: modèles, actions, jobs, événements, notifications. Les 604
-                tests serveur couvrent <strong>88,9&#8239;% des lignes</strong>. Les composants
+                applicative&nbsp;: modèles, actions, jobs, événements, notifications. Les 645
+                tests serveur couvrent <strong>89,4&#8239;% des lignes</strong>. Les composants
                 de vue Livewire vivent hors de <code class="font-mono text-sm">app/</code>
                 et sont validés séparément, tests navigateur compris (voir la répartition
                 plus haut).
@@ -239,18 +244,18 @@
             <dl class="mt-8 grid grid-cols-3 gap-px border border-hairline-strong bg-hairline-strong">
                 <div class="bg-paper p-4">
                     <dt class="text-xs uppercase tracking-wide text-muted">Lignes</dt>
-                    <dd class="mt-1 font-mono text-2xl tabular-nums">88,9&#8239;%</dd>
-                    <dd class="font-mono text-xs text-muted tabular-nums">586 / 659</dd>
+                    <dd class="mt-1 font-mono text-2xl tabular-nums">89,4&#8239;%</dd>
+                    <dd class="font-mono text-xs text-muted tabular-nums">620 / 693</dd>
                 </div>
                 <div class="bg-paper p-4">
                     <dt class="text-xs uppercase tracking-wide text-muted">Fonctions</dt>
-                    <dd class="mt-1 font-mono text-2xl tabular-nums">89,7&#8239;%</dd>
-                    <dd class="font-mono text-xs text-muted tabular-nums">130 / 145</dd>
+                    <dd class="mt-1 font-mono text-2xl tabular-nums">90,4&#8239;%</dd>
+                    <dd class="font-mono text-xs text-muted tabular-nums">142 / 157</dd>
                 </div>
                 <div class="bg-paper p-4">
                     <dt class="text-xs uppercase tracking-wide text-muted">Classes</dt>
-                    <dd class="mt-1 font-mono text-2xl tabular-nums">73,9&#8239;%</dd>
-                    <dd class="font-mono text-xs text-muted tabular-nums">34 / 46</dd>
+                    <dd class="mt-1 font-mono text-2xl tabular-nums">77,1&#8239;%</dd>
+                    <dd class="font-mono text-xs text-muted tabular-nums">37 / 48</dd>
                 </div>
             </dl>
 
@@ -267,8 +272,8 @@
                     <tbody>
                     <tr>
                         <td data-label="Couche">Actions</td>
-                        <td data-label="Lignes couvertes" class="font-mono text-sm tabular-nums">170 / 209</td>
-                        <td data-label="Couverture" class="font-mono tabular-nums">81,3&#8239;%</td>
+                        <td data-label="Lignes couvertes" class="font-mono text-sm tabular-nums">172 / 211</td>
+                        <td data-label="Couverture" class="font-mono tabular-nums">81,5&#8239;%</td>
                     </tr>
                     <tr>
                         <td data-label="Couche">Broadcasting</td>
@@ -287,7 +292,7 @@
                     </tr>
                     <tr>
                         <td data-label="Couche">Events</td>
-                        <td data-label="Lignes couvertes" class="font-mono text-sm tabular-nums">52 / 52</td>
+                        <td data-label="Lignes couvertes" class="font-mono text-sm tabular-nums">55 / 55</td>
                         <td data-label="Couverture" class="font-mono tabular-nums">100&#8239;%</td>
                     </tr>
                     <tr>
@@ -307,18 +312,18 @@
                     </tr>
                     <tr>
                         <td data-label="Couche">Models</td>
-                        <td data-label="Lignes couvertes" class="font-mono text-sm tabular-nums">216 / 223</td>
-                        <td data-label="Couverture" class="font-mono tabular-nums">96,9&#8239;%</td>
+                        <td data-label="Lignes couvertes" class="font-mono text-sm tabular-nums">237 / 244</td>
+                        <td data-label="Couverture" class="font-mono tabular-nums">97,1&#8239;%</td>
                     </tr>
                     <tr>
                         <td data-label="Couche">Notifications</td>
-                        <td data-label="Lignes couvertes" class="font-mono text-sm tabular-nums">10 / 21</td>
-                        <td data-label="Couverture" class="font-mono tabular-nums">47,6&#8239;%</td>
+                        <td data-label="Lignes couvertes" class="font-mono text-sm tabular-nums">17 / 28</td>
+                        <td data-label="Couverture" class="font-mono tabular-nums">60,7&#8239;%</td>
                     </tr>
                     <tr>
                         <td data-label="Couche">Providers</td>
-                        <td data-label="Lignes couvertes" class="font-mono text-sm tabular-nums">21 / 25</td>
-                        <td data-label="Couverture" class="font-mono tabular-nums">84,0&#8239;%</td>
+                        <td data-label="Lignes couvertes" class="font-mono text-sm tabular-nums">22 / 26</td>
+                        <td data-label="Couverture" class="font-mono tabular-nums">84,6&#8239;%</td>
                     </tr>
                     <tr>
                         <td data-label="Couche">Support</td>
@@ -327,8 +332,8 @@
                     </tr>
                     <tr>
                         <td data-label="Couche" class="font-medium">Total app/</td>
-                        <td data-label="Lignes couvertes" class="font-mono text-sm tabular-nums font-medium">586 / 659</td>
-                        <td data-label="Couverture" class="font-mono tabular-nums font-medium">88,9&#8239;%</td>
+                        <td data-label="Lignes couvertes" class="font-mono text-sm tabular-nums font-medium">620 / 693</td>
+                        <td data-label="Couverture" class="font-mono tabular-nums font-medium">89,4&#8239;%</td>
                     </tr>
                     </tbody>
                 </table>
@@ -336,24 +341,24 @@
 
             <p class="mt-6 max-w-[65ch] text-muted">
                 Les deux couches les plus basses sont assumées. Mail (37,5&#8239;%) et
-                Notifications (47,6&#8239;%) correspondent au gabarit du mail de contact et au
-                lien de réinitialisation de mot de passe&nbsp;: du rendu surtout déclenché par
-                Fortify ou par des parcours couverts côté navigateur, peu sollicité par
-                les tests serveur. Le cœur métier reste couvert de bout en bout&nbsp;: modèles
-                à 96,9&#8239;%, événements, jobs et couche HTTP à 100&#8239;%.
+                Notifications (60,7&#8239;%) tiennent surtout à des gabarits d’e-mail
+                (contact, vérification, notification de nouvel abonné)&nbsp;: du rendu
+                déclenché par Fortify ou par des parcours couverts côté navigateur, peu
+                sollicité par les tests serveur. Le cœur métier reste couvert de bout en
+                bout&nbsp;: modèles à 97,1&#8239;%, événements, jobs et couche HTTP à 100&#8239;%.
             </p>
 
             <figure class="capture mt-8">
                 <img
                     src="../src/img/coverage-pest.webp"
                     alt="Sortie de la commande pest --coverage."
-                    width="1330"
-                    height="2000"
+                    width="1720"
+                    height="2452"
                     class="w-full"
                     loading="lazy"
                 />
                 <figcaption class="capture__caption">
-                    Sortie de <code class="font-mono">pest --coverage</code> sur la suite serveur (namespace app/). Total&nbsp;: 88,9&#8239;% des lignes. Relevé le 8 juin 2026.
+                    Sortie de <code class="font-mono">pest --coverage</code> sur la suite serveur (namespace app/). Total&nbsp;: 89,4&#8239;% des lignes. Relevé le 10 juin 2026.
                 </figcaption>
             </figure>
         </div>
