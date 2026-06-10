@@ -15,4 +15,23 @@
       line-height: 2.25rem;
     }
   }
+
+  /* Sous-titre — h3 de section. Reproduit « font-display text-xl font-medium »
+     avec le tracking optique -0.01em. */
+  .h-sub {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    letter-spacing: -0.01em;
+  }
+
+  /* Titre de page (hero du page-header). Taille fluide, tracking serré -0.03em. */
+  .h-hero {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: clamp(2.25rem, 5vw, 3.75rem);
+    line-height: 1;
+    letter-spacing: -0.03em;
+  }
 }
