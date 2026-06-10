@@ -16,4 +16,17 @@
     font-size: 0.75rem;
     color: color-mix(in srgb, var(--color-paper) 58%, var(--color-ink));
   }
+  .footer-link {
+    color: var(--color-paper);
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
+    transition: text-decoration-color 0.2s ease, color 0.2s ease;
+  }
+  .footer-link:hover,
+  .footer-link:focus-visible {
+    color: var(--color-accent-on-dark);
+    text-decoration-color: currentColor;
+  }
 }
